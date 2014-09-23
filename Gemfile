@@ -46,3 +46,5 @@ group :development do
   gem 'pry-rails'
   gem 'quiet_assets'
 end
+
+gem 'figaro', github: 'laserlemon/figaro', ref: "9bbc7343f3916e73c185d071608e5ef24e9638d0"
