@@ -17,8 +17,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.row {
+  border: 1px solid blue;
+  padding: 10px;
+}
 body {
-  text-align: center;
   background: white;
   background-image: url("https://farm4.staticflickr.com/3846/14363066784_4a3d0e110b_b.jpg");
   background-size: cover;
@@ -70,7 +73,7 @@ main {
   border-bottom-left-radius: 10px;
 }
 
-div.errors {
+.errors {
   border-radius: 5px;
   text-align: center;
   font-weight: bold;
@@ -78,7 +81,7 @@ div.errors {
   padding-bottom: 0px;
 }
 
-div.errors.p {
+.errors p {
   padding: 2px;
   margin: 0px;
 }

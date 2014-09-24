@@ -25,11 +25,11 @@ class ApplicationController < ActionController::Base
   end
 
   def require_signed_in
-    redirect_to new_session_url unless logged_in?
+    redirect_to home_url unless logged_in?
   end
 
   def require_logged_out
-    redirect_to user_url(current_user) if logged_in?
+    # redirect_to user_url(current_user) if logged_in?
   end
 
 

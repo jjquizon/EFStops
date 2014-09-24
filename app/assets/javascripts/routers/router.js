@@ -1,17 +1,32 @@
-EfStops.Routers.AppRouter = Backbone.router.extend({
+EfStops.Routers.AppRouter = Backbone.Router.extend({
   initialize: function(options) {
-    // initialize the $rootEl here
+    this.$rootEl = options.$rootEl;
   },
 
   routes: {
-    "" : "currentUserProfile"
+    "": "showCurrentUserProfile",
+    "users/:id" : "showUserProfile"
   },
 
-  currentUserProfile: function() {
+  showCurrentUserProfile: function() {
+    var user = EfStops.users.getOrFetch(currentUserId);
+    var currentUserProfile = new EfStops.Views.UserProfile({ model :user });
+    this._swapView(currentUserProfile);
+  },
 
+  showUserProfile: function(id) {
+    var user = EfStops.users.getOrFetch(id);
+    // user.userImages().fetch();
+    var userProfile = new EfStops.Views.UserProfile({ model: user });
+    this._swapView(userProfile);
+  },
+
+
+  _swapView: function (view) {
+    this._currentView && this._currentView.remove();
+    this._currentView = view;
+    this.$rootEl.html(view.render().$el);
   }
-
-  
 
 
 });

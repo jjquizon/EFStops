@@ -1,0 +1,20 @@
+<div class="main-container">
+</div>
+
+<script charset="utf-8">
+$(document).ready(function(){
+  window.currentUserId = <%= @current_user.id %>
+  EfStops.initialize();
+});
+</script>
+
+<script type="text/template" id="filepicker-form">
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label :filepicker_url, "Upload Your Avatar:" %>
+    <%= f.filepicker_field :filepicker_url %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
+</script>

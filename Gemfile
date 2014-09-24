@@ -48,5 +48,6 @@ group :development do
 end
 
 gem 'figaro', github: 'laserlemon/figaro', ref: "9bbc7343f3916e73c185d071608e5ef24e9638d0"
-gem "filepicker-rails", git: "git://github.com/maxtilford/filepicker-rails.git"
+gem "filepicker-rails"
 gem 'newrelic_rpm'
+gem 'ejs'

@@ -12,10 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require bootstrap
 //= require underscore
 //= require backbone
+//= require bootstrap
 //= require ef_stops
 //= require_tree ../templates
 //= require_tree ./utils

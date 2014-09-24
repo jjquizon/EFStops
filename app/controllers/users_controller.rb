@@ -2,10 +2,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      puts "saving user to DB"
       login!(@user)
-      puts "#{@user}"
-      redirect_to user_url(@user)
+      redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new
@@ -19,8 +17,11 @@ class UsersController < ApplicationController
   def show
     if params.include?(:id)
       @user = User.find(params[:id])
+      render :show
     else
-      redirect_to user_url(current_user)
+      flash.now[:errors] = ["User not found"]
+      @user = current_user if current_user
+      render :show
     end
   end
 

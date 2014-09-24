@@ -4,11 +4,12 @@ window.EfStops = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new EfStops.Router.Approuter();
+    var $rootEl = $(".main-container");
+
+    new EfStops.Routers.AppRouter({
+      $rootEl: $rootEl
+    });
+
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  EfStops.initialize();
-});
