@@ -38,7 +38,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]
 
 group :development do
   gem 'better_errors'
@@ -48,3 +48,4 @@ group :development do
 end
 
 gem 'figaro', github: 'laserlemon/figaro', ref: "9bbc7343f3916e73c185d071608e5ef24e9638d0"
+gem "filepicker-rails", git: "git://github.com/maxtilford/filepicker-rails.git"

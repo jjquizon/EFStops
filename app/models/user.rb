@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
 
-  after_initialize :ensure_session_token
-  validates :username, :email, :session_token, presence: true
+  after_initialize :ensure_session_token, :ensure_avatar
+  validates :username, :email, :session_token, :filepicker_url, presence: true
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+
+  has_many :images
+
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64
@@ -35,6 +38,15 @@ class User < ActiveRecord::Base
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
+
+  def ensure_avatar
+    if self.filepicker_url.nil? || self.filepicker_url == ""
+      self.filepicker_url = "unknown.jpg"
+    else
+      return self.filepicker_url
+    end
+  end
+
 
   protected
   attr_reader :password

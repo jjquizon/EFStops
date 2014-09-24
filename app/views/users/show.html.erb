@@ -1,1 +1,24 @@
-<%= @user.username %>'s Profile
+<div class="profile col-xs-8 col-xs-offset-2">
+  <h1><%= @user.username %>'s profile</h1>
+    <% p @user %>
+  <%= image_tag "#{@user.filepicker_url}" %>
+
+  <div>
+    <ul>
+      <% @user.images.each do |image| %>
+        <li><%= image.title %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <%= form_for @user do |f| %>
+      <div>
+        <%= f.label :filepicker_url, "Upload Your Avatar:" %>
+        <input data-fp-apikey="A0hq7bucVRtKfUwdk8ZiQz" id="user_filepicker_url" name="user[filepicker_url]" type="filepicker" />
+      </div>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+</div>

@@ -16,3 +16,92 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  text-align: center;
+  background: grey;
+  background-image: url("https://farm4.staticflickr.com/3846/14363066784_4a3d0e110b_b.jpg");
+  background-size: 100%;
+  background-position: 0 10%;
+}
+
+main {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+
+}
+
+.navbar {
+  background: #1F1F20;
+  color: white;
+  border: 0px;
+  border-radius: 0px;
+}
+
+.background {
+  background-image: url("../mountains.jpg");
+
+}
+
+.login-signup {
+  top: 100px;
+  background: white;
+  border-radius: 10px;
+  padding: 0px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.login-signup-form-header {
+  background: #2E4B67;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  color: lightgrey;
+}
+
+.login-signup-form {
+  background: lightgrey;
+  padding: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+div.errors {
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+div.errors.p {
+  padding: 2px;
+  margin: 0px;
+}
+
+.root-intro {
+  top: 200px;
+  border-radius: 10px;
+  background-color: white;
+  opacity: 0.9;
+  padding: 5px;
+  text-align: center;
+  div, p, h1 {
+    color: black;
+    opacity: 1.0;
+    font-weight: bold;
+  }
+  p {
+    font-size: 18px;
+  }
+
+}
+
+.profile {
+  background: lightgrey;
+  opacity: 0.9;
+  padding: 10px;
+  border-radius: 10px;
+}

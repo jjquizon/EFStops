@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>EfStops</title>
+  <title>ef/stops</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= filepicker_js_include_tag %>
 </head>
 <body>
   <%= render "layouts/header" %>
-  <main class="container">
+
+
     <% if flash[:errors] %>
-    <div>
+    <div class="errors bg-danger col-xs-4 col-xs-offset-4">
       <% flash[:errors].each do |error| %>
-        <%= error %>
+        <p class="text-danger"><%= error %></p>
       <% end %>
     </div>
     <% end %>
 
-
     <%= yield %>
-  </main>
+
 
 </body>
 </html>

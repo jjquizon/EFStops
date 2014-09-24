@@ -11,15 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923202449) do
+ActiveRecord::Schema.define(version: 20140923221051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "images", force: true do |t|
+    t.string   "image_url",                       null: false
+    t.string   "title",      default: "Untitled"
+    t.string   "image_tag",                       null: false
+    t.integer  "user_id",                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "images", ["image_url"], name: "index_images_on_image_url", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"
@@ -28,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140923202449) do
     t.string   "session_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "filepicker_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
