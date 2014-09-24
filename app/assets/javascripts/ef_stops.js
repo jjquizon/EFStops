@@ -4,7 +4,8 @@ window.EfStops = {
   Views: {},
   Routers: {},
   initialize: function() {
-
+    new EfStops.Router.Approuter();
+    Backbone.history.start();
   }
 };
 

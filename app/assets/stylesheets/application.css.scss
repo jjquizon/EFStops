@@ -19,10 +19,11 @@
 
 body {
   text-align: center;
-  background: grey;
+  background: white;
   background-image: url("https://farm4.staticflickr.com/3846/14363066784_4a3d0e110b_b.jpg");
-  background-size: 100%;
-  background-position: 0 10%;
+  background-size: cover;
+  background-position: 0 15%;
+
 }
 
 main {
@@ -34,7 +35,8 @@ main {
 
 .navbar {
   background: #1F1F20;
-  color: white;
+  background-color: transparent;
+  color: lightgrey;
   border: 0px;
   border-radius: 0px;
 }
@@ -104,4 +106,12 @@ div.errors.p {
   opacity: 0.9;
   padding: 10px;
   border-radius: 10px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: lightgrey;
+}
+
+.container-fluid .navbar-header a {
+  color: white;
 }
