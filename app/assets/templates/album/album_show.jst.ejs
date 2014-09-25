@@ -1,0 +1,19 @@
+<div class="backbone-temp col-xs-8 col-xs-offset-2">
+  <div class="row">
+    <h1>Album title: <%= album.escape('title') %></h1>
+  </div>
+
+  <div class="row">
+    <ul class="list-unstyled">
+      <% images.forEach( function (image) { %>
+        <a href="#/images/<%= image.escape('id') %>">
+          <img src="<%= image.escape('image_url') %>" class="album-img">
+        </a>
+      <% }); %>
+    </ul>
+  </div>
+
+  <div class="row">
+    <h2>Comments</h2>
+  </div>
+</div>

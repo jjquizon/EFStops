@@ -10,10 +10,12 @@ EfStops.Collections.Albums = Backbone.Collection.extend({
         success: function () {
           EfStops.albums.add(album);
           albumCollection.add(album);
+          album.images().fetch();
         }
       });
     } else {
       album.fetch();
+      album.images().fetch();
     }
 
     return album;
