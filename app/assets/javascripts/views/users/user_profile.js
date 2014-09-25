@@ -8,7 +8,6 @@ EfStops.Views.UserProfile = Backbone.View.extend({
   },
 
   checkRender: function () {
-    console.log("listening to images");
     this.render();
   },
 

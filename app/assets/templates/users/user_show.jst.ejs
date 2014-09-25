@@ -12,12 +12,9 @@
     <h3>Uploaded pictures</h3>
   </div>
 
-  <% console.log("images:") %>
   <div class="row">
     <% user.userImages().forEach( function (image) { %>
       <img src="<%= image.escape('image_url') %>" class="user-profile-img">
-      <% console.log(image) %>
-      <% console.log("image loading") %>
     <% }); %>
   </div>
 
