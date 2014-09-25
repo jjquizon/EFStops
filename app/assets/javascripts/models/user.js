@@ -9,13 +9,26 @@ EfStops.Models.User = Backbone.Model.extend({
     return this._albums;
   },
 
+  images: function () {
+    if (!this._images) {
+      this._images = new EfStops.Collections.UserImages([], { user: this });
+    }
+    return this._images;
+  },
+
   parse: function(response) {
-    if (response.userImages) {
-      this.userImages().set(response.userImages, { parse: true });
-      delete response.userImages;
+    if (response.images) {
+      this.images().set(response.images, { parse: true });
+      delete response.images;
+    }
+
+    if (response.albums) {
+      this.albums().set(response.albums, { parse: true });
+      delete response.albums;
     }
 
     return response;
   }
+
 
 });

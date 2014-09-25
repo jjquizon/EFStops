@@ -10,7 +10,8 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
     "explore": "showExplore",
     "users/:id": "showUserProfile",
     "images/:id": "showImage",
-    "search/:tag": "searchByTag"
+    "search/:tag": "searchByTag",
+    "albums/:id": "albumShow"
   },
 
   showCurrentUserProfile: function() {
@@ -46,12 +47,16 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
 
   searchByTag: function(tag) {
     var collection = EfStops.userImages.getByTag(tag);
-    
+
     var tagView = new EfStops.Views.SearchByTag({
         tag: tag,
         collection: collection
       });
     this._swapView(tagView);
+  },
+
+  albumShow: function(albumId) {
+
   },
 
   _swapView: function (view) {

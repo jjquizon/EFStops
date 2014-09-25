@@ -18,7 +18,7 @@ EfStops.Views.Upload = Backbone.View.extend({
     var formTitle = $form.find('.upload-title').val();
     var formTag = $form.find('.upload-tag').val();
     var formDescription = $form.find('textarea').val();
-    var formAlbum_id = $form.find('#albums').val();
+    var formAlbum_id = $form.find('.album-id-input').val();
     var fileUrl = '';
 
     filepicker.pick( function (Blob) {
@@ -37,7 +37,7 @@ EfStops.Views.Upload = Backbone.View.extend({
     var that = this;
     function success () {
       EfStops.userImages().add(image);
-      that.currentUser.userImages().add(image);
+      that.currentUser.images().add(image);
       Backbone.history.navigate("/", { trigger: true });
     }
 

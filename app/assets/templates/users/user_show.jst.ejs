@@ -12,7 +12,15 @@
   </div>
 
   <div class="row">
-    Supposed to be albums here
+    <ul class="list-unstyled">
+    <% user.albums().forEach( function (album) { %>
+      <li>
+        <a href="#/albums/<%= album.escape('id') %>">
+          <%= album.escape('title') %>
+        </a>
+      </li>
+    <% }); %>
+    </ul>
   </div>
 
   <div class="row">
@@ -20,7 +28,7 @@
   </div>
 
   <div class="row">
-    <% user.userImages().forEach( function (image) { %>
+    <% user.images().forEach( function (image) { %>
       <a href="#/images/<%= image.escape('id') %>">
         <img src="<%= image.escape('image_url') %>" class="user-profile-img">
       </a>

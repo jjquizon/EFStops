@@ -47,13 +47,10 @@
 
       <div>
         <label for="album">Choose an Album:</label>
-        <input list="albums" class="form-control" name="img[album_id]" value="">
-        <datalist id="albums">
-          <option value="None">None</option>
+        <input list="album" class="form-control album-id-input" name="img[album_id]" value="">
+        <datalist id="album">
           <% user.albums().forEach( function (album) { %>
-            <option value="<%= album.escape('id') %>">
-              <%= album.escape('title') %>
-            </option>
+            <option value="<%= album.escape('id') %>"><%= album.escape('title') %></option>
           <% }); %>
         </datalist>
       </div>

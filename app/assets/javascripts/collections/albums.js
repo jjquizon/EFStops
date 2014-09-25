@@ -8,6 +8,7 @@ EfStops.Collections.Albums = Backbone.Collection.extend({
       album = new EfStops.Models.Album({ id: id });
       album.fetch({
         success: function () {
+          EfStops.albums.add(album);
           albumCollection.add(album);
         }
       });
@@ -19,3 +20,5 @@ EfStops.Collections.Albums = Backbone.Collection.extend({
   },
 
 });
+
+EfStops.albums = new EfStops.Collections.Albums();
