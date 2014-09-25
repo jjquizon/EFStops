@@ -5,7 +5,13 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
 
   routes: {
     "": "showCurrentUserProfile",
-    "users/:id" : "showUserProfile"
+    "users/:id" : "showUserProfile",
+    "upload" : "uploadPicture"
+  },
+
+  uploadPicture: function(){
+    var view = new EfStops.Views.Upload();
+    this._swapView(view);
   },
 
   showCurrentUserProfile: function() {

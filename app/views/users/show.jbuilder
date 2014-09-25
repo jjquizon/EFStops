@@ -6,6 +6,5 @@ json.images @user.images do |image|
   # json.albums @user.albums do |album|
   #   json.extract! album, :id, :title, :description
   # end
-  json.extract! image, :id, :title, :descripton, :image_tag, :created_at, :updated_at
-
+  json.extract! image, :id, :title, :image_tag, :image_url, :image_tag, :created_at, :updated_at
 end

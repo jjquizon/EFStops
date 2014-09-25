@@ -10,9 +10,13 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
 
     if @image.save
-      render json: @image
+      flash.now[:success] = ['Successfully Uploaded an Image']
+      render :show
     else
+      p @image.errors.full_messages
+      flash.now[:errors] = ['Unsuccessful Upload'];
       flash.now[:errors] = @image.errors.full_messages
+      redirect_to root_url
     end
   end
 

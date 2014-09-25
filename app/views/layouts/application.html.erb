@@ -6,10 +6,19 @@
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
   <%= filepicker_js_include_tag %>
+  <script>filepicker.setKey("A0hq7bucVRtKfUwdk8ZiQz");</script>
 </head>
 <body>
   <%= render "layouts/header" %>
+  <a href="#/upload">Upload</a>
 
+    <% if flash[:success] %>
+    <div class="errors bg-success col-xs-4 col-xs-offset-4">
+      <% flash[:success].each do |success| %>
+        <p class="text-success"><%= success %></p>
+      <% end %>
+    </div>
+    <% end %>
 
     <% if flash[:errors] %>
     <div class="errors bg-danger col-xs-4 col-xs-offset-4">
