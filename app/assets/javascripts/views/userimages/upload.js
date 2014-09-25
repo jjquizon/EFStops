@@ -1,6 +1,10 @@
 EfStops.Views.Upload = Backbone.View.extend({
   template: JST['images/upload'],
 
+  initialize: function (options) {
+    this.currentUser = options.user;
+  },
+
   events: {
     'click .filepicker-button': 'upload'
   },
@@ -26,8 +30,9 @@ EfStops.Views.Upload = Backbone.View.extend({
   },
 
   saveToDatabase: function (title, tag, url) {
-
+    var that = this;
     function success () {
+      that.currentUser.userImages().add(image);
       Backbone.history.navigate("/", { trigger: true });
     }
 
@@ -35,10 +40,8 @@ EfStops.Views.Upload = Backbone.View.extend({
       title: title,
       image_tag: tag,
       image_url: url,
-      user_id: currentUserId
+      user_id: this.currentUser.id
     });
-
-    // console.log(image);
 
     image.save({}, {
       success: success,

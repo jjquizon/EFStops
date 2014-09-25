@@ -2,6 +2,7 @@ EfStops.Collections.Users = Backbone.Collection.extend({
   model: EfStops.Models.User,
   url: "/users",
 
+
   getOrFetch: function (id) {
     var user = EfStops.users.get(id);
 
@@ -9,12 +10,13 @@ EfStops.Collections.Users = Backbone.Collection.extend({
       user = new EfStops.Models.User({ id: id });
       user.fetch({
         success: function() {
-          console.log(user);
           EfStops.users.add(user);
+          user.userImages().fetch();
         }
       });
     } else {
       user.fetch();
+      user.userImages().fetch();
     }
 
     return user;

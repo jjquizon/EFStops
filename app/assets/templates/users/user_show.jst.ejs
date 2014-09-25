@@ -9,11 +9,19 @@
   </div>
 
   <div class="row">
-    <h3>Upload pictures</h3>
+    <h3>Uploaded pictures</h3>
   </div>
 
+  <% console.log("images:") %>
   <div class="row">
-    <script type="text/javascript" src="http://api.filepicker.io/v0/filepicker.js"></script>
+    <% user.userImages().forEach( function (image) { %>
+      <img src="<%= image.escape('image_url') %>" class="user-profile-img">
+      <% console.log(image) %>
+      <% console.log("image loading") %>
+    <% }); %>
   </div>
+
+
+
 
 </div>

@@ -18,7 +18,6 @@
 @import "bootstrap";
 
 .row {
-  border: 1px solid blue;
   padding: 10px;
 }
 body {
@@ -128,4 +127,9 @@ main {
   top: 100px;
   background: white;
   opacity: 0.9;
+}
+
+.user-profile-img {
+  height: 52px;
+  width: 48px;
 }

@@ -1,6 +1,7 @@
 EfStops.Routers.AppRouter = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
+    this.currentUser = EfStops.users.get({ id: currentUserId });
   },
 
   routes: {
@@ -10,13 +11,14 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
   },
 
   uploadPicture: function(){
-    var view = new EfStops.Views.Upload();
+    var user = EfStops.users.getOrFetch(currentUserId);
+    var view = new EfStops.Views.Upload({ user: user });
     this._swapView(view);
   },
 
   showCurrentUserProfile: function() {
     var user = EfStops.users.getOrFetch(currentUserId);
-    var currentUserProfile = new EfStops.Views.UserProfile({ model :user });
+    var currentUserProfile = new EfStops.Views.UserProfile({ model: user });
     this._swapView(currentUserProfile);
   },
 
