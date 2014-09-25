@@ -1,5 +1,5 @@
 EfStops.Views.Upload = Backbone.View.extend({
-  template: JST['images/upload'],
+  template: JST['images/images_upload'],
 
   initialize: function (options) {
     this.currentUser = options.user;
@@ -32,6 +32,7 @@ EfStops.Views.Upload = Backbone.View.extend({
   saveToDatabase: function (title, tag, url) {
     var that = this;
     function success () {
+      EfStops.userImages().add(image);
       that.currentUser.userImages().add(image);
       Backbone.history.navigate("/", { trigger: true });
     }

@@ -1,0 +1,19 @@
+<div class="image-container backbone-temp col-xs-8 col-xs-offset-2">
+  <div class ="row text-center">
+    <h1>Explore</h1>
+  </div>
+
+  <ul class="list-unstyled">
+    <% tags.forEach( function (tag) { %>
+      <li><a href="search/<%= tag %>"><%= tag %></a></li>
+    <% }); %>
+  </ul>
+
+  <div class="row">
+    <% images.forEach( function (image) { %>
+      <a href="#/images/<%= image.escape('id') %>">
+        <img src="<%= image.escape('image_url') %>" class="user-profile-img">
+      </a>
+    <% }); %>
+  </div>
+</div>

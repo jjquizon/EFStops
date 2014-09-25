@@ -3,17 +3,17 @@ EfStops.Collections.UserImages = Backbone.Collection.extend({
   url: "images/",
 
   initialize: function (models, options) {
-    this.user = options.user;
+    // this.user = options.user;
   },
 
   getOrFetch: function (id) {
     var image = this.get(id);
-    var images = this;
-    if (!card) {
-      image = new EfStops.Models.UserImages({ id: id });
+    var imageCollection = this;
+    if (!image) {
+      image = new EfStops.Models.UserImage({ id: id });
       image.fetch({
         success: function () {
-          images.add(image);
+          imageCollection.add(image);
         }
       });
     } else {
@@ -26,3 +26,5 @@ EfStops.Collections.UserImages = Backbone.Collection.extend({
 
 
 });
+
+EfStops.userImages = new EfStops.Collections.UserImages();

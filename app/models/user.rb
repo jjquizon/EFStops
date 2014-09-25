@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many :images
+  has_many :albums
 
 
   def self.generate_session_token

@@ -20,12 +20,25 @@
 .row {
   padding: 10px;
 }
+
 body {
   background: white;
   background-image: url("https://farm4.staticflickr.com/3846/14363066784_4a3d0e110b_b.jpg");
   background-size: cover;
   background-position: 0 15%;
+  background-attachment: fixed;
+}
 
+.body-logged-in {
+  background: darkgrey;
+  background-image: 0;
+  background-size: 0;
+  background-position: 0;
+  background-attachment: 0;
+}
+
+nav.navbar-logged-out {
+  background-color: transparent;
 }
 
 main {
@@ -37,7 +50,6 @@ main {
 
 .navbar {
   background: #1F1F20;
-  background-color: transparent;
   color: lightgrey;
   border: 0px;
   border-radius: 0px;
@@ -132,4 +144,8 @@ main {
 .user-profile-img {
   height: 52px;
   width: 48px;
+}
+
+.image-title-header {
+  text-align: center;
 }

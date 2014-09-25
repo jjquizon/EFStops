@@ -3,7 +3,9 @@
 
 <script charset="utf-8">
 $(document).ready(function(){
-  window.currentUserId = <%= @current_user.id %>
+  $('body').addClass("body-logged-in");
+  $('nav').removeClass("navbar-logged-out");
+  window.currentUserId = <%= @current_user.id %>;
   EfStops.initialize();
 });
 </script>
