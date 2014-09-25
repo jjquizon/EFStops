@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
   <%= filepicker_js_include_tag %>
-  <script>filepicker.setKey("A0hq7bucVRtKfUwdk8ZiQz");</script>
+  <script>filepicker.setKey("<%= ENV['filepicker_api_key'] %>");</script>
 </head>
 <body>
   <%= render "layouts/header" %>
