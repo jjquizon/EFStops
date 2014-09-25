@@ -1,3 +1,8 @@
-json.albums @albums do |album|
-  json.extract! album, :id, :user_id, :title, :description, :created_at, :updated_at
+json.array! @albums do |album|
+  json.id album.id
+  json.user_id album.user_id
+  json.title album.title
+  json.description album.description
+  json.created_at album.created_at
+  json.updated_at album.updated_at
 end

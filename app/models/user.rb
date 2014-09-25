@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :images
+  has_many :images, through: :albums
   has_many :albums
 
 
@@ -47,6 +47,8 @@ class User < ActiveRecord::Base
       return self.filepicker_url
     end
   end
+
+
 
 
   protected

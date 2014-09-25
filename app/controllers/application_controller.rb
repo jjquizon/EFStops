@@ -28,8 +28,14 @@ class ApplicationController < ActionController::Base
     redirect_to home_url unless logged_in?
   end
 
-  def require_logged_out
-    # redirect_to user_url(current_user) if logged_in?
+  def create_none_album(user)
+    album = Album.new({
+        title: "None",
+        description: "No Description",
+        user_id: user.id
+      })
+
+    album.save
   end
 
 

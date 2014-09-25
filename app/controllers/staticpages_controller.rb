@@ -6,8 +6,4 @@ class StaticpagesController < ApplicationController
 
   def home
   end
-
-  def filepicker
-    @user = current_user
-  end
 end

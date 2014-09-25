@@ -1,7 +1,4 @@
 class ImagesController < ApplicationController
-  def new
-  end
-
   def index
     @images = Image.all
     render json: @images
@@ -18,7 +15,6 @@ class ImagesController < ApplicationController
       flash.now[:success] = ['Successfully Uploaded an Image']
       render :show
     else
-      p @image.errors.full_messages
       flash.now[:errors] = ['Unsuccessful Upload'];
       flash.now[:errors] = @image.errors.full_messages
       redirect_to root_url

@@ -11,26 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925174043) do
+ActiveRecord::Schema.define(version: 20140925181828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "albums", force: true do |t|
     t.string   "title",       default: "untitled"
-    t.string   "description", default: "No description"
+    t.text     "description", default: "No description"
     t.integer  "user_id",                                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "images", force: true do |t|
-    t.string   "image_url",                       null: false
-    t.string   "title",      default: "Untitled"
-    t.string   "image_tag",                       null: false
-    t.integer  "user_id",                         null: false
+    t.string   "image_url",                              null: false
+    t.string   "title",       default: "Untitled"
+    t.string   "image_tag",                              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "album_id",                               null: false
+    t.text     "description", default: "No description"
   end
 
   add_index "images", ["image_url"], name: "index_images_on_image_url", unique: true, using: :btree

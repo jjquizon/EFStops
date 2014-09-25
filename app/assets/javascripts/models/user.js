@@ -1,11 +1,12 @@
 EfStops.Models.User = Backbone.Model.extend({
   urlRoot: "/users",
 
-  userImages: function () {
-    if (!this._userImages) {
-      this._userImages = new EfStops.Collections.UserImages([], { user: this });
+
+  albums: function () {
+    if (!this._albums) {
+      this._albums = new EfStops.Collections.Albums([], { user: this });
     }
-    return this._userImages;
+    return this._albums;
   },
 
   parse: function(response) {

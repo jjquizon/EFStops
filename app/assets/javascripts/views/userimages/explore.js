@@ -4,7 +4,7 @@ EfStops.Views.Explore = Backbone.View.extend({
   initialize: function () {
     this.TAGS = ["Other", "Architecture", "Animals", "Art", "Automobiles",
       "Celebrity", "Design", "Fashion", "Film", "Food", "Funny",
-      "Illustrations", "Interior Design", "Music", "Nature", "Photography",
+      "Illustrations", "Music", "Nature", "Photography",
       "Religion", "Romance", "Sports", "Toys", "Travel", "Typography",
       "Urban", "Weddings"];
 

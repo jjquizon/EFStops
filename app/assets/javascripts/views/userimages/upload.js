@@ -3,33 +3,37 @@ EfStops.Views.Upload = Backbone.View.extend({
 
   initialize: function (options) {
     this.currentUser = options.user;
+    this.listenTo(this.currentUser, 'sync', this.render);
+    // this.listenTo(this.currentUser.albums(), 'sync add', this.render);
+
   },
 
   events: {
-    'click .filepicker-button': 'upload'
+    'click .filepicker-button': 'getFormValues'
   },
 
-  upload: function(event) {
+  getFormValues: function(event) {
     event.preventDefault();
-    var filepicker_url = '';
     var $form = $(".upload-form");
     var formTitle = $form.find('.upload-title').val();
     var formTag = $form.find('.upload-tag').val();
+    var formDescription = $form.find('textarea').val();
+    var formAlbum_id = $form.find('#albums').val();
     var fileUrl = '';
 
-    filepicker_url = filepicker.pick( function (Blob) {
+    filepicker.pick( function (Blob) {
       fileUrl = Blob.url;
-      this.saveToDatabase(formTitle, formTag, fileUrl);
+      this.saveToDatabase(formTitle, formTag, fileUrl, formDescription, formAlbum_id);
     }.bind(this));
 
   },
 
   render: function(){
-    this.$el.html(this.template());
+    this.$el.html(this.template({ user: this.currentUser }));
     return this;
   },
 
-  saveToDatabase: function (title, tag, url) {
+  saveToDatabase: function (title, tag, url, description, album_id) {
     var that = this;
     function success () {
       EfStops.userImages().add(image);
@@ -41,7 +45,8 @@ EfStops.Views.Upload = Backbone.View.extend({
       title: title,
       image_tag: tag,
       image_url: url,
-      user_id: this.currentUser.id
+      description: description,
+      album_id: album_id
     });
 
     image.save({}, {
@@ -49,6 +54,6 @@ EfStops.Views.Upload = Backbone.View.extend({
       error: function () {
         console.log("failed to save");
       }
-      });
+    });
   }
 });
