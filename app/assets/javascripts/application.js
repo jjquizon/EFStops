@@ -16,6 +16,8 @@
 //= require underscore
 //= require backbone
 //= require bootstrap
+//= require jquery.ui.autocomplete
+//= require jquery.ui.tooltip
 //= require ef_stops
 //= require_tree ../templates
 //= require_tree ./utils

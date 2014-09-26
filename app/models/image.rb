@@ -5,4 +5,6 @@ class Image < ActiveRecord::Base
   # ENABLE UNIQUE URL BEFORE SENDING UP
 
   belongs_to :album
+  has_many :comments, as: :commentable
+
 end

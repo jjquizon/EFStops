@@ -52,3 +52,4 @@ gem "filepicker-rails"
 gem 'newrelic_rpm'
 gem 'ejs'
 gem 'pusher'
+gem 'jquery-ui-rails'

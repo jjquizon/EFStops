@@ -30,6 +30,27 @@ Album.create(title: "Cultural", description: "I love cultural stuff", user_id: "
 Album.create(title: "Music", description: "I love music", user_id: "1")
 Album.create(title: "Activities", description: "I love fun", user_id: "4")
 
+Comment.create(content: "I love nature", commentable_id: 1, commentable_type:  "Album", user_id: 1)
+Comment.create(content: "I love nature", commentable_id: 1, commentable_type:  "Album", user_id: 1)
+Comment.create(content: "I love nature", commentable_id: 1, commentable_type:  "Album", user_id: 1)
+Comment.create(content: "I love nature", commentable_id: 1, commentable_type:  "Album", user_id: 1)
+Comment.create(content: "I love nature", commentable_id: 1, commentable_type:  "Album", user_id: 1)
+Comment.create(content: "I love birthdays", commentable_id: 2, commentable_type:  "Album", user_id: 2)
+Comment.create(content: "I love birthdays", commentable_id: 2, commentable_type:  "Album", user_id: 2)
+Comment.create(content: "I love birthdays", commentable_id: 2, commentable_type:  "Album", user_id: 2)
+Comment.create(content: "I love birthdays", commentable_id: 2, commentable_type:  "Album", user_id: 2)
+Comment.create(content: "I love birthdays", commentable_id: 2, commentable_type:  "Album", user_id: 2)
+Comment.create(content: "I love birthdays", commentable_id: 2, commentable_type:  "Album", user_id: 2)
+Comment.create(content: "I love trees", commentable_id: 3, commentable_type:  "Album", user_id: 3)
+Comment.create(content: "I love trees", commentable_id: 3, commentable_type:  "Album", user_id: 3)
+Comment.create(content: "I love trees", commentable_id: 3, commentable_type:  "Album", user_id: 3)
+Comment.create(content: "I love trees", commentable_id: 3, commentable_type:  "Album", user_id: 3)
+Comment.create(content: "I love trees", commentable_id: 3, commentable_type:  "Album", user_id: 3)
+Comment.create(content: "I love trees", commentable_id: 3, commentable_type:  "Album", user_id: 3)
+Comment.create(content: "I love trees", commentable_id: 3, commentable_type:  "Album", user_id: 3)
+
+
+
 Image.create(title: "Bungee Jumping", description: "Bungee Man", image_tag: "Sports", album_id: 11,
   image_url: "https://farm4.staticflickr.com/3868/14247501538_385f6c589f_b.jpg"
 )
@@ -67,3 +88,18 @@ Image.create(title: "Petco Park", description: "Petco Park in San Diego, CA", im
 Image.create(title: "Calvin Harris", description: "Calvin Harris performing at Club XS", image_tag: "Music", album_id: 10,
   image_url: "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xaf1/v/t1.0-9/p417x417/418625_4102534115070_866262262_n.jpg?oh=c3ec4166a5e49468a62a30c6a8b58d25&oe=54B93EF2&__gda__=1421920902_3b3674885e75857d359f2c8016844170"
 )
+
+Comment.create(content: "I love bungee jumping", commentable_id: 1, commentable_type:  "Image", user_id: 4)
+Comment.create(content: "I love bungee jumping", commentable_id: 1, commentable_type:  "Image", user_id: 4)
+Comment.create(content: "I love bungee jumping", commentable_id: 1, commentable_type:  "Image", user_id: 4)
+Comment.create(content: "I love bungee jumping", commentable_id: 1, commentable_type:  "Image", user_id: 4)
+Comment.create(content: "I love Kain", commentable_id: 2, commentable_type:  "Image", user_id: 5)
+Comment.create(content: "I love Kain", commentable_id: 2, commentable_type:  "Image", user_id: 5)
+Comment.create(content: "I love Kain", commentable_id: 2, commentable_type:  "Image", user_id: 5)
+Comment.create(content: "I love Kain", commentable_id: 2, commentable_type:  "Image", user_id: 5)
+Comment.create(content: "I love Kain", commentable_id: 2, commentable_type:  "Image", user_id: 5)
+Comment.create(content: "I love Delores Park", commentable_id: 3, commentable_type:  "Image", user_id: 6)
+Comment.create(content: "I love Delores Park", commentable_id: 3, commentable_type:  "Image", user_id: 6)
+Comment.create(content: "I love Delores Park", commentable_id: 3, commentable_type:  "Image", user_id: 6)
+Comment.create(content: "I love Delores Park", commentable_id: 3, commentable_type:  "Image", user_id: 6)
+Comment.create(content: "I love Delores Park", commentable_id: 3, commentable_type:  "Image", user_id: 6)
