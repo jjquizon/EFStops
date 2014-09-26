@@ -15,5 +15,9 @@
 
   <div class="row">
     <h2>Comments</h2>
+    <ul class="list-unstyled">
+      <% comments.each( function (comment) { %>
+        <li> <%= comment.escape('username') %> said: <%= comment.escape('content') %>
+      <% }) %>
   </div>
 </div>

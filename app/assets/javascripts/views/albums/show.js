@@ -3,15 +3,17 @@ EfStops.Views.ShowAlbum = Backbone.View.extend({
 
   initialize: function () {
     this.collection = this.model.images();
+    this.comments = this.model.comments();
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.collection, 'sync', this.render);
+    // this.listenTo(this.comments, 'sync', this.render);
   },
 
   render: function () {
-    console.log(this.model);
     var renderedContent = this.template({
       album: this.model,
-      images: this.collection
+      images: this.collection,
+      comments: this.comments
     });
 
     this.$el.html(renderedContent);

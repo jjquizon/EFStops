@@ -2,6 +2,7 @@ json.extract! @album, :id, :title, :description, :user_id, :created_at, :updated
 
 json.comments @album.comments do |comment|
   json.extract! comment, :id, :content, :commentable_id, :commentable_type, :user_id, :created_at, :updated_at
+  json.username comment.user.username
 end
 
 json.images @album.images do |image|
