@@ -14,12 +14,10 @@ EfStops.Collections.Users = Backbone.Collection.extend({
       user.fetch({
         success: function() {
           EfStops.users.add(user);
-          user.albums().fetch();
         }
       });
     } else {
       user.fetch();
-      user.albums().fetch();
     }
 
     return user;
