@@ -4,7 +4,10 @@
   </div>
 
   <div class="row">
-    <img src="/assets/unknown.jpg">
+    <img src="<%= user.escape('filepicker_url') %>" class="user-profile-img"><br>
+    <% if (user.id == currentUserId) { %>
+      <button class="change-avatar btn btn-default">Change avatar Image</button>
+    <% } %>
   </div>
 
   <div class="row">

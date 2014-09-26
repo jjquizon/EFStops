@@ -142,8 +142,9 @@ main {
 }
 
 .user-profile-img {
-  height: 52px;
-  width: 48px;
+  max-height: 150px;
+  max-width: 150px;
+  border: 2px solid black;
 }
 
 .image-title-header {
@@ -165,7 +166,27 @@ textarea {
 }
 
 .avatar-size {
-  max-height: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+.explore-img{
+  margin: 10px;
+  background-image: url("/assets/Camera-icon.png");
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+  display: inline-block;
+  text-align: center;
+  opacity: 0.4;
+  h2 {
+    color: black;
+    opacity: 1;
+  }
+}
+
+.user-index {
+  margin: 5px;
 }
 /*
 * {
