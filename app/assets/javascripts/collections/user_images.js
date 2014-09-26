@@ -1,9 +1,8 @@
 EfStops.Collections.UserImages = Backbone.Collection.extend({
   model: EfStops.Models.UserImage,
-  url: "images/",
+  url: "/images",
 
   initialize: function (models, options) {
-    // this.user = options.user;
   },
 
   getOrFetch: function (id) {

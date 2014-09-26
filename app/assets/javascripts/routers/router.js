@@ -58,7 +58,6 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
 
   albumShow: function(albumId) {
     var album = EfStops.albums.getOrFetch(albumId);
-
     var albumShowView = new EfStops.Views.ShowAlbum({
       model: album
     });

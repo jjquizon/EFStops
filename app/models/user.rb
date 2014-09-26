@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 
   def ensure_avatar
     if self.filepicker_url.nil? || self.filepicker_url == ""
-      self.filepicker_url = "unknown.jpg"
+      self.filepicker_url = "assets/unknown.jpg"
     else
       return self.filepicker_url
     end

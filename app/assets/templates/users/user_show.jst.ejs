@@ -13,7 +13,7 @@
 
   <div class="row">
     <ul class="list-unstyled">
-    <% user.albums().forEach( function (album) { %>
+    <% albums.each( function (album) { %>
       <li>
         <a href="#/albums/<%= album.escape('id') %>">
           <%= album.escape('title') %>
@@ -28,9 +28,9 @@
   </div>
 
   <div class="row">
-    <% user.images().forEach( function (image) { %>
+    <% images.forEach( function (image) { %>
       <a href="#/images/<%= image.escape('id') %>">
-        <img src="<%= image.escape('image_url') %>" class="user-profile-img">
+        <img src="<%= image.escape('image_url') %>" class="album-img">
       </a>
     <% }); %>
   </div>

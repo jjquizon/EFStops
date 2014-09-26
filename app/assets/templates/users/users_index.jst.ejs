@@ -5,12 +5,18 @@
 
   <div class="row">
     <ul class="list-unstyled">
-      <% users.forEach(function (user) { %>
-        <li>
+      <% users.forEach(function (user, idx) { %>
+        <% idx += 1 %>
+
+        <span class ="col-xs-3">
           <a href="#/users/<%= user.id %>">
+            <img src="<%= user.escape('filepicker_url') %>" class="avatar-size"/>
             <%= user.escape('username') %>
           </a>
-        </li>
+        </span>
+        <% if (idx % 4 === 0 && idx != 0) { %>
+          <br>
+        <% } %>
       <% }); %>
     </ul>
   </div>

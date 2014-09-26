@@ -5,7 +5,7 @@
 
   <div class="row">
     <ul class="list-unstyled">
-      <% images.forEach( function (image) { %>
+      <% images.each( function (image) { %>
         <a href="#/images/<%= image.escape('id') %>">
           <img src="<%= image.escape('image_url') %>" class="album-img">
         </a>

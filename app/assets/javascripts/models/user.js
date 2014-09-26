@@ -1,6 +1,5 @@
 EfStops.Models.User = Backbone.Model.extend({
-  urlRoot: "/users",
-
+  urlRoot: "users",
 
   albums: function () {
     if (!this._albums) {
@@ -17,14 +16,14 @@ EfStops.Models.User = Backbone.Model.extend({
   },
 
   parse: function(response) {
-    if (response.images) {
-      this.images().set(response.images, { parse: true });
-      delete response.images;
-    }
-
     if (response.albums) {
       this.albums().set(response.albums, { parse: true });
       delete response.albums;
+    }
+
+    if (response.images) {
+      this.images().set(response.images, { parse: true });
+      delete response.images;
     }
 
     return response;
