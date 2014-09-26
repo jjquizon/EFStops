@@ -8,12 +8,4 @@
       <li><a href="#/search/<%= tag %>"><%= tag %></a></li>
     <% }); %>
   </ul>
-
-  <div class="row">
-    <% images.forEach( function (image) { %>
-      <a href="#/images/<%= image.escape('id') %>">
-        <img src="<%= image.escape('image_url') %>" class="user-profile-img">
-      </a>
-    <% }); %>
-  </div>
 </div>

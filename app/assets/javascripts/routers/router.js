@@ -8,6 +8,7 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
     "": "showCurrentUserProfile",
     "upload": "uploadImage",
     "explore": "showExplore",
+    "users": "usersIndex",
     "users/:id": "showUserProfile",
     "images/:id": "showImage",
     "search/:tag": "searchByTag",
@@ -46,8 +47,8 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
   },
 
   searchByTag: function(tag) {
-    var collection = EfStops.userImages.getByTag(tag);
-
+    var collection = EfStops.userImages;
+    collection.fetch();
     var tagView = new EfStops.Views.SearchByTag({
         tag: tag,
         collection: collection
@@ -62,7 +63,17 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
       model: album
     });
 
-    this._swapView(albumShowView)
+    this._swapView(albumShowView);
+  },
+
+  usersIndex: function() {
+    var users = EfStops.users;
+
+    var usersIndexView = new EfStops.Views.UsersIndex({
+      collection: users
+    });
+
+    this._swapView(usersIndexView);
   },
 
   _swapView: function (view) {

@@ -23,26 +23,6 @@ EfStops.Collections.UserImages = Backbone.Collection.extend({
     return image;
   },
 
-  getByTag: function (tag) {
-    var images = [];
-    var that = this;
-    this.fetch({
-      success: function () {
-        getImages(that);
-      }
-    });
-
-    function getImages (collection) {
-      collection.forEach(function (image) {
-        if (image.tag === tag) {
-          images.concat(image);
-        }
-      });
-    }
-  }
-
-
-
 });
 
 EfStops.userImages = new EfStops.Collections.UserImages();

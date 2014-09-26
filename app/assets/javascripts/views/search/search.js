@@ -3,13 +3,21 @@ EfStops.Views.SearchByTag = Backbone.View.extend({
 
   initialize: function(options) {
     this.tag = options.tag;
-    // this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync", this.filterImages);
   },
 
-  render: function () {
+  filterImages: function () {
+    this.collection = this.collection.where({ image_tag: this.tag });
+
+    //collection.set
+
+    this.dontrender();
+  },
+
+  dontrender: function () {
     var renderedContent = this.template({
         tag: this.tag,
-        // images: this.collection
+        images: this.collection
       });
 
     this.$el.html(renderedContent);

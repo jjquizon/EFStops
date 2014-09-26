@@ -1,5 +1,21 @@
-<div class="backbone-temp col-xs-8 col-xs-offset-2 text-center">
-  <div class="row">
+<div class="backbone-temp col-xs-8 col-xs-offset-2">
+  <div class="row text-center">
     <h1>This is the tag page for <%= tag %> </h1>
+  </div>
+
+  <div class="row">
+    <h3>Images:</h3>
+  </div>
+
+  <div class="row">
+    <ul class="list-unstyled">
+    <% images.forEach( function (image) { %>
+      <li>
+        <a href="#/images/<%= image.escape('id') %>">
+          <img src="<%= image.escape('image_url') %>" class="img-album">
+        </a>
+      </li>
+    <% }); %>
+    </ul>
   </div>
 </div>

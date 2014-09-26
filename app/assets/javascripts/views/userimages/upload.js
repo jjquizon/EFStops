@@ -36,9 +36,9 @@ EfStops.Views.Upload = Backbone.View.extend({
   saveToDatabase: function (title, tag, url, description, album_id) {
     var that = this;
     function success () {
-      EfStops.userImages().add(image);
+      EfStops.userImages.add(image);
       that.currentUser.images().add(image);
-      Backbone.history.navigate("/", { trigger: true });
+      Backbone.history.navigate("images/" + image.id, { trigger: true });
     }
 
     var image = new EfStops.Models.UserImage({
