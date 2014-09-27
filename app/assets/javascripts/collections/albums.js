@@ -18,7 +18,7 @@ EfStops.Collections.Albums = Backbone.Collection.extend({
     }
 
     return album;
-  },
+  }
 
 });
 

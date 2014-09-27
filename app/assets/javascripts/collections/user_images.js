@@ -20,7 +20,7 @@ EfStops.Collections.UserImages = Backbone.Collection.extend({
     }
 
     return image;
-  },
+  }
 
 });
 

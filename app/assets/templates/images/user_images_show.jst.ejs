@@ -15,8 +15,26 @@
     </div>
   </div>
 
+
+  <div class="row">
+    <h2>Favorites (<%= image.numOfFavorites() %>)</h2>
+    <p>
+      You have <%= favText %> this image
+      <button class="favorite-this-image btn btn-default">
+        <%= favToggle %>
+      </button>
+    </p>
+    <p>
+      Users: <% image.favorites().each (function (favorite) { %>
+        <a href="#/users/<%= favorite.escape('user_id') %>">
+          <%= favorite.escape('username') %><br>
+        </a>
+      <% }); %>
+    </p>
+  </div>
+
   <div class="row image-comments">
-    <h2>Comments</h2>
+    <h2>Comments (<%= image.numOfComments() %>)</h2>
     <ul class="list-unstyled">
       <% comments.each( function (comment) { %>
         <li>

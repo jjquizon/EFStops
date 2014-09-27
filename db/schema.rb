@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20140927151933) do
     t.datetime "updated_at"
   end
 
+  add_index "favorites", ["user_id", "favoritable_id", "favoritable_type"], name: "index_user_and_favoritables", unique: true, using: :btree
+
   create_table "images", force: true do |t|
     t.string   "image_url",                              null: false
     t.string   "title",       default: "Untitled"

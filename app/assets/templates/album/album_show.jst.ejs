@@ -14,7 +14,24 @@
   </div>
 
   <div class="row">
-    <h2>Comments</h2>
+    <h2>Favorites (<%= album.numOfFavorites() %>)</h2>
+    <p>
+      You have <%= favText %> this album
+      <button class="favorite-this-album btn btn-default">
+        <%= favToggle %>
+      </button>
+    </p>
+    <p>
+      Users: <% album.favorites().each (function (favorite) { %>
+        <a href="#/users/<%= favorite.escape('user_id') %>">
+          <%= favorite.escape('username') %><br>
+        </a>
+      <% }); %>
+    </p>
+  </div>
+
+  <div class="row">
+    <h2>Comments (<%= album.numOfComments() %>)</h2>
     <ul class="list-unstyled">
       <% comments.each( function (comment) { %>
         <li> <%= comment.escape('username') %> said: <%= comment.escape('content') %><br>

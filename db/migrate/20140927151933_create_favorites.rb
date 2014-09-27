@@ -5,5 +5,6 @@ class CreateFavorites < ActiveRecord::Migration
       t.references :favoritable, polymorphic: true
       t.timestamps
     end
+    add_index :favorites, [:user_id, :favoritable_id, :favoritable_type], unique: true, name: :index_user_and_favoritables
   end
 end

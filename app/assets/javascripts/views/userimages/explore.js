@@ -11,12 +11,10 @@ EfStops.Views.Explore = Backbone.View.extend({
     this.listenTo(this.collection, 'sync', this.render);
   },
 
-
-
   render: function () {
     var renderedContent = this.template({
       images: this.collection ,
-      tags: this.TAGS
+      tags: this.TAGS,
       });
     this.$el.html(renderedContent);
     return this;

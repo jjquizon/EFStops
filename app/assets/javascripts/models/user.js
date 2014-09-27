@@ -1,5 +1,5 @@
 EfStops.Models.User = Backbone.Model.extend({
-  urlRoot: "users",
+  urlRoot: "/users",
 
   albums: function () {
     if (!this._albums) {

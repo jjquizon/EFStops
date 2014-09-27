@@ -4,24 +4,89 @@ EfStops.Views.ShowAlbum = Backbone.View.extend({
   initialize: function () {
     this.collection = this.model.images();
     this.comments = this.model.comments();
-    this.listenTo(this.model, 'sync', this.render);
+    this.favorites = this.model.favorites();
+    this.listenTo(this.model, 'add sync remove', this.render);
     this.listenTo(this.collection, 'sync', this.render);
-    // this.listenTo(this.comments, 'sync', this.render);
+    this.listenTo(this.favorites, 'add sync remove', this.render);
+    this.listenTo(this.comments, 'sync', this.render);
   },
 
   events: {
-    "click .new-comment-submit": "albumCommentSubmit"
+    "click .new-comment-submit": "albumCommentSubmit",
+    "click .favorite-this-album": "changeFavToggle"
   },
 
   render: function () {
     var renderedContent = this.template({
       album: this.model,
       images: this.collection,
-      comments: this.comments
+      comments: this.comments,
+      favToggle: this.favToggleText(),
+      favText: this.favText
     });
 
     this.$el.html(renderedContent);
     return this;
+  },
+
+  favToggleText: function () {
+    var toggleFavOrUnfav = this.checkUser();
+    this.favText = toggleFavOrUnfav ? "favorited": "not favorited";
+    return toggleFavOrUnfav ? "Click to unfavorite" : "Click to favorite";
+  },
+
+  checkUser: function () {
+    var check = this.model.favorites().find(function (user) {
+      return currentUserId.toString() === user.escape('user_id');
+    });
+
+    return check;
+  },
+
+  changeFavToggle: function () {
+    event.preventDefault();
+    var view = this;
+    var album = this.model;
+
+    function favCreate() {
+      var newFavorite = new EfStops.Models.Favorite({
+        user_id: currentUserId,
+        favoritable_id: album.id,
+        favoritable_type: "Album"
+      });
+
+      newFavorite.save({}, {
+        success: function () {
+          console.log('created');
+          Backbone.history.navigate("#/albums/" + view.model.id, { trigger: true });
+        },
+        error: function() {
+          console.log("Failed to follow");
+        }
+      });
+    }
+
+    function favDestroy() {
+      EfStops.favorites.fetch({
+        success: function(favorites) {
+          var deleteFav = favorites.where({
+            user_id: currentUserId,
+            favoritable_type: "Album"
+          });
+
+          console.log(deleteFav);
+          deleteFav[0].destroy({
+            success: function (){
+              Backbone.history.navigate("#/albums/" + view.model.id, { trigger: true });
+              },
+            error: function () { console.log('error');}
+          });
+        }
+      });
+    }
+
+    this.checkUser() ? favDestroy() : favCreate();
+
   },
 
   albumCommentSubmit: function(event) {

@@ -7,3 +7,7 @@ end
 json.images @user.images do |image|
   json.extract! image, :id, :title, :image_tag, :image_url, :image_tag, :created_at, :updated_at
 end
+
+json.favorites @user.favorites do |favorite|
+  json.extract! favorite, :id, :favoritable_type, :favoritable_id
+end

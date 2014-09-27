@@ -21,7 +21,7 @@ EfStops.Collections.Users = Backbone.Collection.extend({
     }
 
     return user;
-  },
+  }
 
 
 });
