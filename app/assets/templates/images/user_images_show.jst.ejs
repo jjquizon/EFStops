@@ -22,4 +22,16 @@
         <li> <%= comment.escape('username') %> said: <%= comment.escape('content') %>
       <% }) %>
   </div>
+
+  <div class="submit-new-comment">
+    <form class="new-comment-form">
+      <p>
+      <label for="new-comment">New Comment</label><br>
+        <textarea class="new-comment-content"></textarea>
+      </p>
+      <p>
+        <button class="new-comment-submit btn btn-default">Submit Comment</button>
+      </p>
+    </form>
+  </div>
 </div>

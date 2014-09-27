@@ -2,9 +2,11 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
+      flash.now[:success] = ['Comment posted!']
       render :show
     else
       flash.now[:errors] = @comment.errors.full_messages
+      render :show
     end
   end
 
@@ -14,6 +16,7 @@ class CommentsController < ApplicationController
       render :show
     else
       flash.now[:errors] = @user.errors.full_messages
+      render :show
     end
   end
 
