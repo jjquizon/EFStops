@@ -17,7 +17,9 @@
     <h2>Comments</h2>
     <ul class="list-unstyled">
       <% comments.each( function (comment) { %>
-        <li> <%= comment.escape('username') %> said: <%= comment.escape('content') %>
+        <li> <%= comment.escape('username') %> said: <%= comment.escape('content') %><br>
+              at <%= comment.escape('created_at') %>
+        </li><br>
       <% }) %>
   </div>
 

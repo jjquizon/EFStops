@@ -6,6 +6,7 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
 
   routes: {
     "": "showCurrentUserProfile",
+    "#": "showCurrentUserProfile",
     "upload": "uploadImage",
     "explore": "showExplore",
     "users": "usersIndex",

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :images, through: :albums
   has_many :albums, dependent: :destroy
   has_many :comments
+  has_many :favorites
 
 
   def self.generate_session_token

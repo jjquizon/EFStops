@@ -6,5 +6,6 @@ class Image < ActiveRecord::Base
 
   belongs_to :album
   has_many :comments, as: :commentable
+  has_many :favorites, as: :favoritable
 
 end
