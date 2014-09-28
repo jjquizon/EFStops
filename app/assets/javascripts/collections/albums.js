@@ -21,10 +21,9 @@ EfStops.Collections.Albums = Backbone.Collection.extend({
   },
 
   comparator: function (album) {
-    return  -image.get('id');
+    return  -album.get('id');
   }
-
-
+  
 });
 
 EfStops.albums = new EfStops.Collections.Albums();

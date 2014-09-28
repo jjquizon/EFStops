@@ -2,8 +2,8 @@ class Follow < ActiveRecord::Base
   validates :follower_id, :followed_id, presence: true
   validate :id_check, on: :create
 
-  belongs_to :follower, class_name: "User"
-  belongs_to :followed, class_name: "User"
+  belongs_to :follower, class_name: "User", counter_cache: :count_of_followers
+  belongs_to :followed, class_name: "User", counter_cache: :count_of_followed
 
   def id_check
     if follower_id == followed_id

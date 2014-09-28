@@ -4,6 +4,6 @@ class Album < ActiveRecord::Base
   has_many :images, dependent: :destroy
   has_many :comments, as: :commentable
   has_many :favorites, as: :favoritable
-  belongs_to :user
+  belongs_to :user, counter_cache: :count_of_albums
 
 end

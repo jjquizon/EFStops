@@ -11,17 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140927231611) do
+ActiveRecord::Schema.define(version: 20140928052047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "albums", force: true do |t|
-    t.string   "title",       default: "untitled"
-    t.text     "description", default: "No description"
-    t.integer  "user_id",                                null: false
+    t.string   "title",              default: "untitled"
+    t.text     "description",        default: "No description"
+    t.integer  "user_id",                                       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "count_of_images",    default: 0
+    t.integer  "count_of_favorites", default: 0
+    t.integer  "count_of_comments",  default: 0
   end
 
   create_table "comments", force: true do |t|
@@ -55,13 +58,15 @@ ActiveRecord::Schema.define(version: 20140927231611) do
   add_index "follows", ["follower_id"], name: "index_follows_on_follower_id", using: :btree
 
   create_table "images", force: true do |t|
-    t.string   "image_url",                              null: false
-    t.string   "title",       default: "Untitled"
-    t.string   "image_tag",                              null: false
+    t.string   "image_url",                                     null: false
+    t.string   "title",              default: "Untitled"
+    t.string   "image_tag",                                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "album_id",                               null: false
-    t.text     "description", default: "No description"
+    t.integer  "album_id",                                      null: false
+    t.text     "description",        default: "No description"
+    t.integer  "count_of_favorites", default: 0
+    t.integer  "count_of_comments",  default: 0
   end
 
   add_index "images", ["image_url"], name: "index_images_on_image_url", unique: true, using: :btree
@@ -74,6 +79,10 @@ ActiveRecord::Schema.define(version: 20140927231611) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "filepicker_url"
+    t.integer  "count_of_followers", default: 0
+    t.integer  "count_of_followed",  default: 0
+    t.integer  "count_of_albums",    default: 0
+    t.integer  "count_of_images",    default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

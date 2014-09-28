@@ -4,7 +4,7 @@ class Image < ActiveRecord::Base
   # validates :image_url, uniqueness: true
   # ENABLE UNIQUE URL BEFORE SENDING UP
 
-  belongs_to :album
+  belongs_to :album, counter_cache: :count_of_images
   has_many :comments, as: :commentable
   has_many :favorites, as: :favoritable
 
