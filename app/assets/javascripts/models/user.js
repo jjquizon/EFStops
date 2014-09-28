@@ -42,15 +42,36 @@ EfStops.Models.User = Backbone.Model.extend({
 
     if (response.follows) {
       this.follows().set(response.follows, { parse: true });
+      delete response.follows;
     }
 
     // debugger
     if (response.followers) {
       this.followers().set(response.followers, { parse: true });
+      delete response.followers;
     }
+
+    this.assignCounts(response);
+    return response;
+  },
+
+  assignCounts: function (response) {
+    this.albumCount = response.count_of_albums ? response.count_of_albums : 0;
+    delete response.count_of_albums;
+
+    this.imageCount = response.count_of_images ? response.count_of_images : 0;
+    delete response.count_of_images;
+
+    this.followerCount = response.count_of_followers ? response.count_of_followers : 0;
+    delete response.count_of_followers;
+
+    this.followsCount = response.count_of_follows ? response.count_of_follows : 0;
+    delete response.count_of_follows;
 
     return response;
   }
+
+
 
 
 });

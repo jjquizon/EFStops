@@ -10,14 +10,18 @@
       </div>
     </div>
 
-    <div class="description">
-      <p><%= image.escape('description') %></p>
+    <div class="row description text-center">
+      <p>
+        <h4>
+          <%= image.escape('description') %>
+        </h4>
+      </p>
     </div>
   </div>
 
 
   <div class="row">
-    <h2>Favorites (<%= image.numOfFavorites() %>)</h2>
+    <h2>Favorites (<%= favoriteCount %>)</h2>
     <p>
       You have <%= favText %> this image
       <button class="favorite-this-image btn btn-default">
@@ -34,7 +38,7 @@
   </div>
 
   <div class="row image-comments">
-    <h2>Comments (<%= image.numOfComments() %>)</h2>
+    <h2>Comments (<%= commentCount %>)</h2>
     <ul class="list-unstyled">
       <% comments.each( function (comment) { %>
         <li>

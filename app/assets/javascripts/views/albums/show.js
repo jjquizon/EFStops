@@ -21,6 +21,9 @@ EfStops.Views.ShowAlbum = Backbone.View.extend({
       album: this.model,
       images: this.collection,
       comments: this.comments,
+      commentCount: this.model.commentCount,
+      favoriteCount: this.model.favoriteCount,
+      imageCount: this.model.imageCount,
       favToggle: this.favToggleText(),
       favText: this.favText
     });

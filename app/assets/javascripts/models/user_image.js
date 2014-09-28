@@ -8,19 +8,12 @@ EfStops.Models.UserImage =  Backbone.Model.extend({
     return this._comments;
   },
 
-  numOfComments: function () {
-    return this.comments().length;
-  },
 
   favorites: function () {
     if (!this._favorites) {
       this._favorites = new EfStops.Collections.Favorites([], { user: this });
     }
     return this._favorites;
-  },
-
-  numOfFavorites: function () {
-    return this.favorites().length;
   },
 
   parse: function(response) {
@@ -33,6 +26,17 @@ EfStops.Models.UserImage =  Backbone.Model.extend({
       this.favorites().set(response.favorites, { parse: true });
       delete response.favorites;
     }
+
+    this.assignCounts(response);
+    return response;
+  },
+
+  assignCounts: function (response) {
+    this.favoriteCount = response.count_of_favorites ? response.count_of_favorites : 0;
+    delete response.count_of_favorites;
+
+    this.commentCount = response.count_of_comments ? response.count_of_comments : 0;
+    delete response.count_of_comments;
 
     return response;
   }
