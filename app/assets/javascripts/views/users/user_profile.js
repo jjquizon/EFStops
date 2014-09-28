@@ -43,7 +43,9 @@ EfStops.Views.UserProfile = Backbone.View.extend({
       });
     }
 
+    // disable change avatar, sets avatar to stick man
     saveToDatabase("assets/di76dxki9.jpeg");
+    alert("Unfortunately due to filepicker API, you will not be able to choose an img, but here's a stickman!");
     // filepicker.pick( function (Blob) {
     //   fileUrl = Blob.url;
     //   saveToDatabase(fileUrl);

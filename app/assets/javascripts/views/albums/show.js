@@ -57,7 +57,6 @@ EfStops.Views.ShowAlbum = Backbone.View.extend({
 
       newFavorite.save({}, {
         success: function () {
-          console.log('created');
           Backbone.history.navigate("#/albums/" + view.model.id, { trigger: true });
         },
         error: function() {
@@ -74,7 +73,6 @@ EfStops.Views.ShowAlbum = Backbone.View.extend({
             favoritable_type: "Album"
           });
 
-          console.log(deleteFav);
           deleteFav[0].destroy({
             success: function (){
               Backbone.history.navigate("#/albums/" + view.model.id, { trigger: true });

@@ -10,6 +10,13 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :favorites
 
+  has_many :follows, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :follows, source: :followed
+
+  has_many :reverse_follows, class_name: "Follow",
+            foreign_key: "followed_id", dependent: :destroy
+  has_many :followers, through: :reverse_follows, source: :follower
+
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64

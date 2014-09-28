@@ -18,7 +18,12 @@ EfStops.Collections.Albums = Backbone.Collection.extend({
     }
 
     return album;
+  },
+
+  comparator: function (album) {
+    return  -image.get('id');
   }
+
 
 });
 

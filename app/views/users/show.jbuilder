@@ -11,3 +11,11 @@ end
 json.favorites @user.favorites do |favorite|
   json.extract! favorite, :id, :favoritable_type, :favoritable_id
 end
+
+json.followers @user.followed_users do |followed_user|
+  json.extract! followed_user, :id, :username
+end
+
+json.follows @user.followers do |follower|
+  json.extract! follower, :id, :username
+end

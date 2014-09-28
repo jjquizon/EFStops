@@ -46,7 +46,6 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
     var image = this.model;
 
     function favCreate() {
-      console.log('creating');
       var newFavorite = new EfStops.Models.Favorite({
         user_id: currentUserId,
         favoritable_id: image.id,
@@ -55,7 +54,6 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
 
       newFavorite.save({}, {
         success: function () {
-          console.log('created');
           Backbone.history.navigate("#/images/" + view.model.id, { trigger: true });
         },
         error: function() {
@@ -65,8 +63,6 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
     }
 
     function favDestroy() {
-      console.log('deleting');
-
       EfStops.favorites.fetch({
         success: function(favorites) {
           var deleteFav = favorites.where({

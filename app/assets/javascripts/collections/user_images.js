@@ -20,6 +20,10 @@ EfStops.Collections.UserImages = Backbone.Collection.extend({
     }
 
     return image;
+  },
+
+  comparator: function (image) {
+    return  -image.get('id');
   }
 
 });
