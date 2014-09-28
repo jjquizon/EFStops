@@ -21,10 +21,14 @@ EfStops.Views.Upload = Backbone.View.extend({
     var formAlbum_id = $form.find('.album-id-input').val();
     var fileUrl = '';
 
-    filepicker.pick( function (Blob) {
-      fileUrl = Blob.url;
-      this.saveToDatabase(formTitle, formTag, fileUrl, formDescription, formAlbum_id);
-    }.bind(this));
+    // filepicker.pick( function (Blob) {
+    //   fileUrl = Blob.url;
+    //   this.saveToDatabase(formTitle, formTag, fileUrl, formDescription, formAlbum_id);
+    // }.bind(this));
+
+    this.saveToDatabase(formTitle, formTag, "assets/di76dxki9.jpeg", formDescription, formAlbum_id);
+    alert("Unfortunately due to filepicker API, you will not be able to choose an img, but here's a stickman!");
+
 
   },
 

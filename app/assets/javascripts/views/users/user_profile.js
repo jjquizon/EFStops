@@ -33,7 +33,7 @@ EfStops.Views.UserProfile = Backbone.View.extend({
       });
 
       console.log("trying to save user");
-      user.save({
+      user.save({}, {
         success: function (){
           console.log("saved image");
           Backbone.history.navigate("" , { trigger: true });
