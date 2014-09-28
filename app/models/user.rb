@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :images, through: :albums
   has_many :albums, dependent: :destroy
-  has_many :comments
-  has_many :favorites
+  has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   has_many :follows, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :follows, source: :followed

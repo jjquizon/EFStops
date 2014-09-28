@@ -17,7 +17,11 @@ EfStops.Views.UserProfile = Backbone.View.extend({
     var renderedContent = this.template({
       user: this.model,
       albums: this.albums,
-      images: this.images
+      images: this.images,
+      followerCount: this.model.followerCount,
+      followsCount: this.model.followsCount,
+      imageCount: this.model.imageCount,
+      albumCount: this.model.albumCount
       });
     this.$el.html(renderedContent);
     return this;
@@ -36,7 +40,7 @@ EfStops.Views.UserProfile = Backbone.View.extend({
       user.save({}, {
         success: function (){
           console.log("saved image");
-          Backbone.history.navigate("" , { trigger: true });
+          Backbone.history.navigate("#/" , { trigger: true });
           }, error: function () {
           console.log("failed to save image");
         }

@@ -9,27 +9,34 @@
   <script>filepicker.setKey("<%= ENV['filepicker_api_key'] %>");</script>
 </head>
 <body>
-  <%= render "layouts/header" %>
-
-    <% if flash[:success] %>
-    <div class="errors bg-success col-xs-4 col-xs-offset-4">
-      <% flash[:success].each do |success| %>
-        <p class="text-success"><%= success %></p>
+  <section>
+      <%= render "layouts/header" %>
+    <main class="main-logged-out">
+      <% if flash[:success] %>
+      <div class="errors bg-success col-xs-4 col-xs-offset-4">
+        <% flash[:success].each do |success| %>
+          <p class="text-success"><%= success %></p>
+        <% end %>
+      </div>
       <% end %>
-    </div>
-    <% end %>
 
-    <% if flash[:errors] %>
-    <div class="errors bg-danger col-xs-4 col-xs-offset-4">
-      <% flash[:errors].each do |error| %>
-        <p class="text-danger"><%= error %></p>
+      <% if flash[:errors] %>
+      <div class="errors bg-danger col-xs-4 col-xs-offset-4">
+        <% flash[:errors].each do |error| %>
+          <p class="text-danger"><%= error %></p>
+        <% end %>
+      </div>
       <% end %>
+
+      <div class="container">
+        <%= yield %>
+      </div>
+
+    </main>
+    <div class="footer text-center">
+      <%= render "layouts/footer" %>
     </div>
-    <% end %>
-
-
-    <%= yield %>
-
+  </section>
 
 </body>
 </html>

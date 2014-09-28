@@ -1,5 +1,6 @@
 json.extract! @user, :id, :username, :created_at, :updated_at, :filepicker_url,
-  :count_of_followers, :count_of_followed, :count_of_albums, :count_of_images
+  :count_of_followers, :count_of_followed, :count_of_albums
+json.count_of_images @user.images.count
 
 json.albums @user.albums do |album|
   json.extract! album, :id, :title, :description, :created_at, :updated_at
