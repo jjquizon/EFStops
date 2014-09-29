@@ -16,6 +16,8 @@ User.create(username: 'abittooslow', email: "abittooslow@hi.com", password: "abi
 User.create(username: 'phantom', email: 'phantom@hi.com', password: 'phantom')
 User.create(username: 'w1t3wash3d', email: 'w1t3wash3d@hi.com', password: 'w1t3wash3d')
 User.create(username: 'tyromaniac', email: 'tyromaniac@hi.com', password: 'tyromaniac')
+User.create(username: 'vivlaviv', email: "vivlaviv@hi.com", password: 'vivlaviv')
+User.create(username: 'smelliemellie', email: 'smelliemellie@hi.com', password: 'smelliemellie')
 
 
 Album.create(title: "Nature", description: "I love nature", user_id: "1")

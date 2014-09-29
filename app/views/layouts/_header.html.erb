@@ -9,9 +9,9 @@
         <span class="icon-bar"></span>
       </button>
       <% if logged_in? %>
-        <a class="navbar-brand" href="#/">ef-<strong>stops</strong></a>
+        <a class="navbar-brand" href="#">ef-<strong>stops</strong></a>
       <% else %>
-        <a class="navbar-brand" href="#/">ef-<strong>stops</strong></a>
+        <a class="navbar-brand" href="#">ef-<strong>stops</strong></a>
       <% end %>
     </div>
 
@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% if logged_in? %>
-          <li class=""><a href="#/">You</a></li>
+          <li class=""><a href="#/you">You</a></li>
           <li><a href="#/users">People</a></li>
           <li><a href="#/explore">Explore</a></li>
           <li><a href="#/upload">Upload</a></li>
