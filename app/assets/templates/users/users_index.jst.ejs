@@ -9,7 +9,7 @@
         <% idx += 1 %>
 
         <span class ="col-xs-3 user-index">
-          <a href="#/users/<%= user.id %>">
+          <a href="#/users/<%= user.escape('username') %>">
             <img src="<%= user.escape('filepicker_url') %>" class="avatar-size"/>
             <%= user.escape('username') %>
           </a>

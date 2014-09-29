@@ -13,7 +13,9 @@
         </p>
       </div>
       <div class="col-xs-6">
-        <img src="<%= image.escape('image_url') %>" class="album-img">
+        <a href="#/images/<%= image.escape('image_id') %>">
+          <img src="<%= image.escape('image_url') %>" class="album-img">
+        </a>
       </div>
     </div>
   <% }); %>

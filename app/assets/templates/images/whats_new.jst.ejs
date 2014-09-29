@@ -1,0 +1,14 @@
+<div class="image-container backbone-temp col-xs-8 col-xs-offset-2">
+  <div class ="row text-center">
+    <h1>What's New</h1>
+  </div>
+  <ul class="list-unstyled">
+    <% images.each( function (image) { %>
+        <a href="#/images/<%= image.escape('id') %>">
+          <div class="row">
+            <img src="<%= image.escape('image_url') %>" class="album-img">
+          </div>
+        </a>
+    <% }); %>
+  </ul>
+</div>

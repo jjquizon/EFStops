@@ -21,8 +21,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    params[:id] = params[:id].downcase
     if params.include?(:id)
-      @user = User.find(params[:id])
+      @user = User.friendly.find(params[:id])
       render :show
     else
       flash.now[:errors] = ["User not found"]
@@ -41,7 +42,6 @@ class UsersController < ApplicationController
   end
 
   def feed
-    # @feed = User.find(params[:id]).
     @user = User.find(params[:id])
     if @user
       @feed = @user.feed

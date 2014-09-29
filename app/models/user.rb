@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :username, use: :slugged
 
   after_initialize :ensure_session_token, :ensure_avatar
   validates :username, :email, :session_token, :filepicker_url, presence: true
@@ -16,6 +18,8 @@ class User < ActiveRecord::Base
   has_many :reverse_follows, class_name: "Follow",
             foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :reverse_follows, source: :follower
+
+
 
 
   def self.generate_session_token
