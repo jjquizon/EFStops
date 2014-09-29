@@ -1,5 +1,8 @@
 json.extract! @user, :id, :username, :created_at, :updated_at, :filepicker_url
 
+json.page_number params[:page]
+json.total_pages @feed.total_pages
+
 json.followers_images @feed.each do |followed|
   json.array! followed.images.each do |image|
     json.title image.title

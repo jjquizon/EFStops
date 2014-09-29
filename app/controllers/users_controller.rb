@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   def feed
     @user = User.find(params[:id])
     if @user
-      @feed = @user.feed
+      pageinate_feed(@user)
       render :feed
     else
       flash.now[:errors] = ['Could not find user']
@@ -55,5 +55,10 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:username, :email, :password, :filepicker_url)
+  end
+
+  def pageinate_feed(user)
+    params[:page] = '1' if params[:page].nil?
+    @feed = user.feed.page(params[:page])
   end
 end
