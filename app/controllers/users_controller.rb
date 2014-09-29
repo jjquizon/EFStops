@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def pageinate_feed(user)
-    params[:page] = '1' if params[:page].nil?
-    @feed = user.feed.page(params[:page])
+    feed = user.feed
+    @feed = Kaminari.paginate_array(feed).page(params[:page]).per(10)
   end
 end

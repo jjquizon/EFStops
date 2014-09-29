@@ -6,12 +6,20 @@ window.EfStops = {
   initialize: function() {
     var $rootEl = $(".main-container");
 
-    new EfStops.Routers.AppRouter({
-      $rootEl: $rootEl
+    var collection = new EfStops.Collections.Feeds([], {
+        currentUserId: currentUserId,
     });
 
-    Backbone.history.start();
+    collection.fetch({
+      data: { page: 1 },
+      success: function() {
+        new EfStops.Routers.AppRouter({
+          collection: collection,
+          $rootEl: $rootEl
+        });
+        Backbone.history.start();
+      }
+    });
+
   }
-
-
 };

@@ -1,5 +1,6 @@
 class Image < ActiveRecord::Base
 
+  attr_accessor :user_id, :username, :filepicker_url
   validates :image_url, :title, :description, :image_tag, :album_id, presence: true
   # validates :image_url, uniqueness: true
   # ENABLE UNIQUE URL BEFORE SENDING UP

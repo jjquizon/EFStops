@@ -2,6 +2,7 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
     this.currentUser = EfStops.users.get({ id: currentUserId });
+    this.feedCollection = options.collection;
   },
 
   routes: {
@@ -80,9 +81,10 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
   },
 
   showUserFeed: function (id) {
-    var feed = EfStops.feeds.getOrFetch(currentUserId);
+    var currentUser = EfStops.users.getOrFetch(currentUserId);
     var feedView = new EfStops.Views.UserFeed({
-      model: feed
+      model: currentUser,
+      collection: this.feedCollection
     });
 
     this._swapView(feedView);

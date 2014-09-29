@@ -62,11 +62,17 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    self.followed_users
+    images = [];
+    self.followed_users.each do |user|
+      user.images.each do |image|
+        image.user_id = user.id
+        image.username = user.username
+        image.filepicker_url = user.filepicker_url
+        images << image
+      end
+    end
+    images
   end
-
-
-
 
   protected
   attr_reader :password
