@@ -11,9 +11,9 @@ Features
 * Create Albums
 * Comment/Favorite other's pictures/albums
 * Follow other users
-
+* Photo Feed from followed users
+* FriendlyID of users
 
 Future Features
-* Follow other users
-* Photo Feed from followed users
-* Flickr's photostream
+* Composite views for Backbone
+* Pagination/Infinite scroll
