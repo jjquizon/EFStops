@@ -1,0 +1,21 @@
+<div class="profile col-xs-8 col-xs-offset-2">
+  <div class="row">
+    <h1>I am <%= user.escape('username') %>'s feed</h1>
+  </div>
+
+  <% images.each(function (image) { %>
+    <div class="row">
+      <div class="col-xs-3">
+        <p>
+          <h3><%= image.escape('title') %></h3>
+          Posted by <%= image.escape('username') %>
+          on <%= image.escape('created_at') %>
+        </p>
+      </div>
+      <div class="col-xs-6">
+        <img src="<%= image.escape('image_url') %>" class="album-img">
+      </div>
+    </div>
+  <% }); %>
+
+</div>

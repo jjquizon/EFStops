@@ -40,6 +40,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def feed
+    # @feed = User.find(params[:id]).
+    @user = User.find(params[:id])
+    if @user
+      @feed = @user.feed
+      render :feed
+    else
+      flash.now[:errors] = ['Could not find user']
+      redirect_to root_url
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password, :filepicker_url)

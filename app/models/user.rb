@@ -57,6 +57,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def feed
+    self.followed_users
+  end
+
 
 
 

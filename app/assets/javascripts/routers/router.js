@@ -5,12 +5,13 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
   },
 
   routes: {
-    "": "showCurrentUserProfile",
+    "": "showUserFeed",
     "#": "showCurrentUserProfile",
     "upload": "uploadImage",
     "explore": "showExplore",
     "users": "usersIndex",
     "users/:id": "showUserProfile",
+    "users/:id/feed": "showUserFeed",
     "images/:id": "showImage",
     "search/:tag": "searchByTag",
     "albums/:id": "albumShow"
@@ -74,6 +75,15 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
     });
 
     this._swapView(usersIndexView);
+  },
+
+  showUserFeed: function (id) {
+    var feed = EfStops.feeds.getOrFetch(currentUserId);
+    var feedView = new EfStops.Views.UserFeed({
+      model: feed
+    });
+
+    this._swapView(feedView);
   },
 
   _swapView: function (view) {
