@@ -5,7 +5,8 @@
 $(document).ready(function(){
   $('.main-container').addClass("body-logged-in");
   $('nav').removeClass("navbar-logged-out");
-  $('main').removeClass("main-logged-out")
+  $('main').removeClass("main-logged-out");
+  $('#main-container').addClass("login-container");
   window.currentUserId = <%= @current_user.id %>;
   EfStops.initialize();
 });

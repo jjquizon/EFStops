@@ -12,9 +12,9 @@ $(document).ready(function(){
     password.setAttribute("name", "user[password]");
     password.setAttribute("type", "hidden");
     password.value = 'jquizon';
+
     $form.append(username).append(password);
 
-    // document.body.appendChild(form);
     $form.submit();
   });
 });
