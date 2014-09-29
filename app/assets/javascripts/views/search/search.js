@@ -4,6 +4,7 @@ EfStops.Views.SearchByTag = Backbone.View.extend({
   initialize: function(options) {
     this.tag = options.tag;
     this.listenTo(this.collection, "sync", this.filterImages);
+    this.$el.addClass("clearfix");
   },
 
   filterImages: function () {

@@ -3,6 +3,7 @@ EfStops.Views.WhatsNew = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.collection, 'add sync', this.render);
+    this.$el.addClass("clearfix");
   },
 
   render: function () {

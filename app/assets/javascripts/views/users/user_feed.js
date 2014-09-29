@@ -6,6 +6,7 @@ EfStops.Views.UserFeed = Backbone.View.extend({
     this.listenTo(this.model, "sync add destroy", this.render);
     this.listenTo(this.collection, "add", this.render);
     this.listenTo(this.images, 'add', this.render);
+    this.$el.addClass("clearfix");
   },
 
   render: function() {
@@ -26,7 +27,7 @@ EfStops.Views.UserFeed = Backbone.View.extend({
 
   nextPage: function () {
     var self = this;
-    if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+    if ($(window).scrollTop() > $(document).height() - $(window).height() - 125) {
       console.log("scrolled to bottom!");
       if (self.collection.pageNumber < self.collection.totalPages) {
         self.collection.fetch({

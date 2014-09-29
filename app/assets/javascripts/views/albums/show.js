@@ -9,6 +9,7 @@ EfStops.Views.ShowAlbum = Backbone.View.extend({
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.favorites, 'add sync remove', this.render);
     this.listenTo(this.comments, 'sync', this.render);
+    this.$el.addClass("clearfix");
   },
 
   events: {

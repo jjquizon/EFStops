@@ -7,6 +7,7 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
     this.listenTo(this.model, "add sync remove", this.render);
     this.listenTo(this.comments, 'add sync remove', this.render);
     this.listenTo(this.favorites, 'add sync remove', this.render);
+    this.$el.addClass("clearfix");
   },
 
   events: {

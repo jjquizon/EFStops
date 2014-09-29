@@ -4,6 +4,7 @@ EfStops.Views.UsersIndex = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
     this.updateUsers();
+    this.$el.addClass("clearfix");
   },
 
   render: function () {

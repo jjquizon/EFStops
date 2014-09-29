@@ -9,6 +9,7 @@ EfStops.Views.Explore = Backbone.View.extend({
       "Urban", "Weddings"];
 
     this.listenTo(this.collection, 'sync', this.render);
+    this.$el.addClass("clearfix");
   },
 
   render: function () {

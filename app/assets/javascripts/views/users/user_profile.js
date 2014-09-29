@@ -7,6 +7,7 @@ EfStops.Views.UserProfile = Backbone.View.extend({
     this.listenTo(this.model, "sync add", this.render);
     this.listenTo(this.images, "sync add", this.render);
     this.listenTo(this.albums, "sync add", this.render);
+    this.$el.addClass("clearfix");
   },
 
   events: {

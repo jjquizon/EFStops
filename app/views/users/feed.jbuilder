@@ -1,5 +1,3 @@
-# json.extract! @user, :id, :username, :created_at, :updated_at, :filepicker_url
-
 json.page_number params[:page]
 json.total_pages @feed.total_pages
 

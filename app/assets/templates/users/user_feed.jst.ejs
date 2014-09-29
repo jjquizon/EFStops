@@ -1,22 +1,25 @@
-<div class="profile col-xs-8 col-xs-offset-2">
+<div class="profile">
   <div class="row text-center">
     <h1><%= user.escape('username') %>'s feed</h1>
   </div>
 
-  <% images.each(function (image) { %>
-    <div class="row">
-      <div class="col-xs-3">
-        <p>
-          <h3><%= image.escape('title') %></h3>
-          Posted by <%= image.escape('username') %>
-          on <%= image.escape('created_at') %>
-        </p>
+  <div class="images-show">
+    <% images.each(function (image) { %>
+      <div class="row">
+        <div class="col-xs-3">
+          <p>
+            <h3><%= image.escape('title') %></h3>
+            Posted by <%= image.escape('username') %>
+            on <%= image.escape('created_at') %>
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <a href="#/images/<%= image.escape('image_id') %>">
+            <img src="<%= image.escape('image_url') %>" class="album-img">
+          </a>
+        </div>
       </div>
-      <div class="col-xs-6">
-        <a href="#/images/<%= image.escape('image_id') %>">
-          <img src="<%= image.escape('image_url') %>" class="album-img">
-        </a>
-      </div>
-    </div>
-  <% }); %>
+    <% }); %>
+  </div>
+
 </div>
