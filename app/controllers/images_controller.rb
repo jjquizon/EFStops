@@ -1,12 +1,17 @@
 class ImagesController < ApplicationController
   def index
+    @images = Image.all
+    render :index
+  end
+
+  def whatsnew
     all_images = Image.all
     sorted_images = all_images.sort do |image1, image2|
       image2.created_at <=> image1.created_at
     end
 
     @images = Kaminari.paginate_array(sorted_images).page(params[:page]).per(10)
-    render :index
+    render :whatsnew
   end
 
   def show

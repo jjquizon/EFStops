@@ -39,12 +39,23 @@ EfStops.Collections.Feeds = Backbone.Collection.extend({
   },
 
   parse: function (response) {
+    this.parseImages(response);
+    this.parsePages(response);
+
+    return response.models;
+  },
+
+  parseImages: function (response) {
     if (response.followers_images) {
       var responseImages = response.followers_images;
       this.images().set(responseImages, { remove: false });
       delete response.followers_images;
     }
 
+    return response;
+  },
+
+  parsePages: function (response) {
     if (response.page_number){
       this.pageNumber = parseInt(response.page_number);
       delete response.page_number;
@@ -55,10 +66,8 @@ EfStops.Collections.Feeds = Backbone.Collection.extend({
       delete response.total_pages;
     }
 
-    return response.models;
+    return response;
   }
-
-
 
 
 });

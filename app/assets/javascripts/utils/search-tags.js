@@ -36,9 +36,8 @@
               }
             }
         });
-
         setTimeout(function () { $searchDiv.tooltip("destroy");}, 3000);
-      }
-    });
+     }
+  });
 
 });

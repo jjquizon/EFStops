@@ -30,15 +30,11 @@ EfStops.Views.WhatsNew = Backbone.View.extend({
   nextPage: function () {
     var self = this;
     if ($(window).scrollTop() > $(document).height() - $(window).height() - 125) {
-      console.log("scrolled to bottom!");
       if (self.collection.pageNumber < self.collection.totalPages) {
         self.collection.fetch({
           data: { page: self.collection.pageNumber + 1 },
           remove: false,
           wait: true,
-          success: function (collection, response) {
-            console.log("successfully fetched page " + self.collection.pageNumber + " out of " + self.collection.totalPages);
-          }
         });
       }
     }

@@ -9,9 +9,6 @@ EfStops.Views.SearchByTag = Backbone.View.extend({
 
   filterImages: function () {
     this.collection = this.collection.where({ image_tag: this.tag });
-
-    //collection.set
-
     this.dontrender();
   },
 

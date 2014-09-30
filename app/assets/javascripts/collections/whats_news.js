@@ -6,7 +6,7 @@ EfStops.Collections.WhatsNews = Backbone.Collection.extend({
   },
 
   url: function() {
-    var url = "/images/page";
+    var url = "/images/whatsnew";
     return url;
   },
 
@@ -25,6 +25,11 @@ EfStops.Collections.WhatsNews = Backbone.Collection.extend({
       delete response.images;
     }
 
+    this.parsePages(response);
+    return response;
+  },
+
+  parsePages: function (response) {
     if (response.page_number) {
       this.pageNumber = parseInt(response.page_number);
       delete response.page_number;
@@ -35,6 +40,7 @@ EfStops.Collections.WhatsNews = Backbone.Collection.extend({
       delete response.total_pages;
     }
 
+    return response;
   }
 });
 

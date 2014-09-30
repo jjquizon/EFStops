@@ -1,3 +1,6 @@
+json.page_number params[:page]
+json.total_pages @images.total_pages
+
 json.images @images.each do |image|
   json.id image.id
   json.image_url image.image_url

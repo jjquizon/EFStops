@@ -85,7 +85,6 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
     }
 
     this.checkUser() ? favDestroy() : favCreate();
-
   },
 
   imageCommentSubmit: function(event) {
@@ -93,25 +92,28 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
     $form = $('.new-comment-form');
     var formContent = $form.find('.new-comment-content').val();
     $form.find('.new-comment-content').val('');
-    var newComment = new EfStops.Models.Comment({
+    this.newComment = new EfStops.Models.Comment({
       content: formContent,
       commentable_id: this.model.id,
       commentable_type: "Image",
       user_id: currentUserId
     });
 
-    var view = this;
-    newComment.save({}, {
-      success: success,
+    var that = this;
+    this.newComment.save({}, {
+      success: function() {
+        that.success();
+      },
       error: function() {
         console.log('failed to save');
       }
     });
 
-    function success () {
-      view.model.comments().add(newComment);
-      Backbone.history.navigate("#/images/" + view.model.id, { trigger: true });
-    }
+  },
+
+  success: function () {
+    this.model.comments().add(this.newComment);
+    Backbone.history.navigate("#/images/" + this.model.id, { trigger: true });
   }
 
 });

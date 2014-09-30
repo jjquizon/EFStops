@@ -40,6 +40,12 @@ EfStops.Models.User = Backbone.Model.extend({
       delete response.images;
     }
 
+    this.parseFollows(response);
+    this.assignCounts(response);
+    return response;
+  },
+
+  parseFollows: function (response) {
     if (response.follows) {
       this.follows().set(response.follows, { parse: true });
       delete response.follows;
@@ -50,7 +56,6 @@ EfStops.Models.User = Backbone.Model.extend({
       delete response.followers;
     }
 
-    this.assignCounts(response);
     return response;
   },
 

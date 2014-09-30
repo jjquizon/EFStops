@@ -14,7 +14,6 @@ $(document).ready(function(){
     password.value = 'jquizon';
 
     $form.append(username).append(password);
-
     $form.submit();
   });
 });

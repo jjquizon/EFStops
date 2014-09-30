@@ -42,25 +42,4 @@ EfStops.Views.Explore = Backbone.CompositeView.extend({
     rendered = this.subviews();
   }
 
-  // render: function () {
-  //   var content = this.template({
-  //     board: this.model
-  //   });
-  //   this.$el.html(content);
-  //   this.renderLists();
-  //   this.renderListForm();
-  //   return this;
-  // },
-  //
-  // renderLists: function () {
-  //   this.model.lists().each(this.addList.bind(this));
-  //   this.$('#lists').sortable();
-  // },
-  //
-  // renderListForm: function () {
-  //   var view = new TrelloClone.Views.ListForm({
-  //     collection: this.collection
-  //   });
-  //   this.addSubview('#list-form', view);
-  // }
 });

@@ -14,7 +14,6 @@ EfStops.Views.UserProfile = Backbone.View.extend({
     "click .change-avatar": "changeUserAvatar"
   },
   render: function () {
-
     var renderedContent = this.template({
       user: this.model,
       albums: this.albums,
