@@ -17,6 +17,10 @@ EfStops.Views.WhatsNew = Backbone.View.extend({
     return this;
   },
 
+  comparator: function (WhatsNew) {
+    return -WhatsNew.images().get('created_at');
+  },
+
   listenForScroll: function () {
     $(window).off("scroll"); // remove past view's listeners
     var throttledCallback = _.throttle(this.nextPage.bind(this), 200);

@@ -66,7 +66,6 @@ EfStops.ModalUpload = Backbone.Modal.extend({
     EfStops.userImages.add(this.image);
     this.user.images().add(this.image);
     this.close();
-    debugger
     Backbone.history.navigate("#/images/" + this.image.id, { trigger: true });
   }
 });
