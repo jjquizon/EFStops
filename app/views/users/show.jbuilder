@@ -1,4 +1,4 @@
-json.extract! @user, :id, :username, :created_at, :updated_at, :filepicker_url,
+json.extract! @user, :id, :username, :created_at, :updated_at, :avatar_url,
   :count_of_followers, :count_of_followed, :count_of_albums
 json.count_of_images @user.images.count
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929163144) do
+ActiveRecord::Schema.define(version: 20140930181336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,12 +76,12 @@ ActiveRecord::Schema.define(version: 20140929163144) do
     t.string   "session_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "filepicker_url"
     t.integer  "count_of_followers", default: 0
     t.integer  "count_of_followed",  default: 0
     t.integer  "count_of_albums",    default: 0
     t.integer  "count_of_images",    default: 0
     t.string   "slug"
+    t.string   "avatar_url",                     null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

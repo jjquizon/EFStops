@@ -11,5 +11,5 @@ json.followers_images @feed.each do |image|
     json.count_of_favorites  image.count_of_favorites
     json.user_id image.user_id
     json.username image.username
-    json.filepicker_url image.filepicker_url
+    json.avatar_url image.avatar_url
 end

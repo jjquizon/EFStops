@@ -34,14 +34,14 @@ EfStops.Views.UserProfile = Backbone.View.extend({
       var user = new EfStops.Models.User();
       user.set({
         id: currentUserId,
-        user: { filepicker_url: fileUrl}
+        user: { avatar_url: fileUrl}
       });
 
       console.log("trying to save user");
       user.save({}, {
         success: function (){
           console.log("saved image");
-          Backbone.history.navigate("#/" , { trigger: true });
+          Backbone.history.navigate("#/you" , { trigger: true });
           }, error: function () {
           console.log("failed to save image");
         }

@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   friendly_id :username, use: :slugged
 
   after_initialize :ensure_session_token, :ensure_avatar
-  validates :username, :email, :session_token, :filepicker_url, presence: true
+  validates :username, :email, :session_token, :avatar_url, presence: true
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
@@ -54,10 +54,10 @@ class User < ActiveRecord::Base
   end
 
   def ensure_avatar
-    if self.filepicker_url.nil? || self.filepicker_url == ""
-      self.filepicker_url = "assets/unknown.jpg"
+    if self.avatar_url.nil? || self.avatar_url == ""
+      self.avatar_url = "assets/unknown.jpg"
     else
-      return self.filepicker_url
+      return self.avatar_url
     end
   end
 
@@ -67,7 +67,7 @@ class User < ActiveRecord::Base
       user.images.each do |image|
         image.user_id = user.id
         image.username = user.username
-        image.filepicker_url = user.filepicker_url
+        image.avatar_url = user.avatar_url
         images << image
       end
     end
