@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show, :index, :update]
   get '/users/:id/feed', to: 'users#feed'
-  resources :images, only: [:index, :create, :show]
+  get '/images/page', to:  'images#index'
+  resources :images, only: [:create, :show]
   resources :albums, only: [:index, :create, :show]
   resources :comments, only: [:create, :update, :show]
   resources :favorites, only: [:create, :destroy, :index]

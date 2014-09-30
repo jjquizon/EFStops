@@ -92,11 +92,12 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
   },
 
   whatsNew: function (){
-    var images = EfStops.userImages;
-    images.fetch();
+
+    EfStops.WhatsNew.fetch();
 
     var whatsNewView = new EfStops.Views.WhatsNew({
-      collection: images
+      data: { page: 1 },
+      collection: EfStops.WhatsNew
     });
 
     this._swapView(whatsNewView);
