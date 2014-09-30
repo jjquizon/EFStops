@@ -16,14 +16,12 @@ EfStops.Collections.Albums = Backbone.Collection.extend({
     } else {
       album.fetch();
     }
-
     return album;
   },
 
   comparator: function (album) {
     return  -album.get('id');
   }
-  
 });
 
 EfStops.albums = new EfStops.Collections.Albums();

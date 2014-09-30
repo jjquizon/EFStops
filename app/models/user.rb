@@ -71,7 +71,12 @@ class User < ActiveRecord::Base
         images << image
       end
     end
-    images
+
+    sorted_images = images.sort do |image1, image2|
+      image2.created_at <=> image1.created_at
+    end
+
+    sorted_images
   end
 
   protected

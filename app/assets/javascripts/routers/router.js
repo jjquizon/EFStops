@@ -17,7 +17,8 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
     "images/new": "whatsNew",
     "images/:id": "showImage",
     "search/:tag": "searchByTag",
-    "albums/:id": "albumShow"
+    "albums/:id": "albumShow",
+    "img-upload": "imageUpload"
   },
 
   showCurrentUserProfile: function() {
@@ -33,9 +34,9 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
   },
 
   showExplore: function() {
-    var collection = EfStops.userImages;
-    collection.fetch();
-    var exploreView = new EfStops.Views.Explore({ collection: collection });
+    // var collection = EfStops.userImages;
+    // collection.fetch();
+    var exploreView = new EfStops.Views.Explore();
     this._swapView(exploreView);
   },
 
@@ -99,6 +100,11 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
     });
 
     this._swapView(whatsNewView);
+  },
+
+  imageUpload: function () {
+    var imageUploadView = new EfStops.Views.ImageUploadModal();
+    this._swapView(imageUploadView);
   },
 
   _swapView: function (view) {

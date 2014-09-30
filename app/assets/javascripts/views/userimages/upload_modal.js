@@ -1,13 +1,23 @@
-EfStops.Views.Upload = Backbone.View.extend({
-  template: JST['images/images_upload'],
+EfStops.ModalUpload = Backbone.Modal.extend({
+  template: JST["images/images_upload"],
 
   initialize: function (options) {
-    this.currentUser = options.user;
-    this.listenTo(this.currentUser, 'sync', this.render);
-    // this.listenTo(this.currentUser.albums(), 'sync add', this.render);
+    this.user = options.model;
+    this.listenTo(this.user, "sync", this.render);
+  },
+
+  serializeData: function () {
+    return { user: this.user };
   },
 
   events: {
+    'click #filepicker-button': 'getFormValues',
+    "click #cancel-upload": "closeModal"
+  },
+
+  closeModal: function (event) {
+    event.preventDefault();
+    this.close();
   },
 
   getFormValues: function(event) {
@@ -19,6 +29,8 @@ EfStops.Views.Upload = Backbone.View.extend({
     var formAlbum_id = $form.find('.album-id-input').val();
     var fileUrl = '';
 
+
+    // TODO: uncomment
     // filepicker.pick( function (Blob) {
     //   fileUrl = Blob.url;
     //   this.saveToDatabase(formTitle, formTag, fileUrl, formDescription, formAlbum_id);
@@ -30,20 +42,9 @@ EfStops.Views.Upload = Backbone.View.extend({
 
   },
 
-  render: function(){
-    this.$el.html(this.template({ user: this.currentUser }));
-    return this;
-  },
-
   saveToDatabase: function (title, tag, url, description, album_id) {
     var that = this;
-    function success () {
-      EfStops.userImages.add(image);
-      that.currentUser.images().add(image);
-      Backbone.history.navigate("#/images/" + image.id, { trigger: true });
-    }
-
-    var image = new EfStops.Models.UserImage({
+    this.image = new EfStops.Models.UserImage({
       title: title,
       image_tag: tag,
       image_url: url,
@@ -51,11 +52,30 @@ EfStops.Views.Upload = Backbone.View.extend({
       album_id: album_id
     });
 
-    image.save({}, {
-      success: success,
+    this.image.save({}, {
+      success: function(model) {
+        that.success(model);
+      },
       error: function () {
         console.log("failed to save");
       }
     });
+  },
+
+  success: function (image) {
+    EfStops.userImages.add(this.image);
+    this.user.images().add(this.image);
+    this.close();
+    debugger
+    Backbone.history.navigate("#/images/" + this.image.id, { trigger: true });
   }
+});
+
+$(document).ready(function($) {
+  $('#img-upload').on('click', function(event){
+    event.preventDefault();
+    var user = EfStops.users.getOrFetch(currentUserId);
+    var modalView = new EfStops.ModalUpload({ model: user });
+    $("#modal-container").html(modalView.render().$el);
+  });
 });

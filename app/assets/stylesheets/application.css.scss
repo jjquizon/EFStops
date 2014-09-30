@@ -14,6 +14,8 @@
  *= require_self
  *= require jquery.ui.autocomplete
  *= require jquery.ui.tooltip
+ *= require backbone.modal
+ *= require backbone.modal.theme
  */
 
 @import "bootstrap-sprockets";
@@ -49,7 +51,7 @@ body {
   background-repeat: no-repeat;
   width: 100%;
   padding: 50px 0 0 0;
-  /* height: 630px; */
+  height: 630px;
   margin-bottom: 0;
 }
 
@@ -152,15 +154,18 @@ main {
   opacity: 0.8;
 }
 
+.image-container {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
 .backbone-temp{
-  top: 25px;
-  bottom: 50px;
   background: white;
   opacity: 0.9;
   padding: 20px;
   display: block;
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 
 .user-profile-img {
@@ -190,6 +195,11 @@ textarea {
 .avatar-size {
   height: 50px;
   width: 50px;
+}
+
+.explore-div {
+  height: 200px;
+  width: 200px;
 }
 
 .explore-img{
@@ -261,6 +271,10 @@ textarea {
   top: auto;
 }
 
+#main-container{
+  background: white;
+}
+
 .new-comment-content {
   height: 150px;
   width: 400px;
@@ -293,5 +307,39 @@ section {
 }
 
 .login-container {
-  min-height: 625px;
+
+}
+
+#explore-boxes {
+  border-radius-top: 5px;
+  padding: 0;
+  max-height: 225px;
+
+  max-width: 250px;
+  min-height: 225px;
+  min-width: 225px;
+  margin: 10px;
+  color: white;
+  margin: 0 10px 10px 10px;
+  text-align: center;
+  h3 {
+    padding: 0;
+    margin: 0;
+  }
+  .explore-box-header {
+    border-radius-top: 5px;
+  }
+  img {
+    max-height: 200px;
+    max-width: 200px;
+  }
+}
+
+.button-form-div {
+  max-width: 200px;
+  display: inline;
+}
+
+#modal-container {
+  z-index: 3;
 }

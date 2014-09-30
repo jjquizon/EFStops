@@ -1,17 +1,7 @@
-<div class="image-container backbone-temp col-xs-8 col-xs-offset-2">
+<div class="image-container backbone-temp clearfix">
   <div class ="row text-center">
     <h1>Explore</h1>
   </div>
-  <ul class="list-unstyled">
-    <% tags.forEach( function (tag, idx) { %>
-      <% idx += 1 %>
-        <a href="#/search/<%= tag %>">
-          <div class="explore-img">
-            <h2><%= tag %></h2>
-          </div>
-        </a>
-
-
-    <% }); %>
+  <ul class="list-unstyled" id="tags-list">
   </ul>
 </div>

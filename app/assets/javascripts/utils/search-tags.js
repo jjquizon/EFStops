@@ -1,9 +1,11 @@
  $(document).ready(function(){
-   var Tags = ["Other", "Architecture", "Animals", "Art", "Automobiles",
-     "Celebrity", "Design", "Fashion", "Film", "Food", "Funny",
-     "Illustrations", "Music", "Nature", "Photography",
-     "Religion", "Romance", "Sports", "Toys", "Travel", "Typography",
-     "Urban", "Weddings"];
+
+    var Tags = [
+    "Architecture", "Animals", "Art", "Automobiles",
+      "Celebrity", "Design", "Fashion", "Film", "Food", "Funny",
+      "Illustrations", "Music", "Nature", "Photography",
+      "Religion", "Romance", "Sports", "Toys", "Travel", "Typography",
+      "Urban", "Weddings"];
 
     var $searchTag = $("#search-tags");
     var $searchButton = $("#tag-submit");

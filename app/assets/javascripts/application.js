@@ -16,6 +16,7 @@
 //= require underscore
 //= require backbone
 //= require bootstrap
+//= require backbone.modal-min
 //= require jquery.ui.autocomplete
 //= require jquery.ui.tooltip
 //= require ef_stops

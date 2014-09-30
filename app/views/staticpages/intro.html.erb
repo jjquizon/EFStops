@@ -3,4 +3,12 @@
   <p>A Flickr clone</p>
   <%= link_to "Login", new_session_url, class: "btn btn-default" %>
   <%= link_to "Signup", new_user_url, class: "btn btn-default" %>
+  <div class="button-form-div">
+    <form id="guest-signin-form" action="<%= session_url %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <div class="guest-button">
+        <button class="signin-guest btn btn-primary" id="guest-signin">Signin as Guest</button>
+      </div>
+    </form>
+  </div>
 </div>

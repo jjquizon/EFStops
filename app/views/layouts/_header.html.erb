@@ -11,7 +11,7 @@
       <% if logged_in? %>
         <a class="navbar-brand" href="#">ef-<strong>stops</strong></a>
       <% else %>
-        <a class="navbar-brand" href="">ef-<strong>stops</strong></a>
+        <a class="navbar-brand" href="<%= home_url %>">ef-<strong>stops</strong></a>
       <% end %>
     </div>
 
@@ -22,7 +22,7 @@
           <li class=""><a href="#/you">You</a></li>
           <li><a href="#/users">People</a></li>
           <li><a href="#/explore">Explore</a></li>
-          <li><a href="#/upload">Upload</a></li>
+          <li><a href="#/img-upload" id="img-upload">Upload</a></li>
           <li><a href="#/images/new">What's New</a></li>
         <% else %>
           <li class=""><a href="<%= new_session_url %>">Login</a></li>
@@ -69,12 +69,14 @@
           <li><div class="navbar-form"><%= button_to "Logout", session_url, method: :delete, class: "btn btn-default  " %></div></li>
         </ul>
       <% else %>
+      <div class>
         <form id="guest-signin-form" action="<%= session_url %>" method="post">
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
           <div class="guest-button">
             <button class="signin-guest btn btn-primary" id="guest-signin">Signin as Guest</button>
           </div>
         </form>
+      </div>
       <% end %>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

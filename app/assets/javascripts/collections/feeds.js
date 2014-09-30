@@ -13,12 +13,10 @@ EfStops.Collections.Feeds = Backbone.Collection.extend({
   getOrFetch: function (id) {
     this.id = id;
     var feed = EfStops.feeds.get(id);
-
     if (!feed) {
       feed = new EfStops.Models.Feed("model",{
           currentUserId: this.currentUserId
       });
-
       feed.fetch({
         success: function() {
           EfStops.feeds.add(feed);
@@ -27,7 +25,6 @@ EfStops.Collections.Feeds = Backbone.Collection.extend({
     } else {
       feed.fetch();
     }
-
     return feed;
   },
 
@@ -41,9 +38,7 @@ EfStops.Collections.Feeds = Backbone.Collection.extend({
     return this._images;
   },
 
-
   parse: function (response) {
-    console.log(response);
     if (response.followers_images) {
       var responseImages = response.followers_images;
       this.images().set(responseImages, { remove: false });

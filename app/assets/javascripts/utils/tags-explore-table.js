@@ -1,0 +1,25 @@
+$(document).ready(function (){
+  EfStops.SearchTags = [
+  {title: "Architecture", color: "orange", image_url: "/assets/Camera-icon.png" },
+  {title: "Animals", color: "gold", image_url: "/assets/Camera-icon.png" },
+  {title: "Art", color: "green" , image_url: "/assets/Camera-icon.png" },
+  {title: "Automobiles", color: "blue" , image_url: "/assets/Camera-icon.png" },
+  {title: "Celebrity", color: "purple", image_url: "/assets/Camera-icon.png" },
+  {title: "Design", color: "red", image_url: "/assets/Camera-icon.png" },
+  {title: "Fashion", color: "orange", image_url: "/assets/Camera-icon.png" },
+  {title: "Film", color: "gold ", image_url: "/assets/Camera-icon.png" },
+  {title: "Food", color: "green", image_url: "/assets/Camera-icon.png" },
+  {title: "Funny", color: "blue" , image_url: "/assets/Camera-icon.png" },
+  {title: "Illustrations", color: "purple", image_url: "/assets/Camera-icon.png" },
+  {title: "Music", color: "red", image_url: "/assets/Camera-icon.png" },
+  {title: "Nature", color: "orange", image_url: "/assets/Camera-icon.png" },
+  {title: "Photography", color: "gold", image_url: "/assets/Camera-icon.png" },
+  {title: "Religion", color: "green", image_url: "/assets/Camera-icon.png" },
+  {title: "Romance", color: "blue", image_url: "/assets/Camera-icon.png" },
+  {title: "Sports", color: "purple", image_url: "/assets/Camera-icon.png" },
+  {title: "Toys", color: "red", image_url: "/assets/Camera-icon.png" },
+  {title: "Travel", color: "orange", image_url: "/assets/Camera-icon.png" },
+  {title: "Typography", color: "gold", image_url: "/assets/Camera-icon.png" },
+  {title: "Urban", color: "green", image_url: "/assets/Camera-icon.png" },
+  {title: "Weddings", color: "blue", image_url: "/assets/Camera-icon.png" }];
+});
