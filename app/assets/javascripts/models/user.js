@@ -64,8 +64,8 @@ EfStops.Models.User = Backbone.Model.extend({
     this.followerCount = response.count_of_followers ? response.count_of_followers : 0;
     delete response.count_of_followers;
 
-    this.followsCount = response.count_of_follows ? response.count_of_follows : 0;
-    delete response.count_of_follows;
+    this.followsCount = response.count_of_followed ? response.count_of_followed : 0;
+    delete response.count_of_followed;
 
 
     return response;
