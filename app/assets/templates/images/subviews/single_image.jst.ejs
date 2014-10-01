@@ -1,7 +1,7 @@
 <div class="hover-target">
   <span class="image-container">
     <a>
-      <img src="<%= image.escape('image_url') %>" class="album-cover-img">
+      <img src="<%= image.escape('image_url') %>">
     </a>
   <span>
   <div class="image-description">
@@ -9,7 +9,7 @@
       <a href=""><%= image.escape('title') %></a>
     </div>
     <div class="image-owner">
-      <a href=""><%= image.escape('owner') %></a>
+      <a href="#/users/<%= image.escape('owner') %>"><%= image.escape('owner') %></a>
     </div>
     <span class="glyphs">
         <a href=""><span class="glyphicon glyphicon-star-empty"></span></a>

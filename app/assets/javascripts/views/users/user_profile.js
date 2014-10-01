@@ -5,6 +5,7 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
     console.log(this.model);
     this.images = this.model.images();
     this.albums = this.model.albums();
+    this.favoriteImages = this.model.favoriteImages();
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.images, "add", this.addImageSubviews);
     this.listenTo(this.albums, "sync", this.render);
@@ -40,6 +41,8 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
     this.addSubview(".photostream", albumSubview);
   },
 
+
+
   findActive: function () {
     var target = this.$el.find('.active').text();
     this.linkgrabber(target);
@@ -62,7 +65,6 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
   },
 
   linkgrabber: function (target) {
-    var DO;
     switch(target) {
       case "Photostream":
         this.renderImages();
@@ -87,7 +89,10 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
   },
 
   renderFavorites: function () {
-    console.log("render favorites!");
+    var that = this;
+    this.favoriteImages.each(function (image){
+      that.addImageSubviews(image);
+    });
   },
 
   renderEdit: function () {

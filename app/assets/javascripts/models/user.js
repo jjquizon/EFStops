@@ -29,15 +29,28 @@ EfStops.Models.User = Backbone.Model.extend({
     return this._followers;
   },
 
+  favoriteImages: function () {
+    if (!this._favoriteImages) {
+      this._favoriteImages = new EfStops.Collections.Favorites([], { user: this });
+    }
+    return this._favoriteImages;
+  },
+
   parse: function(response) {
     if (response.albums) {
       this.albums().set(response.albums, { parse: true });
       delete response.albums;
     }
-
+    
     if (response.images) {
       this.images().set(response.images, { parse: true });
       delete response.images;
+    }
+
+    if (response.favorite_images) {
+      console.log(response.favorite_images);
+      this.favoriteImages().set(response.favorite_images, { parse: true });
+      delete response.favorite_images;
     }
 
     this.parseFollows(response);

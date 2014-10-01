@@ -13,8 +13,9 @@ json.images @user.images do |image|
   json.owner @user.username
 end
 
-json.favorites @user.favorites do |favorite|
-  json.extract! favorite, :id, :favoritable_type, :favoritable_id
+json.favorite_images @user.favorite_images do |favorite|
+  json.extract! favorite.favoritable, :id, :title, :image_url
+  json.owner favorite.favoritable.user.username
 end
 
 json.followers @user.followed_users do |followed_user|

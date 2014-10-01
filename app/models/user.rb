@@ -82,6 +82,13 @@ class User < ActiveRecord::Base
     sorted_images
   end
 
+  def favorite_images
+    image_favorites = self.favorites.select do |favorite|
+      favorite.favoritable_type = "Image"
+    end
+    image_favorites
+  end
+
   protected
   attr_reader :password
 end
