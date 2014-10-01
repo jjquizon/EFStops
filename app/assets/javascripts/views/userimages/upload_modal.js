@@ -26,9 +26,9 @@ EfStops.ModalUpload = Backbone.Modal.extend({
     var formTitle = $form.find('.upload-title').val();
     var formTag = $form.find('.upload-tag').val();
     var formDescription = $form.find('textarea').val();
-    var formAlbum_id = $form.find('.album-id-input').val();
+    var formAlbumTitle = $form.find('.album-id-input').val();
+    var formAlbum_id = this.user.albums().where({ title: formAlbumTitle })[0].id;
     var fileUrl = '';
-
 
     // TODO: uncomment
     // filepicker.pick( function (Blob) {

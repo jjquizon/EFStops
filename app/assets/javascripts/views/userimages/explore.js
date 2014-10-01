@@ -18,7 +18,6 @@ EfStops.Views.Explore = Backbone.CompositeView.extend({
       this.addTagDiv(tag);
     }.bind(this));
 
-    console.log(this.subviews());
   },
 
   addTagDiv: function (tag) {
