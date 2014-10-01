@@ -3,6 +3,7 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.currentUser = EfStops.users.get({ id: currentUserId });
     this.feedCollection = options.collection;
+    this.$rootEl.css("min-height", EfStops.getWindowHeight());
   },
 
   routes: {

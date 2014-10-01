@@ -8,7 +8,7 @@ $(document).ready(function(){
   $('main').removeClass("main-logged-out");
   $('#main-container').addClass("login-container");
   window.currentUserId = <%= @current_user.id %>;
-  window.currentUserUsername = "<%= @current_user.username %>";  
+  window.currentUserUsername = "<%= @current_user.username %>";
   EfStops.initialize();
 });
 </script>

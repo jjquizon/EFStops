@@ -14,6 +14,7 @@ window.EfStops = {
       data: { page: 1 },
       success: function() {
         new EfStops.Routers.AppRouter({
+          windowHeight: EfStops.getWindowHeight(),
           collection: collection,
           $rootEl: $rootEl
         });

@@ -192,7 +192,7 @@ main {
     .statcount {
       position: absolute;
       bottom: 0px;
-      right: 180px;
+      right: 160px;
       display: inline-block;
       margin: 0 0 0 40px;
       h1 {
@@ -215,7 +215,7 @@ main {
     }
     .member-since {
       position: absolute;
-      right: 0px;
+      right: -20px;
       bottom: 0px;
       display: inline-block;
       margin: 0 0 0 40px;
@@ -256,12 +256,6 @@ main {
         opacity: 1;
       }
     }
-    div#profile-navbar.navbar.profile-nav {
-      position: absolute;
-      opacity: 0.8;
-      top: 120px;
-      padding-left: 135px
-    }
   }
 
   .photostream {
@@ -275,7 +269,42 @@ main {
     margin: 5px;
   }
 
+  .navbar.profile-nav#profile-navbar {
+    background: #1D1D1E;
+    width: 100%;
+    position: absolute;
+    opacity: 0.6;
+    top: 136px;
+    padding-left: 135px;
+    padding-bottom: 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: 1px 0 1px 0 #fff;
+    ul {
+      left: 13px;
+      height: 49px;
+      margin: 1px 0 0 5px;
+      padding: 0;
+    }
+    ul:first-child {
+      border-left: 1px solid black;
+    }
+    ul > li {
+      font-weight: bold;
+      border-right: 1px solid black;
+      line-height: 1em;
+      height: 100%;
+    }
+    ul > li > a {
+      height: 100%;
+      color: #fff;
+      padding: 13px 20px 12px 20px;
+      text-shadow: 1px 1px 2px black;
+    }
+  }
 }
+
+
 
 .navbar-default .navbar-nav > li > a {
   color: lightgrey;

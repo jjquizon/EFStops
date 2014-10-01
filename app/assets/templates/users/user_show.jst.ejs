@@ -19,7 +19,7 @@
         <a><strong>Edit cover photo</strong></a>
       </div>
     </div>
-    <div class="navbar profile-nav" id="profile-navbar" style="visibility: hidden">
+    <div class="navbar profile-nav" id="profile-navbar">
       <ul class="clearfix nav navbar-nav">
         <li><a>Photostream</a></li>
         <li><a>Albums</a></li>
@@ -28,13 +28,6 @@
       </ul>
     </div>
   </div>
-
-  <div class="row">
-    <% if (user.id == currentUserId) { %>
-      <button class="change-avatar btn btn-default">Change avatar Image</button>
-    <% } %>
-  </div>
-
 
   <div class="container-fluid photostream" >
     <% images.each( function (image) { %>
