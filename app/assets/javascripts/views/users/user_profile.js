@@ -11,17 +11,16 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
   },
 
   events: {
-    "click .change-avatar": "changeUserAvatar"
+    "click .change-avatar": "changeUserAvatar",
+    "resize window": "render"
   },
+
   render: function () {
     var renderedContent = this.template({
       user: this.model,
       albums: this.albums,
       images: this.images,
-      followerCount: this.model.followerCount,
-      followsCount: this.model.followsCount,
-      imageCount: this.model.imageCount,
-      albumCount: this.model.albumCount
+      width: $(window).width()
       });
     this.$el.html(renderedContent);
     return this;
@@ -36,12 +35,12 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
         user: { avatar_url: fileUrl}
       });
 
-      console.log("trying to save user");
       user.save({}, {
         success: function (){
           console.log("saved image");
           Backbone.history.navigate("#/you" , { trigger: true });
-          }, error: function () {
+        },
+        error: function () {
           console.log("failed to save image");
         }
       });

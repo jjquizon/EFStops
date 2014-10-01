@@ -1,48 +1,43 @@
-<div class="profile">
-  <div class="row cover-image">
-    <img src="<%= user.escape('cover_photo_url') %>">
-  </div>
-    <div>
-      <% console.log(user) %>
-      <h1><%= user.escape('username') %>'s profile</h1>
+<div class="profile" id="profile-show">
+  <div class="row cover-image" id="cover-image"
+    style="background-image: url(<%= user.escape('cover_photo_url') %>)">
+    <div class="row"></div>
+    <img src="<%= user.escape('avatar_url') %>" id="user-profile-img">
+    <div class="person">
+      <h1><span class="name-holder"><%= user.escape('username') %></span></h1>
     </div>
+    <div class="stats">
+      <div class="stat statcount">
+        <h1><%= user.imageCount %></h1>
+        <h2>Photos</h2>
+      </div>
+      <div class="stat member-since">
+        <h1>October 2014</h1>
+        <h2>Member Since</h2>
+      </div>
+      <div class="change-photo" style="display: none">
+        <a><strong>Edit cover photo</strong></a>
+      </div>
+    </div>
+    <div class="navbar profile-nav" id="profile-navbar">
+      <ul class="clearfix nav navbar-nav">
+        <li><a>Photostream</a></li>
+        <li><a>Albums</a></li>
+        <li><a>Favorites</a></li>
+        <li><a>Edit</a></li>
+      </ul>
+    </div>
+  </div>
+
   <div class="row">
-    <img src="<%= user.escape('avatar_url') %>" class="user-profile-img"><br>
     <% if (user.id == currentUserId) { %>
       <button class="change-avatar btn btn-default">Change avatar Image</button>
     <% } %>
   </div>
 
-  <div row="row">
-      <h3>Followers: <%= user.followerCount %></h3>
-      <h3>Follows: <%= user.followsCount %></h3>
-  </div>
 
-  <div class="row">
-    <h3>Albums (<%= user.albumCount %>)</h3>
-  </div>
 
-  <div class="row">
-    <ul class="list-unstyled">
-    <% user.albums().each( function (album) { %>
-      <li>
-        <a href="#/albums/<%= album.escape('id') %>">
-          <%= album.escape('title') %>
-        </a>
-      </li>
-    <% }); %>
-    </ul>
-  </div>
 
-  <div class="row">
-    <h3>Uploaded pictures (<%= user.imageCount %>)</h3>
-  </div>
 
-  <div class="row">
-    <% user.images().forEach( function (image) { %>
-      <a href="#/images/<%= image.escape('id') %>">
-        <img src="<%= image.escape('image_url') %>" class="album-img">
-      </a>
-    <% }); %>
-  </div>
+
 </div>

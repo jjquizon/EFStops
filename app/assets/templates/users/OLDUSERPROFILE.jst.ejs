@@ -1,0 +1,47 @@
+<div class="">
+  <div class="row cover-image">
+    <img src="<%= user.escape('cover_photo_url') %>">
+  </div>
+    <div>
+      <h1><%= user.escape('username') %>'s profile</h1>
+    </div>
+  <div class="row">
+    <img src="<%= user.escape('avatar_url') %>" class="user-profile-img"><br>
+    <% if (user.id == currentUserId) { %>
+      <button class="change-avatar btn btn-default">Change avatar Image</button>
+    <% } %>
+  </div>
+
+  <div row="row">
+      <h3>Followers: <%= user.followerCount %></h3>
+      <h3>Follows: <%= user.followsCount %></h3>
+  </div>
+
+  <div class="row">
+    <h3>Albums (<%= user.albumCount %>)</h3>
+  </div>
+
+  <div class="row">
+    <ul class="list-unstyled">
+    <% user.albums().each( function (album) { %>
+      <li>
+        <a href="#/albums/<%= album.escape('id') %>">
+          <%= album.escape('title') %>
+        </a>
+      </li>
+    <% }); %>
+    </ul>
+  </div>
+
+  <div class="row">
+    <h3>Uploaded pictures (<%= user.imageCount %>)</h3>
+  </div>
+
+  <div class="row">
+    <% user.images().forEach( function (image) { %>
+      <a href="#/images/<%= image.escape('id') %>">
+        <img src="<%= image.escape('image_url') %>" class="album-img">
+      </a>
+    <% }); %>
+  </div>
+</div>

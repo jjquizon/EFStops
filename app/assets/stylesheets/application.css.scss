@@ -131,21 +131,150 @@ main {
 }
 
 .profile {
-  background: lightgrey;
-  opacity: 0.9;
   display: block;
-
+  zoom: 1;
+  position: relative;
+  background: white;
+  opacity: 0.9;
+  padding: 0 0px 0 0px;
+  margin: 0;
+  width: auto;
+  font-family: "HelveticaNeue-Light",Helvetica,Arial,sans-serif;
+  font-size: 15px;
   .cover-image {
     margin: 0;
     padding: 0;
-    width: 100%;
-    
-    img {
-      width: 100%;
-      height: 187px;
+    height: 187px;
+    background-position: 0 30%;
+  }
+  #user-profile-img {
+    z-index: 3;
+    position: absolute;
+    top: 65px;
+    left: 4px;
+    margin-left: 10px;
+    max-height: 113px;
+    max-width: 113px;
+    border: 1px solid darkgrey;
+    display: block;
+    zoom: 1;
+  }
+  .person {
+    position: absolute;
+    display: block;
+    right: 0;
+    font-size: 3.5em;
+    top: 70px;
+    left: 140px;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 1px 0 black;
+    color: #FFF;
+  }
+  .stats {
+    z-index: 2;
+    position: absolute;
+    line-height: 5px;
+    right: 50px;
+    top: 130px;
+    .name-holder {
+      position: relative;
     }
+    h1 {
+      font-size: 2.5em;
+      padding-top: 0;
+      text-shadow: 0 1px 0 black;
+      color: white;
+    }
+    h2 {
+      font-size: small;
+    }
+    .statcount {
+      position: absolute;
+      bottom: 0px;
+      right: 180px;
+      display: inline-block;
+      margin: 0 0 0 40px;
+      h1 {
+        font-size: 1.5em;
+        line-height: 0em;
+        text-align: right;
+        white-space: nowrap;
+        padding-top: 0;
+        text-shadow: 0 1px 0 black;
+        color: #FFF;
+      }
+      h2 {
+        font-size: .7em;
+        line-height: .2em;
+        text-align: right;
+        white-space: nowrap;
+        text-shadow: 0 1px 0 black;
+        color: #FFF;
+      }
+    }
+    .member-since {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      display: inline-block;
+      margin: 0 0 0 40px;
+      line-height: 17px;
+      text-align: left;
+      h1 {
+        font-size: 1.5em;
+        line-height: 0em;
+        text-align: right;
+        white-space: nowrap;
+        padding-top: 0;
+        text-shadow: 0 1px 0 black;
+        color: #FFF;
+      }
+      h2 {
+        font-size: .7em;
+        line-height: .2em;
+        text-align: right;
+        white-space: nowrap;
+        text-shadow: 0 1px 0 black;
+        color: #FFF;
+      }
+    }
+    .change-photo {
+      background: darkgrey;
+      opacity: 0.5;
+      position: absolute;
+      display: inline-block;
+      bottom: 55px;
+      right: 10px;
+      width: 150px;
+      height: 35px;
+      padding: 13px 5px 5px 15px;
+      border: 1px solid black;
+      color: #FFF;
+      z-index: 3
+      a {
+        opacity: 1;
+      }
+    }
+    div#profile-navbar.navbar.profile-nav {
+      position: absolute;
+      opacity: 0.8;
+      top: 120px;
+      padding-left: 135px
+    }
+  }
+
+  .photostream {
+    text-align: center;
+    padding: 5px;
 
   }
+  .photostream-thumb {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 5px;
+  }
+
 }
 
 .navbar-default .navbar-nav > li > a {
