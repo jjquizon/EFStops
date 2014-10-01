@@ -2,6 +2,7 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
   template: JST["users/user_show"],
 
   initialize: function() {
+    console.log(this.model);
     this.images = this.model.images();
     this.albums = this.model.albums();
     this.listenTo(this.model, "sync", this.render);
@@ -24,7 +25,6 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
       });
     this.$el.html(renderedContent);
     this.renderImages();
-    this.addHoverEvent();
     return this;
   },
 
@@ -39,7 +39,6 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
       that.addImageSubviews(image);
     });
   },
-
 
   changeUserAvatar: function (event) {
     event.preventDefault();
@@ -60,7 +59,6 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
         }
       });
     }
-
     // disable change avatar, sets avatar to stick man
     saveToDatabase("assets/di76dxki9.jpeg");
     alert("Unfortunately due to filepicker API, you will not be able to choose an img, but here's a stickman!");
@@ -68,6 +66,5 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
     //   fileUrl = Blob.url;
     //   saveToDatabase(fileUrl);
     // }.bind(this));
-
   }
 });

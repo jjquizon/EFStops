@@ -5,7 +5,6 @@ EfStops.Views.SingleImageView = Backbone.CompositeView.extend({
     this.image = options.image;
     this.listenTo(this.image, 'sync', this.render);
     this.$el.addClass("photostream-thumb");
-    this.addHoverListener();
   },
 
   render: function () {
