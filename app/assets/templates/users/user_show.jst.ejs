@@ -19,7 +19,7 @@
         <a><strong>Edit cover photo</strong></a>
       </div>
     </div>
-    <div class="navbar profile-nav" id="profile-navbar">
+    <div class="navbar profile-nav" id="profile-navbar" style="visibility: hidden">
       <ul class="clearfix nav navbar-nav">
         <li><a>Photostream</a></li>
         <li><a>Albums</a></li>
@@ -36,6 +36,14 @@
   </div>
 
 
+  <div class="container-fluid photostream" >
+    <% images.each( function (image) { %>
+    <div class="photostream-thumb">
+      <img src="<%= image.escape('image_url') %>" class="photostream-img"
+      style="max-width: <%= width/3.2 %>px">
+    </div>
+    <% }); %>
+  </div>
 
 
 
