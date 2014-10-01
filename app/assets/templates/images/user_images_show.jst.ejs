@@ -5,7 +5,6 @@
       </div>
     </div>
     <div class="image-show-links">
-
     </div>
 </div>
 <div class="comments-container container-fluid">
@@ -87,7 +86,7 @@
         <div class="row image-show-owner">
           <span class="col-xs-2 text-right">
             <a href="#/albums/<%= image.escape('image_tag') %>">
-              <img src="<%= image.escape('album_cover_img_url') %>" class="avatar-size">
+              <img src="<%= tag.image_url %>" class="avatar-size">
             </a>
           </span>
           <div class="col-xs-offset-3">

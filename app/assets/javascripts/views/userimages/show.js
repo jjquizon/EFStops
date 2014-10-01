@@ -2,9 +2,10 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
   template: JST["images/user_images_show"],
 
   initialize: function() {
-    this.user = this.model;
-    this.comments = this.user.comments();
-    this.favorites = this.user.favorites();
+    this.image = this.model;
+    this.comments = this.image.comments();
+    this.favorites = this.image.favorites();
+    this.imageT = this.image.image_tag;
     this.listenTo(this.model, "add sync remove", this.render);
     this.listenTo(this.comments, 'add sync remove', this.render);
     this.listenTo(this.favorites, 'add sync remove', this.render);
@@ -17,7 +18,9 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
   },
 
   render: function() {
+
     var renderedContent = this.template({
+      tag: this.getImageTag(),
       image: this.model,
       comments: this.comments,
       favToggle: this.favToggleText(),
@@ -26,6 +29,11 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
 
     this.$el.html(renderedContent);
     return this;
+  },
+
+  getImageTag: function () {
+    var tag = EfStops.SearchTags[this.imageTag] || { image_url: "assets/Camera-icon.png" };
+    return tag;
   },
 
   favToggleText: function () {
@@ -91,6 +99,7 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
     $form = $('.new-comment-form');
     var formContent = $form.find('.new-comment-content').val();
     $form.find('.new-comment-content').val('');
+
     this.newComment = new EfStops.Models.Comment({
       content: formContent,
       commentable_id: this.model.id,
