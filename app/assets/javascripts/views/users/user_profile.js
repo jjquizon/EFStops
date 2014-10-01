@@ -1,4 +1,4 @@
-EfStops.Views.UserProfile = Backbone.View.extend({
+EfStops.Views.UserProfile = Backbone.CompositeView.extend({
   template: JST["users/user_show"],
 
   initialize: function() {

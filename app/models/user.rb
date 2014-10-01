@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username, use: :slugged
 
-  after_initialize :ensure_session_token, :ensure_avatar
+  after_initialize :ensure_session_token, :ensure_avatar, :ensure_cover_photo
   validates :username, :email, :session_token, :avatar_url, presence: true
+  validates :cover_photo_url, presence: true
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
@@ -18,8 +19,6 @@ class User < ActiveRecord::Base
   has_many :reverse_follows, class_name: "Follow",
             foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :reverse_follows, source: :follower
-
-
 
 
   def self.generate_session_token
@@ -59,6 +58,10 @@ class User < ActiveRecord::Base
     else
       return self.avatar_url
     end
+  end
+
+  def ensure_cover_photo
+    self.cover_photo_url ||= "assets/default_cover.jpg"
   end
 
   def feed

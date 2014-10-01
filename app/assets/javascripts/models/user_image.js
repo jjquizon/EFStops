@@ -39,6 +39,20 @@ EfStops.Models.UserImage =  Backbone.Model.extend({
     delete response.count_of_comments;
 
     return response;
+  },
+
+  getOwnerInfo: function (response) {
+    if (response.owner) {
+      this.owner = response.owner;
+      delete response.owner;
+    }
+
+    if (response.owner_avatar_url) {
+      this.ownerAvatarUrl  = response.owner_avatar_url;
+      delete response.owner_avatar_url;
+    }
+
+    return response;
   }
 
 });

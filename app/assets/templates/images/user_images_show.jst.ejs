@@ -1,62 +1,104 @@
-<div class="image-container backbone-temp col-xs-8 col-xs-offset-2">
-  <div>
-    <div class ="row text-center">
-      <h1><%= image.escape('title') %></h1>
-    </div>
-
+<div class="image-container container-fluid">
     <div class="row text-center">
       <div class="">
         <img src="<%= image.escape('image_url') %>" class="img-show">
       </div>
     </div>
+    <div class="image-show-links">
 
-    <div class="row description text-center">
-      <p>
-        <h4>
-          <%= image.escape('description') %>
-        </h4>
-      </p>
     </div>
-  </div>
-
-
-  <div class="row">
-    <h2>Favorites (<%= favoriteCount %>)</h2>
-    <p>
-      You have <%= favText %> this image
-      <button class="favorite-this-image btn btn-default">
-        <%= favToggle %>
-      </button>
-    </p>
-    <p>
-      Users: <% image.favorites().each (function (favorite) { %>
-        <a href="#/users/<%= favorite.escape('user_id') %>">
-          <%= favorite.escape('username') %><br>
-        </a>
-      <% }); %>
-    </p>
-  </div>
-
-  <div class="row image-comments">
-    <h2>Comments (<%= commentCount %>)</h2>
+</div>
+<div class="comments-container container-fluid">
+  <div class="row"></div>
+  <div class="image-comments col-xs-4 col-xs-offset-2">
+    <div class="row image-show-owner">
+      <span class="col-xs-2 text-right">
+        <img src="<%= image.escape('owner_avatar_url') %>" class="avatar-size">
+      </span>
+      <div class="col-xs-offset-2">
+        <h3 class="image-owner-show"><%= image.escape('owner') %></p></h3>
+        <strong><%= image.escape('title') %></strong>
+        <p><%= image.escape('description') %></p>
+      </div>
+    </div>
+    <div class="row">
+    </div>
+    <h4>Comments (<%= commentCount %>)</h4>
     <ul class="list-unstyled">
       <% comments.each( function (comment) { %>
-        <li>
-          <%= comment.escape('username') %> said: <%= comment.escape('content') %><br>
-             at   <%= comment.escape('created_at') %>
-        </li><br>
+        <li class="clearfix">
+          <div class="col-xs-2" class="comment-avtar">
+            <img src="<%= comment.escape('avatar_url') %>" class="avatar-size">
+          </div>
+          <div class="col-xs-4">
+            <%= comment.escape('username') %><br>
+            <%= comment.escape('content') %>
+          </div>
+        </li>
       <% }) %>
+    </ul>
+    <div class="submit-new-comment">
+      <form class="new-comment-form">
+        <textarea class="new-comment-content" placeholder=" Add a comment"></textarea>
+        <p>
+          <button class="new-comment-submit btn btn-default">Submit Comment</button>
+        </p>
+      </form>
+    </div>
   </div>
+  <div class="col-xs-1"></div>
+  <div class="col-xs-5 right-col">
+    <div class="row"></div>
+    <div class="row">
+      <div class="col-xs-8 stats">
+        <div class="col-xs-4">
+          <span class="number">0</span><br>
+          <span><strong>views</strong></span>
+        </div>
+        <div class="col-xs-4">
+          <span class="number"><%= favoriteCount %></span><br>
+          <span><strong>faves</strong></span>
+        </div>
+        <div class="col-xs-4">
+          <span class="number"><%= commentCount %></span><br>
+          <span><strong>comments</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="row image-show-owner">
+          <span class="col-xs-2 text-right">
+            <a href="#/albums/<%= image.escape('album_id') %>">
+              <img src="<%= image.escape('album_cover_img_url') %>" class="avatar-size">
+            </a>
+          </span>
+          <div class="col-xs-offset-3">
+            <strong class="album-text">Album:</strong>
+            <a href="#/albums/<%= image.escape('album_id') %>">
+              <h3 class="image-owner-show"><%= image.escape('album_title') %></p></h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="row image-show-owner">
+          <span class="col-xs-2 text-right">
+            <a href="#/albums/<%= image.escape('image_tag') %>">
+              <img src="<%= image.escape('album_cover_img_url') %>" class="avatar-size">
+            </a>
+          </span>
+          <div class="col-xs-offset-3">
+            <strong class="album-text">Tag:</strong>
+            <a href="#/search/<%= image.escape('image_tag') %>">
+              <h3 class="image-owner-show"><%= image.escape('image_tag') %></p></h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div class="submit-new-comment">
-    <form class="new-comment-form">
-      <p>
-      <label for="new-comment">New Comment</label><br>
-        <textarea class="new-comment-content"></textarea>
-      </p>
-      <p>
-        <button class="new-comment-submit btn btn-default">Submit Comment</button>
-      </p>
-    </form>
   </div>
 </div>

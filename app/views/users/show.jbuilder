@@ -1,13 +1,15 @@
 json.extract! @user, :id, :username, :created_at, :updated_at, :avatar_url,
-  :count_of_followers, :count_of_followed, :count_of_albums
+  :count_of_followers, :count_of_followed, :count_of_albums, :cover_photo_url
 json.count_of_images @user.images.count
 
 json.albums @user.albums do |album|
-  json.extract! album, :id, :title, :description, :created_at, :updated_at
+  json.extract! album, :id, :title, :description, :created_at,
+                       :updated_at, :cover_image_url
 end
 
 json.images @user.images do |image|
-  json.extract! image, :id, :title, :image_tag, :image_url, :image_tag, :created_at, :updated_at
+  json.extract! image, :id, :title, :image_tag, :image_url,
+                       :image_tag, :created_at, :updated_at
 end
 
 json.favorites @user.favorites do |favorite|

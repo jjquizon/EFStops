@@ -9,4 +9,7 @@ class Image < ActiveRecord::Base
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :favorites, as: :favoritable, dependent: :destroy
 
+  def user
+    self.album.user
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930181336) do
+ActiveRecord::Schema.define(version: 20141001005144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140930181336) do
     t.integer  "count_of_images",    default: 0
     t.integer  "count_of_favorites", default: 0
     t.integer  "count_of_comments",  default: 0
+    t.string   "cover_image_url",                               null: false
   end
 
   create_table "comments", force: true do |t|
@@ -81,7 +82,8 @@ ActiveRecord::Schema.define(version: 20140930181336) do
     t.integer  "count_of_albums",    default: 0
     t.integer  "count_of_images",    default: 0
     t.string   "slug"
-    t.string   "avatar_url",                     null: false
+    t.string   "avatar_url",                                              null: false
+    t.string   "cover_photo_url",    default: "assets/default_cover.jpg", null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

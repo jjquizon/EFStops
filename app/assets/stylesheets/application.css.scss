@@ -31,7 +31,6 @@ body {
   margin: auto auto;
   padding: 0;
   background: white;
-  background: lightgrey;
 
 }
 
@@ -134,11 +133,18 @@ main {
 .profile {
   background: lightgrey;
   opacity: 0.9;
-  padding: 10px;
-  border-radius: 10px;
   display: block;
-  margin-top: 40px;
-  margin-bottom: 40px;
+
+  .cover-image {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 187px;
+    }
+
+  }
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -155,10 +161,35 @@ main {
 }
 
 .image-container {
-  width: 75%;
   margin-left: auto;
   margin-right: auto;
+  background: #212124;
 
+}
+
+.image-show-links {
+  height: 50px;
+}
+
+.comments-container {
+  background: #ffffff;
+
+  span.number {
+    font-size: large;
+  }
+
+  .stats {
+    border-bottom: 1px solid darkgrey;
+    padding-bottom: 10px;
+  }
+
+  h3 {
+    margin: 0px 10px 10px 0;
+  }
+
+  a {
+    color: black;
+  }
 }
 
 .backbone-temp{
@@ -188,14 +219,16 @@ textarea {
 }
 
 .img-show {
-  max-height: 500px;
-  border: 2px solid black;
+  max-height: 512px;
+  max-width: 718px;
+  border: 1px solid black;
 }
 
 .avatar-size {
   height: 50px;
   width: 50px;
 }
+
 
 .explore-div {
   height: 200px;
@@ -276,7 +309,8 @@ textarea {
 }
 
 .new-comment-content {
-  height: 150px;
+  border-radius: 5px;
+  height: 100px;
   width: 400px;
 }
 
@@ -342,4 +376,36 @@ section {
 
 #modal-container {
   z-index: 3;
+}
+
+.image-show-owner {
+  border-bottom: 1px solid lightgrey;
+
+  strong {
+    font-size: medium;
+  }
+
+  .avatar-img {
+    box-shadow: 10px 10px 5px #888888;
+  }
+
+  li {
+    padding: 0;
+    margin: 5px 0 5px 0;
+    .row {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .col-xs-2.comment-avatar {
+    margin-top: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+  }
+
+  .btn {
+    margin-right: 39px;
+    position: relative;
+    right: 116px;
+  }
 }

@@ -2,8 +2,9 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
   template: JST["images/user_images_show"],
 
   initialize: function() {
-    this.comments = this.model.comments();
-    this.favorites = this.model.favorites();
+    this.user = this.model;
+    this.comments = this.user.comments();
+    this.favorites = this.user.favorites();
     this.listenTo(this.model, "add sync remove", this.render);
     this.listenTo(this.comments, 'add sync remove', this.render);
     this.listenTo(this.favorites, 'add sync remove', this.render);
