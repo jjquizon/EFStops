@@ -14,10 +14,11 @@ EfStops.Views.Explore = Backbone.CompositeView.extend({
     this.$el.css('width', '100%');
     this.$el.css('margin-left', 'auto');
     this.$el.css('margin-right', 'auto');
-    EfStops.SearchTags.forEach(function (tag) {
+    $.each(EfStops.SearchTags, function (idx, tag) {
       this.addTagDiv(tag);
     }.bind(this));
 
+    console.log(this.subviews());
   },
 
   addTagDiv: function (tag) {

@@ -23,7 +23,7 @@
     </div>
     <div class="row">
     </div>
-    <h4>Comments (<%= commentCount %>)</h4>
+    <h4>Comments (<%= image.commentCount %>)</h4>
     <ul class="list-unstyled">
       <% comments.each( function (comment) { %>
         <li class="clearfix">
@@ -56,11 +56,11 @@
           <span><strong>views</strong></span>
         </div>
         <div class="col-xs-4">
-          <span class="number"><%= favoriteCount %></span><br>
+          <span class="number"><%= image.favoriteCount %></span><br>
           <span><strong>faves</strong></span>
         </div>
         <div class="col-xs-4">
-          <span class="number"><%= commentCount %></span><br>
+          <span class="number"><%= image.commentCount %></span><br>
           <span><strong>comments</strong></span>
         </div>
       </div>

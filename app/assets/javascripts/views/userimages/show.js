@@ -20,8 +20,6 @@ EfStops.Views.UserImageShow = Backbone.View.extend({
     var renderedContent = this.template({
       image: this.model,
       comments: this.comments,
-      commentCount: this.model.commentCount,
-      favoriteCount: this.model.favoriteCount,
       favToggle: this.favToggleText(),
       favText: this.favText
     });
