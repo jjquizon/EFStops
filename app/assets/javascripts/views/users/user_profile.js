@@ -4,15 +4,15 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
   initialize: function() {
     this.images = this.model.images();
     this.albums = this.model.albums();
-    this.listenTo(this.model, "sync add", this.render);
-    this.listenTo(this.images, "sync add", this.render);
-    this.listenTo(this.albums, "sync add", this.render);
+    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.images, "add", this.addImageSubviews);
+    this.listenTo(this.albums, "sync", this.render);
     this.$el.addClass("clearfix");
   },
 
   events: {
     "click .change-avatar": "changeUserAvatar",
-    "resize window": "render"
+    "resize window": "render",
   },
 
   render: function () {
@@ -23,8 +23,23 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
       width: $(window).width()
       });
     this.$el.html(renderedContent);
+    this.renderImages();
+    this.addHoverEvent();
     return this;
   },
+
+  addImageSubviews: function (image) {
+    var imageSubview = new EfStops.Views.SingleImageView({ image: image });
+    this.addSubview(".photostream", imageSubview);
+  },
+
+  renderImages: function () {
+    var that = this;
+    this.images.each(function (image) {
+      that.addImageSubviews(image);
+    });
+  },
+
 
   changeUserAvatar: function (event) {
     event.preventDefault();
