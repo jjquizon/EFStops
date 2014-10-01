@@ -4,7 +4,7 @@ json.count_of_images @user.images.count
 
 json.albums @user.albums do |album|
   json.extract! album, :id, :title, :description, :created_at,
-                       :updated_at, :cover_image_url
+                       :updated_at, :cover_image_url, :count_of_images
 end
 
 json.images @user.images do |image|

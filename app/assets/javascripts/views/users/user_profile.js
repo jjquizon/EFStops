@@ -14,6 +14,7 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
   events: {
     "click .change-avatar": "changeUserAvatar",
     "resize window": "render",
+    "click #nav-ul-links": "changeActive"
   },
 
   render: function () {
@@ -24,7 +25,8 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
       width: $(window).width()
       });
     this.$el.html(renderedContent);
-    this.renderImages();
+    this.findActive();
+    // this.renderImages();
     return this;
   },
 
@@ -33,11 +35,74 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
     this.addSubview(".photostream", imageSubview);
   },
 
+  addAlbumSubviews: function (album) {
+    var albumSubview = new EfStops.Views.SingleAlbum({ album: album });
+    this.addSubview(".photostream", albumSubview);
+  },
+
+  findActive: function () {
+    var target = this.$el.find('.active').text();
+    this.linkgrabber(target);
+  },
+
   renderImages: function () {
     var that = this;
     this.images.each(function (image) {
       that.addImageSubviews(image);
     });
+  },
+
+  changeActive: function (event) {
+    event.preventDefault();
+    this.clearSubviews();
+    this.removeActive();
+    $(event.target.parentElement).addClass('active');
+    var target = event.target.text;
+    this.linkgrabber(target);
+  },
+
+  linkgrabber: function (target) {
+    var DO;
+    switch(target) {
+      case "Photostream":
+        this.renderImages();
+        break;
+      case "Albums":
+        this.renderAlbums();
+        break;
+      case "Favorites":
+        this.renderFavorites();
+        break;
+      case "Edit":
+        this.renderEdit();
+        break;
+    }
+  },
+
+  renderAlbums: function () {
+    var that = this;
+    this.albums.each(function (album){
+      that.addAlbumSubviews(album);
+    });
+  },
+
+  renderFavorites: function () {
+    console.log("render favorites!");
+  },
+
+  renderEdit: function () {
+    console.log("render edit!");
+  },
+
+  removeActive: function () {
+    this.$el.find('li').each(function (idx, li) {
+      console.log(li);
+      $(li).removeClass('active') ;
+    });
+  },
+
+  clearSubviews: function () {
+    this.remove(true);
   },
 
   changeUserAvatar: function (event) {

@@ -1,0 +1,15 @@
+<div class="hover-target">
+  <span class="image-container">
+    <a href="#/albums/<%= album.escape('id') %>">
+      <img src="<%= album.escape('cover_image_url') %>">
+    </a>
+  <span>
+  <div class="album-description">
+    <div class="album-title">
+      <%= album.escape('title') %>
+    </div>
+    <div class="album-stats">
+      <%= album.imageCount %> photos
+    </div>
+  </div>
+</div>
