@@ -1,6 +1,7 @@
 $(document).ready(function(){
-  $('#guest-signin').on('click', function (event){
+  $('.guest-signin').on('click', function (event){
     event.preventDefault();
+    console.log("signing in as guest");
     var $form = $("#guest-signin-form");
 
     var username = document.createElement("input");
