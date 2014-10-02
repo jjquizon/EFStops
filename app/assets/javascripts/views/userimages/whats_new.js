@@ -1,7 +1,7 @@
-EfStops.Views.WhatsNew = Backbone.View.extend({
+EfStops.Views.WhatsNew = Backbone.CompositeView.extend({
   template: JST["images/whats_new"],
 
-  initialize: function () {
+  initialize: function (options) {
     this.images = this.collection.images();
     this.listenTo(this.collection, 'add', this.render);
     this.listenTo(this.images, 'add', this.render);
@@ -14,11 +14,20 @@ EfStops.Views.WhatsNew = Backbone.View.extend({
     });
     this.$el.html(renderedContent);
     this.listenForScroll();
+    this.renderImages();
     return this;
   },
 
-  comparator: function (WhatsNew) {
-    return -WhatsNew.images().get('created_at');
+  renderImages: function () {
+    var that = this;
+    this.images.each(function (image) {
+      that.addImageSubviews(image);
+    });
+  },
+
+  addImageSubviews: function (image) {
+    var imageSubview = new EfStops.Views.SingleImageView({ image: image });
+    this.addSubview(".whats-new", imageSubview);
   },
 
   listenForScroll: function () {

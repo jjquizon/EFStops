@@ -1,55 +1,42 @@
-<div class="backbone-temp col-xs-8 col-xs-offset-2">
-  <div class="row">
-    <h1>Album title: <%= album.escape('title') %></h1>
-  </div>
-
-  <div class="row">
-    <h2>Images (<%= imageCount %>)</h2>
-    <ul class="list-unstyled">
-      <% images.each( function (image) { %>
-        <a href="#/images/<%= image.escape('id') %>">
-          <img src="<%= image.escape('image_url') %>" class="album-img">
+<div class="album-profile" id="profile-show">
+  <div class="row cover-image" id="cover-image"
+    style="background-image: url(<%= user.escape('cover_photo_url') %>)">
+    <div class="row"></div>
+    <img src="<%= user.escape('avatar_url') %>" id="user-profile-img">
+    <div class="person">
+      <h1><span class="title-holder"><%= album.escape('title') %></span></h1>
+      <span class="username-holder">
+        <a href="#/users/<%= user.escape('username') %>">
+          <%= user.escape('username') %>
         </a>
-      <% }); %>
-    </ul>
+      </span>
+    </div>
+    <div class="stats">
+      <div class="stat statcount">
+        <h1><%= album.imageCount %></h1>
+        <h2>Photos</h2>
+      </div>
+      <div class="stat view-count">
+        <h1>0</h1>
+        <h2>Views</h2>
+      </div>
+    </div>
+    <div class="navbar profile-nav" id="profile-navbar">
+      <ul class="clearfix nav navbar-nav" id="nav-ul-links">
+        <li class="users-albums-btn">
+          <a href="#/users/<%= user.escape('id') %>/albums">
+            View All Albums
+            </a>
+        </li>
+        <li class="active"><a>Photos</a></li>
+      </ul>
+    </div>
   </div>
 
-  <div class="row">
-    <h2>Favorites (<%= favoriteCount %>)</h2>
-    <p>
-      You have <%= favText %> this album
-      <button class="favorite-this-album btn btn-default">
-        <%= favToggle %>
-      </button>
-    </p>
-    <p>
-      Users: <% album.favorites().each (function (favorite) { %>
-        <a href="#/users/<%= favorite.escape('user_id') %>">
-          <%= favorite.escape('username') %><br>
-        </a>
-      <% }); %>
-    </p>
+  <div class="container-fluid photostream">
   </div>
 
-  <div class="row">
-    <h2>Comments (<%= commentCount %>)</h2>
-    <ul class="list-unstyled">
-      <% comments.each( function (comment) { %>
-        <li> <%= comment.escape('username') %> said: <%= comment.escape('content') %><br>
-              at <%= comment.escape('created_at') %>
-        </li><br>
-      <% }) %>
-  </div>
 
-  <div class="submit-new-comment">
-    <form class="new-comment-form">
-      <p>
-      <label for="new-comment">New Comment</label><br>
-        <textarea class="new-comment-content"></textarea>
-      </p>
-      <p>
-        <button class="new-comment-submit btn btn-default">Submit Comment</button>
-      </p>
-    </form>
-  </div>
+
+
 </div>

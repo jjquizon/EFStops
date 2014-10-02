@@ -15,10 +15,11 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
     "users": "usersIndex",
     "users/:id": "showUserProfile",
     "users/:id/feed": "showUserFeed",
+    "users/:id/:activeLink": "showUserProfileAlbums",
+    "users/:userid/albums/:albumid": "albumShow",
     "images/new": "whatsNew",
     "images/:id": "showImage",
     "search/:tag": "searchByTag",
-    "albums/:id": "albumShow",
     "img-upload": "imageUpload"
   },
 
@@ -34,9 +35,16 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
     this._swapView(userProfile);
   },
 
+  showUserProfileAlbums: function(id, activeLink) {
+    var user = EfStops.users.getOrFetch(id);
+    var userProfile = new EfStops.Views.UserProfile({
+      model: user,
+      activeLink: activeLink
+    });
+    this._swapView(userProfile);
+  },
+
   showExplore: function() {
-    // var collection = EfStops.userImages;
-    // collection.fetch();
     var exploreView = new EfStops.Views.Explore();
     this._swapView(exploreView);
   },
@@ -63,10 +71,12 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
     this._swapView(tagView);
   },
 
-  albumShow: function(albumId) {
+  albumShow: function(userid, albumId) {
+    var user = EfStops.users.getOrFetch(userid);
     var album = EfStops.albums.getOrFetch(albumId);
     var albumShowView = new EfStops.Views.ShowAlbum({
-      model: album
+      user: user,
+      album: album
     });
 
     this._swapView(albumShowView);

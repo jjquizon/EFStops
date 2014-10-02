@@ -1,8 +1,7 @@
 EfStops.Views.UserProfile = Backbone.CompositeView.extend({
   template: JST["users/user_show"],
 
-  initialize: function() {
-    console.log(this.model);
+  initialize: function(options) {
     this.images = this.model.images();
     this.albums = this.model.albums();
     this.favoriteImages = this.model.favoriteImages();
@@ -10,6 +9,7 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
     this.listenTo(this.images, "add", this.addImageSubviews);
     this.listenTo(this.albums, "sync", this.render);
     this.$el.addClass("clearfix");
+    this.activeLink = _.str.capitalize(options.activeLink) || "Photostream";
   },
 
   events: {
@@ -26,8 +26,8 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
       width: $(window).width()
       });
     this.$el.html(renderedContent);
+    this.setActive(this.activeLink);
     this.findActive();
-    // this.renderImages();
     return this;
   },
 
@@ -37,7 +37,10 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
   },
 
   addAlbumSubviews: function (album) {
-    var albumSubview = new EfStops.Views.SingleAlbum({ album: album });
+    var albumSubview = new EfStops.Views.SingleAlbum({
+      user: this.model,
+      album: album
+    });
     this.addSubview(".photostream", albumSubview);
   },
 
@@ -51,6 +54,11 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
     this.images.each(function (image) {
       that.addImageSubviews(image);
     });
+  },
+
+  setActive: function (active) {
+    var li = this.$el.find("#"+this.activeLink)[0];
+    $(li).addClass("active");
   },
 
   changeActive: function (event) {

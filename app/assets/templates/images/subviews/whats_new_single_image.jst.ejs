@@ -4,14 +4,12 @@
       <img src="<%= image.escape('image_url') %>">
     </a>
   <span>
+  <div class="image-owner">
+    <a href="#/users/<%= image.escape('owner') %>"><%= image.escape('owner') %></a>
+  </div>
   <div class="image-description">
     <div class="image-title">
-      <a href="#/images/<%= image.escape('id') %>">
-        <%= image.escape('title') %>
-      </a>
-    </div>
-    <div class="image-owner">
-      <a href="#/users/<%= image.escape('owner') %>">by <%= image.escape('owner') %></a>
+      <a href="#/images/"><%= image.escape('title') %></a>
     </div>
     <span class="glyphs">
         <a><span class="glyphicon glyphicon-star-empty"></span></a>

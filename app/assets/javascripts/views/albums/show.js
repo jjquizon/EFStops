@@ -1,14 +1,13 @@
-EfStops.Views.ShowAlbum = Backbone.View.extend({
+EfStops.Views.ShowAlbum = Backbone.CompositeView.extend({
   template: JST["album/album_show"],
 
-  initialize: function () {
-    this.collection = this.model.images();
-    this.comments = this.model.comments();
-    this.favorites = this.model.favorites();
-    this.listenTo(this.model, 'add sync remove', this.render);
-    this.listenTo(this.collection, 'sync', this.render);
-    this.listenTo(this.favorites, 'add sync remove', this.render);
-    this.listenTo(this.comments, 'sync', this.render);
+  initialize: function (options, activeLink) {
+    this.album = options.album;
+    this.user = options.user;
+    this.images = this.album.images();
+    this.listenTo(this.user, 'add sync', this.render);
+    this.listenTo(this.album, 'add sync remove', this.render);
+    this.listenTo(this.images, 'sync', this.render);
     this.$el.addClass("clearfix");
   },
 
@@ -17,19 +16,29 @@ EfStops.Views.ShowAlbum = Backbone.View.extend({
     "click .favorite-this-album": "changeFavToggle"
   },
 
+  renderImages: function () {
+    var that = this;
+    this.images.each(function (image) {
+      that.addImageSubviews(image);
+    });
+  },
+
+  addImageSubviews: function (image) {
+    var imageSubview = new EfStops.Views.SingleImageView({
+      image: image,
+      user: this.user
+    });
+    this.addSubview(".photostream", imageSubview);
+  },
+
   render: function () {
     var renderedContent = this.template({
-      album: this.model,
-      images: this.collection,
-      comments: this.comments,
-      commentCount: this.model.commentCount,
-      favoriteCount: this.model.favoriteCount,
-      imageCount: this.model.imageCount,
-      favToggle: this.favToggleText(),
-      favText: this.favText
+      user: this.user,
+      album: this.album,
+      images: this.images,
     });
-
     this.$el.html(renderedContent);
+    this.renderImages();
     return this;
   },
 

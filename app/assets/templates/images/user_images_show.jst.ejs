@@ -1,4 +1,4 @@
-<div class="image-container container-fluid">
+<div class="image-container container-fluid" id="image-container">
     <div class="row text-center">
       <div class="">
         <img src="<%= image.escape('image_url') %>" class="img-show">
@@ -12,10 +12,14 @@
   <div class="image-comments col-xs-4 col-xs-offset-2">
     <div class="row image-show-owner">
       <span class="col-xs-2 text-right">
-        <img src="<%= image.escape('owner_avatar_url') %>" class="avatar-size">
+        <a href="#/users/<%= image.escape('owner') %>">
+          <img src="<%= image.escape('owner_avatar_url') %>" class="avatar-size">
+        </a>
       </span>
       <div class="col-xs-offset-2">
-        <h3 class="image-owner-show"><%= image.escape('owner') %></p></h3>
+        <a href="#/users/<%= image.escape('owner') %>">
+          <h3 class="image-owner-show"><%= image.escape('owner') %></p></h3>
+        </a>
         <strong><%= image.escape('title') %></strong>
         <p><%= image.escape('description') %></p>
       </div>
@@ -27,11 +31,17 @@
       <% comments.each( function (comment) { %>
         <li class="clearfix">
           <div class="col-xs-2" class="comment-avtar">
-            <img src="<%= comment.escape('avatar_url') %>" class="avatar-size">
+            <a href="#/users/<%= comment.escape('username') %>">
+              <img src="<%= comment.escape('avatar_url') %>" class="avatar-size">
+            </a>
           </div>
-          <div class="col-xs-4">
-            <%= comment.escape('username') %><br>
-            <%= comment.escape('content') %>
+          <div class="col-xs-10">
+            <a href="#/users/<%= comment.escape('username') %>">
+              <strong><%= comment.escape('username') %></strong>
+            </a>
+            <p>
+              <%= comment.escape('content') %>
+            </p>
           </div>
         </li>
       <% }) %>

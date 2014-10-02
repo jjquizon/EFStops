@@ -3,7 +3,7 @@
     <h1>List of Users</h1>
   </div>
 
-  <div class="row">
+  <div class>
     <ul class="list-unstyled">
       <% users.forEach(function (user, idx) { %>
         <% idx += 1 %>
@@ -14,9 +14,6 @@
             <%= user.escape('username') %>
           </a>
         </span>
-        <% if (idx % 4 === 0 && idx != 0) { %>
-          <br>
-        <% } %>
       <% }); %>
     </ul>
   </div>

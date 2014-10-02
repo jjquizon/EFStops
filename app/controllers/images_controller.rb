@@ -10,7 +10,7 @@ class ImagesController < ApplicationController
       image2.created_at <=> image1.created_at
     end
 
-    @images = Kaminari.paginate_array(sorted_images).page(params[:page]).per(10)
+    @images = Kaminari.paginate_array(sorted_images).page(params[:page]).per(20)
     render :whatsnew
   end
 
