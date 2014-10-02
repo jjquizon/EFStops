@@ -9,7 +9,7 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
     this.listenTo(this.images, "add", this.addImageSubviews);
     this.listenTo(this.albums, "sync", this.render);
     this.$el.addClass("clearfix");
-    this.activeLink = _.str.capitalize(options.activeLink) || "Photostream";
+    this.activeLink = this.capitalize(options.activeLink) || "Photostream";
   },
 
   events: {
@@ -142,5 +142,9 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
     //   fileUrl = Blob.url;
     //   saveToDatabase(fileUrl);
     // }.bind(this));
+  },
+
+  capitalize: function(string) {
+    return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();
   }
 });
