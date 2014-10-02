@@ -41,14 +41,13 @@ EfStops.Models.User = Backbone.Model.extend({
       this.albums().set(response.albums, { parse: true });
       delete response.albums;
     }
-    
+
     if (response.images) {
       this.images().set(response.images, { parse: true });
       delete response.images;
     }
 
     if (response.favorite_images) {
-      console.log(response.favorite_images);
       this.favoriteImages().set(response.favorite_images, { parse: true });
       delete response.favorite_images;
     }

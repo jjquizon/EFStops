@@ -1,0 +1,13 @@
+<div>
+  <span class="feed-image-span clearfix">
+    <a href="#/images/<%= image.escape('image_id') %>">
+      <img src="<%= image.escape('image_url') %>" class="feed-img">
+    </a>
+  </span>
+  <a href="#/images/<%= image.escape('image_id') %>">
+    <span class="feed-img-title"><h3><%= image.escape('title') %></h3></span>
+  </a>
+  <a href="#/users/<%= image.escape('user_id') %>">
+    <span class="feed-img-username"><%= image.escape('username') %></span>
+  </a>
+</div>

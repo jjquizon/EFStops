@@ -41,8 +41,6 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
     this.addSubview(".photostream", albumSubview);
   },
 
-
-
   findActive: function () {
     var target = this.$el.find('.active').text();
     this.linkgrabber(target);

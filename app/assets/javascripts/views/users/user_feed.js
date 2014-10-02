@@ -1,11 +1,11 @@
-EfStops.Views.UserFeed = Backbone.View.extend({
+EfStops.Views.UserFeed = Backbone.CompositeView.extend({
   template: JST['users/user_feed'],
 
   initialize: function (options) {
     this.images = this.collection.images();
-    this.listenTo(this.model, "sync add destroy", this.render);
+    this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, "add", this.render);
-    this.listenTo(this.images, 'add', this.render);
+    this.listenTo(this.images, 'add', this.addImageSubviews);
     this.$el.addClass("clearfix");
   },
 
@@ -15,8 +15,21 @@ EfStops.Views.UserFeed = Backbone.View.extend({
       images: this.images
     });
     this.$el.html(renderedContent);
+    this.renderImages();
     this.listenForScroll();
     return this;
+  },
+
+  renderImages: function () {
+    var that = this;
+    this.images.each(function (image) {
+      that.addImageSubviews(image);
+    });
+  },
+
+  addImageSubviews: function (image) {
+    var imageSubview = new EfStops.Views.FeedSingleImage({ image: image });
+    this.addSubview(".feed", imageSubview);
   },
 
   listenForScroll: function () {
@@ -32,7 +45,8 @@ EfStops.Views.UserFeed = Backbone.View.extend({
         self.collection.fetch({
           data: { page: self.collection.pageNumber + 1 },
           remove: false,
-          wait: true,
+          wait: false,
+          success: function () { console.log('fetched images'); }
         });
       }
     }

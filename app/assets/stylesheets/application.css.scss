@@ -666,3 +666,49 @@ section {
     right: 116px;
   }
 }
+
+.feed {
+  padding: 10px 20px 10px 20px;
+  .feed-image-container {
+    position: relative;
+    margin: 40px;
+    white-space: nowrap;
+  }
+
+  .feed-image-span {
+    position: relative;
+  }
+
+  .feed-img-title, .feed-img-username {
+    z-index: 5;
+    position: relative;
+    left: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000000;
+    text-outline: black;
+  }
+
+  .feed-img-title {
+    bottom: 625px;
+    font-size: 30px;
+  }
+  .feed-img-username {
+    bottom: 565px;
+    font-size: 20px
+  }
+
+
+
+  h3 {
+    margin: 0;
+    position: absolute;
+  }
+
+  img {
+    max-width: 800px;
+    max-height: 600px;
+    border: 2px solid black;
+  }
+
+
+}
