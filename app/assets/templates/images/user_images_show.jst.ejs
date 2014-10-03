@@ -78,7 +78,7 @@
       <div class="col-xs-8">
         <div class="row image-show-owner">
           <span class="col-xs-2 text-right">
-            <a href="#/albums/<%= image.escape('album_id') %>">
+            <a href="#/users/<%= image.escape('owner') %>/albums/<%= image.escape('album_id') %>">
               <img src="<%= image.escape('album_cover_img_url') %>" class="avatar-size">
             </a>
           </span>

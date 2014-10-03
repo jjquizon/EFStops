@@ -159,8 +159,8 @@ main {
     top: 65px;
     left: 4px;
     margin-left: 10px;
-    max-height: 113px;
-    max-width: 113px;
+    height: 113px;
+    width: 113px;
     border: 1px solid darkgrey;
     display: block;
     zoom: 1;
@@ -286,7 +286,7 @@ main {
     margin: 5px;
     border: 1px solid darkgrey;
     img {
-      max-height: 320px;
+      height: 320px;
       max-width: 427px;
       z-index: 1;
       float: left;
@@ -381,6 +381,7 @@ main {
     font-size: 15px;
     font-weight: bolder;
     margin-right: 15px;
+    color: #fff;
   }
 
   .photostream-thumb:hover .image-description {
@@ -773,7 +774,7 @@ section {
     margin: 5px;
     border: 1px solid darkgrey;
     img {
-      max-height: 320px;
+      height: 320px;
       max-width: 427px;
       z-index: 1;
       float: left;
@@ -1016,7 +1017,7 @@ section {
     margin: 5px;
     border: 1px solid darkgrey;
     img {
-      max-height: 320px;
+      height: 320px;
       max-width: 427px;
       z-index: 1;
       float: left;

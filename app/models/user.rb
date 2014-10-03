@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
 
   has_many :follows, foreign_key: "follower_id", dependent: :destroy
+
   has_many :followed_users, through: :follows, source: :followed
 
   has_many :reverse_follows, class_name: "Follow",
@@ -65,18 +66,18 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    images = [];
-    self.followed_users.includes(:images).each do |user|
-      user.images.each do |image|
-        image.user_id = user.id
-        image.username = user.username
-        image.avatar_url = user.avatar_url
+    images = []
+    self.followed_users.includes(:images).each do |followed|
+      followed.images.each do |image|
+        image.user_id = followed.id
+        image.username = followed.username
+        image.avatar_url = followed.avatar_url
         images << image
       end
     end
 
     sorted_images = images.sort do |image1, image2|
-      image2.created_at <=> image1.created_at
+      image2.id <=> image1.id
     end
 
     sorted_images

@@ -1,7 +1,7 @@
 json.page_number params[:page]
 json.total_pages @feed.total_pages
 
-json.followers_images @feed.each do |image|
+json.followed_images @feed.each do |image|
     json.title image.title
     json.description image.description
     json.image_id image.id

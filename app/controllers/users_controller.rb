@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   end
 
   def feed
-    @user = User.find(params[:id])
+    @user = User.includes(:followed_users => [:images]).find(params[:id])
     if @user
       pageinate_feed(@user)
       render :feed

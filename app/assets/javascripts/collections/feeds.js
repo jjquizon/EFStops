@@ -46,10 +46,10 @@ EfStops.Collections.Feeds = Backbone.Collection.extend({
   },
 
   parseImages: function (response) {
-    if (response.followers_images) {
-      var responseImages = response.followers_images;
+    if (response.followed_images) {
+      var responseImages = response.followed_images;
       this.images().set(responseImages, { remove: false });
-      delete response.followers_images;
+      delete response.followed_images;
     }
 
     return response;

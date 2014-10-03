@@ -19,10 +19,10 @@ json.favorite_images @user.favorite_images do |favorite|
   json.owner favorite.favoritable.user.username
 end
 
-json.followers @user.followed_users do |followed_user|
-  json.extract! followed_user, :id, :username
+json.followers @user.followers do |follower|
+  json.extract! follower, :id, :username
 end
 
-json.follows @user.followers do |follower|
-  json.extract! follower, :id, :username
+json.follows @user.followed_users do |followed|
+  json.extract! followed, :id, :username
 end

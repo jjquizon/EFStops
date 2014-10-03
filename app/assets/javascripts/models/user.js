@@ -59,7 +59,7 @@ EfStops.Models.User = Backbone.Model.extend({
 
   parseFollows: function (response) {
     if (response.follows) {
-      this.follows().set(response.follows, { parse: true });
+      this.follows().set(response.followed_users, { parse: true });
       delete response.follows;
     }
 
