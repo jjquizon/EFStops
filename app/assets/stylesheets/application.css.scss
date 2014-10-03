@@ -21,7 +21,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.glyphicon.glyphicon-comment, .glyphicon.glyphicon-resize-full {
+.glyphicon.glyphicon-comment, .glyphicon.glyphicon-resize-full, .glyphicon.glyphicon-star-empty {
   display: none;
 }
 
@@ -821,6 +821,7 @@ section {
         display: block;
         width: auto;
         height: 20px;
+        display: none;
         white-space: nowrap;
         display: inline;
         color: #fff;
@@ -1062,6 +1063,7 @@ section {
         bottom: 4px;
         top: auto;
         display: block;
+        visibility: hidden;
         width: auto;
         height: 20px;
         white-space: nowrap;
