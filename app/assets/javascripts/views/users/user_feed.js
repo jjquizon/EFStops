@@ -34,7 +34,7 @@ EfStops.Views.UserFeed = Backbone.CompositeView.extend({
 
   listenForScroll: function () {
     $(window).off("scroll");
-    var throttledCallback = _.throttle(this.nextPage.bind(this), 200);
+    var throttledCallback = _.throttle(this.nextPage.bind(this), 700);
     $(window).on("scroll", throttledCallback);
   },
 
@@ -42,6 +42,7 @@ EfStops.Views.UserFeed = Backbone.CompositeView.extend({
     var self = this;
     if ($(window).scrollTop() > $(document).height() - $(window).height() - 125) {
       if (self.collection.pageNumber < self.collection.totalPages) {
+        console.log(self.collection.pageNumber + 1);
         self.collection.fetch({
           data: { page: self.collection.pageNumber + 1 },
           remove: false,
@@ -49,5 +50,5 @@ EfStops.Views.UserFeed = Backbone.CompositeView.extend({
         });
       }
     }
-  },
+  }
 });
