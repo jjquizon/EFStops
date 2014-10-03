@@ -6,6 +6,7 @@ EfStops.Views.WhatsNew = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'add', this.render);
     this.listenTo(this.images, 'add', this.render);
     this.$el.addClass("clearfix");
+    this.$el.addClass("whats-new-bg");
   },
 
   render: function () {

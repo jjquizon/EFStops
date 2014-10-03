@@ -102,7 +102,7 @@ Image.create(title: "Fireworks!", description: "So pretty", image_tag: "Photogra
 image_url: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/10171082_10202669122222596_814056933421165997_n.jpg?oh=97a301b55955875fe4d159f162e9b527&oe=54B655D9&__gda__=1421266400_53463aea0edd21d0cf5aca0a6353b5a9"
 )
 
-Image.create(title: "Splash Mountain", description: "Looks different at night", image_tag: "Travel", album_id: 14,
+Image.create(title: "Splash Mountain", description: "Looks different at night", image_tag: "Travel", album_id: 13,
 image_url: "https://scontent-a-sjc.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/10177426_10202669123782635_2458642058806601492_n.jpg?oh=e3d6193ee12af0815f230e2a010a02dd&oe=54CA103A"
 )
 
@@ -158,19 +158,19 @@ Image.create(title: "Lake", description: "Lake near Yosemite, CA", image_tag: "N
 image_url: "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/p417x417/10307434_10203007517682271_1154315366405601363_n.jpg?oh=71d87c79d8c9e2eac869f6b1ddde2415&oe=54B38655&__gda__=1422451438_b0abb458fc7aa33eb0963172f470aad1"
 )
 
-Image.create(title: "Soarin', Flyin'", description: "Screaming, CA", image_tag: "Travel", album_id: 14,
+Image.create(title: "Soarin', Flyin'", description: "Screaming, CA", image_tag: "Travel", album_id: 13,
 image_url: "https://scontent-b-sjc.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/p417x417/10004056_10202716117357445_5521585616643154388_n.jpg?oh=f8a79d7f4c816a6924504e41bb44b955&oe=54C375E5"
 )
 
-Image.create(title: "Wonderful World of Color", description: "World of Color, DCA", image_tag: "Travel", album_id: 14,
+Image.create(title: "Wonderful World of Color", description: "World of Color, DCA", image_tag: "Travel", album_id: 13,
 image_url: "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/p480x480/10154011_10202716127277693_366867179197971202_n.jpg?oh=7c0a2985f88918802cb648bd261b9e97&oe=54B88F56&__gda__=1422901245_53da47f3342b10e0c717b6d24cb40320"
 )
 
-Image.create(title: "Walt and Mouse", description: "Walt Disney statue at Disneyland", image_tag: "Travel", album_id: 14,
+Image.create(title: "Walt and Mouse", description: "Walt Disney statue at Disneyland", image_tag: "Travel", album_id: 13,
 image_url: "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/p480x480/1554527_10202716128157715_2863431124379893486_n.jpg?oh=c73dc0f793d07826f6e28ee6b8bccb74&oe=54C1264E&__gda__=1422932965_4013e7e063192983bf48f16f42fed006"
 )
 
-Image.create(title: "Magic Castle", description: "Magic Castle at Disneyland", image_tag: "Travel", album_id: 14,
+Image.create(title: "Magic Castle", description: "Magic Castle at Disneyland", image_tag: "Travel", album_id: 13,
 image_url: "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/s720x720/1016979_10202716127437697_6526186774483132286_n.jpg?oh=9e64fada5326eb9ff2e6ec214dd3a777&oe=54BAF483&__gda__=1420939334_486609f67f60952c2e74b04b5e6a4a61"
 )
 
@@ -182,7 +182,7 @@ Image.create(title: "Churros!", description: "Churros are awesome", image_tag: "
 image_url: "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/1458617_10202669113342374_1877384820909493480_n.jpg?oh=0a359bd87fc936c2fadbab67c44f06a6&oe=54BDC59C&__gda__=1421849078_b89ee3163fda22e37920bcc85d652089"
 )
 
-Image.create(title: "Balloons", description: "Balloon man", image_tag: "Travel", album_id: 14,
+Image.create(title: "Balloons", description: "Balloon man", image_tag: "Travel", album_id: 13,
 image_url: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10153096_10202669115342424_842219817609856441_n.jpg?oh=8285dbaed0340f4d04c40c0b50dc1d98&oe=54BF25C7&__gda__=1421667501_86720a3a02db219726f2ed3fddfd5791"
 )
 
