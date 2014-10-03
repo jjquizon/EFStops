@@ -49,7 +49,7 @@ end
 
 gem 'figaro'
 gem "filepicker-rails"
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '~> 3.9.5.251'
 gem 'ejs'
 gem 'pusher'
 gem 'jquery-ui-rails'
