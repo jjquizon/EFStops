@@ -4,7 +4,6 @@ $(document).ready(function (){
   Animals: { title: "Animals", color: "gold", image_url: "/assets/Camera-icon.png" },
   Art: { title: "Art", color: "green" , image_url: "/assets/Camera-icon.png" },
   Automobiles: { title: "Automobiles", color: "blue" , image_url: "/assets/Camera-icon.png" },
-  Celebrity: { title: "Celebrity", color: "purple", image_url: "/assets/Camera-icon.png" },
   Design: { title: "Design", color: "red", image_url: "/assets/Camera-icon.png" },
   Fashion: { title: "Fashion", color: "orange", image_url: "/assets/Camera-icon.png" },
   Film: { title: "Film", color: "gold ", image_url: "/assets/Camera-icon.png" },

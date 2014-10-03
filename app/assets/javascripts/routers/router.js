@@ -62,8 +62,7 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
   },
 
   searchByTag: function(tag) {
-    var collection = EfStops.userImages;
-    collection.fetch();
+    var collection = EfStops.userImages.fetchByTag(tag);
     var tagView = new EfStops.Views.SearchByTag({
         tag: tag,
         collection: collection
@@ -103,9 +102,7 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
   },
 
   whatsNew: function (){
-
     EfStops.WhatsNew.fetch();
-
     var whatsNewView = new EfStops.Views.WhatsNew({
       data: { page: 1 },
       collection: EfStops.WhatsNew

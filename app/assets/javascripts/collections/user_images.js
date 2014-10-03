@@ -24,6 +24,31 @@ EfStops.Collections.UserImages = Backbone.Collection.extend({
 
   comparator: function (image) {
     return  -image.get('id');
+  },
+
+  fetchByTag: function (tag) {
+    this.tag = this.capitalize(tag);
+    var that = this;
+    this.newImages = new EfStops.Collections.UserImages();
+    this.fetch({
+      success: function (collection, response, options) {
+        var images = new EfStops.Collections.UserImages();
+        images.set(response.images);
+        delete response.images;
+        var newImages = images.where({ image_tag: this.tag });
+        this.newImages.set(newImages);
+      }.bind(this)
+    });
+    return this.newImages;
+  },
+
+  setNewCollection: function(response) {
+
+  },
+
+
+  capitalize: function(string) {
+    return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();
   }
 
 });

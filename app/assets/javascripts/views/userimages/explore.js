@@ -5,7 +5,7 @@ EfStops.Views.Explore = Backbone.CompositeView.extend({
 
     this.TAGS = [
       "Architecture", "Animals", "Art", "Automobiles",
-      "Celebrity", "Design", "Fashion", "Film", "Food", "Funny",
+      "Design", "Fashion", "Film", "Food", "Funny",
       "Illustrations", "Music", "Nature", "Photography",
       "Religion", "Romance", "Sports", "Toys", "Travel", "Typography",
       "Urban", "Weddings"];

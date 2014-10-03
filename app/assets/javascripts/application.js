@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require jquery.serializejson.min.js
 //= require underscore
-//= require underscore.string
 //= require backbone
 //= require bootstrap
 //= require backbone.modal-min
