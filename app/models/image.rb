@@ -6,10 +6,7 @@ class Image < ActiveRecord::Base
   # ENABLE UNIQUE URL BEFORE SENDING UP
 
   belongs_to :album, counter_cache: :count_of_images
+  has_one :user, through: :album
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :favorites, as: :favoritable, dependent: :destroy
-
-  def user
-    self.album.user
-  end
 end

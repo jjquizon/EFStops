@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def show
     params[:id] = params[:id].downcase
     if params.include?(:id)
-      @user = User.friendly.find(params[:id])
+      @user = User.includes([:albums]).friendly.find(params[:id])
       render :show
     else
       flash.now[:errors] = ["User not found"]

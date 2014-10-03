@@ -1,11 +1,11 @@
 class ImagesController < ApplicationController
   def index
-    @images = Image.all
+    @images = Image.all.includes(:user)
     render :index
   end
 
   def whatsnew
-    all_images = Image.all
+    all_images = Image.all.includes(:user)
     sorted_images = all_images.sort do |image1, image2|
       image2.created_at <=> image1.created_at
     end

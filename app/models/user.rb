@@ -66,7 +66,7 @@ class User < ActiveRecord::Base
 
   def feed
     images = [];
-    self.followed_users.each do |user|
+    self.followed_users.includes(:images).each do |user|
       user.images.each do |image|
         image.user_id = user.id
         image.username = user.username
@@ -83,10 +83,8 @@ class User < ActiveRecord::Base
   end
 
   def favorite_images
-    image_favorites = self.favorites.select do |favorite|
-      favorite.favoritable_type = "Image"
-    end
-    image_favorites
+    image_favorites = self.favorites.includes([:favoritable]).where("favoritable_type = ?", "Image")
+    image_favorites.includes([:user])
   end
 
   protected
