@@ -3,7 +3,6 @@ EfStops.Views.UserFeed = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.images = this.collection.images();
-    this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, "add", this.render);
     this.listenTo(this.images, 'add', this.addImageSubviews);
     this.$el.addClass("clearfix");

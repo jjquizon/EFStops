@@ -6,7 +6,6 @@ class ImagesController < ApplicationController
 
   def whatsnew
     all_images = Image.all.order(id: :desc).includes(:user)
-
     @images = Kaminari.paginate_array(all_images).page(params[:page]).per(16)
     render :whatsnew
   end

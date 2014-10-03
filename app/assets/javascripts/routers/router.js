@@ -12,9 +12,9 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
     "upload": "uploadImage",
     "explore": "whatsNew",
     "users": "usersIndex",
-    "users/:id": "showUserProfile",
     "users/:id/feed": "showUserFeed",
     "users/:id/:activeLink": "showUserProfileAlbums",
+    "users/:id": "showUserProfile",
     "users/:userid/albums/:albumid": "albumShow",
     "images/new": "whatsNew",
     "images/:id": "showImage",
@@ -91,9 +91,7 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
   },
 
   showUserFeed: function (id) {
-    var currentUser = EfStops.users.getOrFetch(currentUserId);
     var feedView = new EfStops.Views.UserFeed({
-      model: currentUser,
       collection: this.feedCollection
     });
 

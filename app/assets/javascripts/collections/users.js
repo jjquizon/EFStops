@@ -23,6 +23,10 @@ EfStops.Collections.Users = Backbone.Collection.extend({
     return user;
   },
 
+  getFavorites: function (id) {
+    
+  },
+
   comparator: function (user) {
     return  user.get('created_at');
   }

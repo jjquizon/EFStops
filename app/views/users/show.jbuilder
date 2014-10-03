@@ -14,7 +14,7 @@ json.images @user.images do |image|
   json.favorite image.favorites
 end
 
-json.favorite_images @user.favorite_images.includes([:favoritable => [:user]]) do |favorite|
+json.favorite_images @user.favorite_images do |favorite|
   json.extract! favorite.favoritable, :id, :title, :image_url
   json.owner favorite.favoritable.user.username
 end
