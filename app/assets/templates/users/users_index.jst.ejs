@@ -1,19 +1,19 @@
 <div class="backbone-temp col-xs-8 col-xs-offset-2">
-  <div class="row">
+  <div class="row text-center">
     <h1>List of Users</h1>
   </div>
 
   <div class>
-    <ul class="list-unstyled">
+    <ul class="list-unstyled text-center clearfix col-xs-offset-2">
       <% users.forEach(function (user, idx) { %>
         <% idx += 1 %>
 
-        <span class ="col-xs-3 user-index">
+        <div class ="user-index text-left col-xs-3">
           <a href="#/users/<%= user.escape('username') %>">
             <img src="<%= user.escape('avatar_url') %>" class="avatar-size"/>
             <%= user.escape('username') %>
           </a>
-        </span>
+        </div>
       <% }); %>
     </ul>
   </div>
