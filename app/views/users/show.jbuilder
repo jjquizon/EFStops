@@ -7,10 +7,11 @@ json.albums @user.albums do |album|
                        :updated_at, :cover_image_url, :count_of_images
 end
 
-json.images @user.images.includes(:user) do |image|
+json.images @user.images.includes([:user, :favorites]) do |image|
   json.extract! image, :id, :title, :image_tag, :image_url,
                        :image_tag, :created_at, :updated_at
   json.owner image.user.username
+  json.favorite image.favorites
 end
 
 json.favorite_images @user.favorite_images.includes([:favoritable]) do |favorite|

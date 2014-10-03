@@ -50,6 +50,7 @@ end
 
 group :production do
   gem 'thin'
+  gem 'rack'
 end
 
 gem 'figaro'
@@ -62,4 +63,3 @@ gem 'kaminari'
 gem 'friendly_id'
 gem 'compass'
 gem 'lol_dba'
-gem 'rack'

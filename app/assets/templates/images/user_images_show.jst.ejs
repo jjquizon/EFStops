@@ -84,7 +84,7 @@
           </span>
           <div class="col-xs-offset-3">
             <strong class="album-text">Album:</strong>
-            <a href="#/albums/<%= image.escape('album_id') %>">
+            <a href="#/users/<%= image.escape('owner') %>/albums/<%= image.escape('album_id') %>">
               <h3 class="image-owner-show"><%= image.escape('album_title') %></p></h3>
             </a>
           </div>

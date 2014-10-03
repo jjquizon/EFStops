@@ -7,6 +7,10 @@ EfStops.Views.SingleImageView = Backbone.CompositeView.extend({
     this.$el.addClass("photostream-thumb");
   },
 
+  events: {
+    "click .glyphicon": "favoriteOrUnfav"
+  },
+
   render: function () {
     var renderedContent = this.template({
       image: this.image
@@ -16,6 +20,22 @@ EfStops.Views.SingleImageView = Backbone.CompositeView.extend({
     return this;
   },
 
+  favoriteOrUnfav: function (event) {
+    event.preventDefault();
+  },
 
+  favToggleText: function () {
+     var toggleFavOrUnfav = this.checkUser();
+     this.favText = toggleFavOrUnfav ? "favorited": "not favorited";
+     return toggleFavOrUnfav ? "Click to unfavorite" : "Click to favorite";
+  },
+
+  checkUser: function () {
+    var check = this.model.favorites().find(function (user) {
+      return currentUserId.toString() === user.escape('user_id');
+    });
+
+    return check;
+  },
 
 });

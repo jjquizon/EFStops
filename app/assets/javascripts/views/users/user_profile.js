@@ -16,7 +16,7 @@ EfStops.Views.UserProfile = Backbone.CompositeView.extend({
   events: {
     "click .change-avatar": "changeUserAvatar",
     "resize window": "render",
-    "click #nav-ul-links": "changeActive"
+    "click #nav-ul-links": "changeActive",
   },
 
   render: function () {

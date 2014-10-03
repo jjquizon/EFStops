@@ -46,7 +46,6 @@ EfStops.Views.UserFeed = Backbone.CompositeView.extend({
           data: { page: self.collection.pageNumber + 1 },
           remove: false,
           wait: false,
-          success: function () { console.log('fetched images'); }
         });
       }
     }
