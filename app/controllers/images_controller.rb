@@ -5,12 +5,9 @@ class ImagesController < ApplicationController
   end
 
   def whatsnew
-    all_images = Image.all.includes(:user)
-    sorted_images = all_images.sort do |image1, image2|
-      image2.created_at <=> image1.created_at
-    end
+    all_images = Image.all.order(id: :desc).includes(:user)
 
-    @images = Kaminari.paginate_array(sorted_images).page(params[:page]).per(20)
+    @images = Kaminari.paginate_array(all_images).page(params[:page]).per(16)
     render :whatsnew
   end
 
