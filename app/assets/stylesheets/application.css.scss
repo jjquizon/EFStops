@@ -286,6 +286,7 @@ main {
     border: 1px solid darkgrey;
     img {
       max-height: 320px;
+      max-width: 427px;
       z-index: 1;
       float: left;
     }
@@ -341,8 +342,6 @@ main {
         font-size: 16px;
         line-height: 1.3;
         white-space: nowrap;
-        /* left: 100px; */
-        /* display: inline */
       }
       .glyphs span {
         margin-left: 6px;

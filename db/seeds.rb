@@ -98,42 +98,6 @@ Image.create(title: "Hiking!", description: "Santa Anita Big Loop", image_tag: "
 image_url: "https://scontent-b-sjc.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10372356_10203045957603245_7422470971408560168_n.jpg?oh=c0762e8bd62bf666541b29a1308fadbd&oe=54CEEDA8"
 )
 
-Image.create(title: "Trees", description: "Tree line while hiking", image_tag: "Nature", album_id: 1,
-image_url: "https://scontent-b-sjc.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10371911_10203045942602870_6100514137009935523_n.jpg?oh=3946fcec7aa6e13f299055879917b436&oe=54BDDEF3"
-)
-
-Image.create(title: "Lake", description: "Lake near Yosemite, CA", image_tag: "Nature", album_id: 1,
-image_url: "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/p417x417/10307434_10203007517682271_1154315366405601363_n.jpg?oh=71d87c79d8c9e2eac869f6b1ddde2415&oe=54B38655&__gda__=1422451438_b0abb458fc7aa33eb0963172f470aad1"
-)
-
-Image.create(title: "Soarin', Flyin'", description: "Screaming, CA", image_tag: "Travel", album_id: 14,
-image_url: "https://scontent-b-sjc.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/p417x417/10004056_10202716117357445_5521585616643154388_n.jpg?oh=f8a79d7f4c816a6924504e41bb44b955&oe=54C375E5"
-)
-
-Image.create(title: "Wonderful World of Color", description: "World of Color, DCA", image_tag: "Travel", album_id: 14,
-image_url: "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/p480x480/10154011_10202716127277693_366867179197971202_n.jpg?oh=7c0a2985f88918802cb648bd261b9e97&oe=54B88F56&__gda__=1422901245_53da47f3342b10e0c717b6d24cb40320"
-)
-
-Image.create(title: "Walt and Mouse", description: "Walt Disney statue at Disneyland", image_tag: "Travel", album_id: 14,
-image_url: "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/p480x480/1554527_10202716128157715_2863431124379893486_n.jpg?oh=c73dc0f793d07826f6e28ee6b8bccb74&oe=54C1264E&__gda__=1422932965_4013e7e063192983bf48f16f42fed006"
-)
-
-Image.create(title: "Magic Castle", description: "Magic Castle at Disneyland", image_tag: "Travel", album_id: 14,
-image_url: "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/s720x720/1016979_10202716127437697_6526186774483132286_n.jpg?oh=9e64fada5326eb9ff2e6ec214dd3a777&oe=54BAF483&__gda__=1420939334_486609f67f60952c2e74b04b5e6a4a61"
-)
-
-Image.create(title: "Nightscape", description: "Long shutter", image_tag: "Photography", album_id: 1,
-image_url: "https://scontent-a-sjc.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/10268503_10203007492761648_3486946508984730288_n.jpg?oh=9216b55dc6d9eb0f543279d87d61fda3&oe=54B8B609"
-)
-
-Image.create(title: "Churros!", description: "Churros are awesome", image_tag: "Food", album_id: 15,
-image_url: "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/1458617_10202669113342374_1877384820909493480_n.jpg?oh=0a359bd87fc936c2fadbab67c44f06a6&oe=54BDC59C&__gda__=1421849078_b89ee3163fda22e37920bcc85d652089"
-)
-
-Image.create(title: "Balloons", description: "Balloon man", image_tag: "Travel", album_id: 14,
-image_url: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10153096_10202669115342424_842219817609856441_n.jpg?oh=8285dbaed0340f4d04c40c0b50dc1d98&oe=54BF25C7&__gda__=1421667501_86720a3a02db219726f2ed3fddfd5791"
-)
-
 Image.create(title: "Fireworks!", description: "So pretty", image_tag: "Photography", album_id: 11,
 image_url: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/10171082_10202669122222596_814056933421165997_n.jpg?oh=97a301b55955875fe4d159f162e9b527&oe=54B655D9&__gda__=1421266400_53463aea0edd21d0cf5aca0a6353b5a9"
 )
@@ -186,7 +150,89 @@ Image.create(title: "Jeff", description: "got a home run", image_tag: "Sports", 
 image_url: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/p417x417/10246235_10202682647560721_4179139708639532087_n.jpg?oh=1f5c4c40d2741f69625e5f1513254f30&oe=54BA355D&__gda__=1422874342_503f9244663f51a43ee4da32cb550557"
 )
 
+Image.create(title: "Trees", description: "Tree line while hiking", image_tag: "Nature", album_id: 1,
+image_url: "https://scontent-b-sjc.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10371911_10203045942602870_6100514137009935523_n.jpg?oh=3946fcec7aa6e13f299055879917b436&oe=54BDDEF3"
+)
 
+Image.create(title: "Lake", description: "Lake near Yosemite, CA", image_tag: "Nature", album_id: 1,
+image_url: "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/p417x417/10307434_10203007517682271_1154315366405601363_n.jpg?oh=71d87c79d8c9e2eac869f6b1ddde2415&oe=54B38655&__gda__=1422451438_b0abb458fc7aa33eb0963172f470aad1"
+)
+
+Image.create(title: "Soarin', Flyin'", description: "Screaming, CA", image_tag: "Travel", album_id: 14,
+image_url: "https://scontent-b-sjc.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/p417x417/10004056_10202716117357445_5521585616643154388_n.jpg?oh=f8a79d7f4c816a6924504e41bb44b955&oe=54C375E5"
+)
+
+Image.create(title: "Wonderful World of Color", description: "World of Color, DCA", image_tag: "Travel", album_id: 14,
+image_url: "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/p480x480/10154011_10202716127277693_366867179197971202_n.jpg?oh=7c0a2985f88918802cb648bd261b9e97&oe=54B88F56&__gda__=1422901245_53da47f3342b10e0c717b6d24cb40320"
+)
+
+Image.create(title: "Walt and Mouse", description: "Walt Disney statue at Disneyland", image_tag: "Travel", album_id: 14,
+image_url: "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/p480x480/1554527_10202716128157715_2863431124379893486_n.jpg?oh=c73dc0f793d07826f6e28ee6b8bccb74&oe=54C1264E&__gda__=1422932965_4013e7e063192983bf48f16f42fed006"
+)
+
+Image.create(title: "Magic Castle", description: "Magic Castle at Disneyland", image_tag: "Travel", album_id: 14,
+image_url: "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/s720x720/1016979_10202716127437697_6526186774483132286_n.jpg?oh=9e64fada5326eb9ff2e6ec214dd3a777&oe=54BAF483&__gda__=1420939334_486609f67f60952c2e74b04b5e6a4a61"
+)
+
+Image.create(title: "Nightscape", description: "Long shutter", image_tag: "Photography", album_id: 1,
+image_url: "https://scontent-a-sjc.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/10268503_10203007492761648_3486946508984730288_n.jpg?oh=9216b55dc6d9eb0f543279d87d61fda3&oe=54B8B609"
+)
+
+Image.create(title: "Churros!", description: "Churros are awesome", image_tag: "Food", album_id: 15,
+image_url: "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/1458617_10202669113342374_1877384820909493480_n.jpg?oh=0a359bd87fc936c2fadbab67c44f06a6&oe=54BDC59C&__gda__=1421849078_b89ee3163fda22e37920bcc85d652089"
+)
+
+Image.create(title: "Balloons", description: "Balloon man", image_tag: "Travel", album_id: 14,
+image_url: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10153096_10202669115342424_842219817609856441_n.jpg?oh=8285dbaed0340f4d04c40c0b50dc1d98&oe=54BF25C7&__gda__=1421667501_86720a3a02db219726f2ed3fddfd5791"
+)
+
+Image.create(title: "Offtrail Hiking", description: "This really hurt to get here", image_tag: "Nature", album_id: 4,
+image_url: "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/10403455_10203007511242110_665828030417899682_n.jpg?oh=3bfe4d67f43bc153646adff5e2303501&oe=54C308DE&__gda__=1422458593_e7e963a270c0221c456aecb91edaffec"
+)
+
+Image.create(title: "Lake", description: "Lake at the end of May", image_tag: "Nature", album_id: 4,
+image_url: "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10322817_10203007511722122_3142228496870092644_n.jpg?oh=c641abfd1b291e50c13b45b614ac07ec&oe=54AEE49A&__gda__=1421881740_ade70aff771f5ace9c0d867e6412df86"
+)
+
+Image.create(title: "Tebowing", description: "on Potato Chip Rock", image_tag: "Funny", album_id: 11,
+image_url: "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xaf1/v/t1.0-9/p417x417/1959615_10202382549858466_1250131666_n.jpg?oh=fedfc051147d6c764be0d9031ba024db&oe=54C55EAA&__gda__=1418074653_2b2f7d73fb8db65dc5bb5ae54d65c388"
+)
+
+Image.create(title: "SF Heart", description: "Union Square", image_tag: "Art", album_id: 9,
+image_url: "https://scontent-a-sjc.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/1391499_10201511556684181_1367959897_n.jpg?oh=0c2b24a1ce4530c314b0df349e2fe1b4&oe=54BD7539"
+)
+
+Image.create(title: "Niners", description: "49ers vs Cardinals", image_tag: "Sports", album_id: 8,
+image_url: "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/1385360_10201511559764258_2054328371_n.jpg?oh=d680f41bbfa90c39baab2a8c60eef77a&oe=54C5BBBF&__gda__=1420780901_13aa5a466065c209338658610f64bb45"
+)
+
+Image.create(title: "Touchdown!", description: "TD Vernon Davis", image_tag: "Sports", album_id: 8,
+image_url: "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/1385666_10201511565564403_1289938155_n.jpg?oh=c935b4e544cd566d926ab5c66686a0b3&oe=548267BF&__gda__=1421725541_04def800671e1a52ecd1b0dc5a6debc1"
+)
+
+Image.create(title: "Penalty", description: "Illegal Hands to the face", image_tag: "Sports", album_id: 8,
+image_url: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/1377127_10201511570124517_485704908_n.jpg?oh=144989131128805925248674252102de&oe=54CA8529&__gda__=1417934066_802159745b6f9aed822b1e93c15d388d"
+)
+
+Image.create(title: "Bay Bridge", description: "at night", image_tag: "Architecture", album_id: 9,
+image_url: "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/968969_10200565858522318_1219536792_n.jpg?oh=8ccef0a0fe7730d6f1727e871cc0ece9&oe=54B3CD21&__gda__=1422227324_7d5bae064911a6c5c5cd1b75becb6f96"
+)
+
+Image.create(title: "Grand Park LA", description: "City Hall", image_tag: "Architecture", album_id: 15,
+image_url: "https://scontent-b-sjc.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/486447_10200292405046152_1548202660_n.jpg?oh=065a5d6ab6802792a3cea8d40aaf0158&oe=54B4CA47"
+)
+
+Image.create(title: "Fountain", description: "at the Grand Park", image_tag: "Architecture", album_id: 15,
+image_url: "https://scontent-a-sjc.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/63056_10200292405726169_428172505_n.jpg?oh=5298f6a9ab65f98b4bebe0eb0286e1a5&oe=54BC3498"
+)
+
+Image.create(title: "Griffith Observatory", description: "Griffith Park", image_tag: "Architecture", album_id: 15,
+image_url: "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-prn2/v/t1.0-9/63249_10200191987575778_1715240787_n.jpg?oh=ede1df79b7d991953fc41b87c3eaffe5&oe=54BC092B&__gda__=1417877633_c973a75605c6d566d2be840a149dd897"
+)
+
+Image.create(title: "Sunset", description: "Cliffs at La Jolla", image_tag: "Nature", album_id: 5,
+image_url: "https://scontent-a-sjc.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/316857_2379222553358_83930272_n.jpg?oh=0fcdf8228e0388cca23eb123e6458780&oe=54B10A09"
+)
 
 
 
@@ -215,6 +261,9 @@ Follow.create(follower_id: 1, followed_id: 6)
 Follow.create(follower_id: 1, followed_id: 7)
 Follow.create(follower_id: 1, followed_id: 8)
 Follow.create(follower_id: 1, followed_id: 9)
+Follow.create(follower_id: 1, followed_id: 10)
+Follow.create(follower_id: 1, followed_id: 11)
+Follow.create(follower_id: 1, followed_id: 12)
 Follow.create(follower_id: 2, followed_id: 1)
 Follow.create(follower_id: 2, followed_id: 2)
 Follow.create(follower_id: 2, followed_id: 3)
