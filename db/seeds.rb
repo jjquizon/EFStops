@@ -23,7 +23,7 @@ User.create(username: 'smelliemellie', email: 'smelliemellie@hi.com', password: 
 Album.create(title: "Nature", description: "I love nature", user_id: "12", cover_image_url: "https://scontent-b-sjc.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10371911_10203045942602870_6100514137009935523_n.jpg?oh=3946fcec7aa6e13f299055879917b436&oe=54BDDEF3")
 Album.create(title: "Birthdays", description: "I love birthdays", user_id: "2")
 Album.create(title: "Trees", description: "I love trees", user_id: "2")
-Album.create(title: "Mountains", description: "I love mountains", user_id: "1", cover_image_url: "https://scontent-b-sjc.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10372356_10203045957603245_7422470971408560168_n.jpg?oh=c0762e8bd62bf666541b29a1308fadbd&oe=54CEEDA8")
+Album.create(title: "Mountains", description: "I love mountains", user_id: "2", cover_image_url: "https://scontent-b-sjc.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10372356_10203045957603245_7422470971408560168_n.jpg?oh=c0762e8bd62bf666541b29a1308fadbd&oe=54CEEDA8")
 Album.create(title: "Sunsets", description: "I love sunsets", user_id: "4", cover_image_url: "https://scontent-a-sjc.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/316857_2379222553358_83930272_n.jpg?oh=0fcdf8228e0388cca23eb123e6458780&oe=54B10A09")
 Album.create(title: "Food", description: "I love food", user_id: "5", cover_image_url: "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/968815_10200864316703586_1840964532_n.jpg?oh=6ab66823125f7b540a0feb7e9e56ceb4&oe=54C08FB7&__gda__=1421914090_0f41e9df848d6df360b57163b9faf943")
 Album.create(title: "Cars", description: "I love cars", user_id: "6", cover_image_url: "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/181139_4781623251874_566553905_n.jpg?oh=d202b596071aada27456bb059c388435&oe=54B77FE6&__gda__=1421661742_ef259ee4397a5f9745062e6209697f06")
@@ -34,7 +34,7 @@ Album.create(title: "Activities", description: "I love fun", user_id: "4", cover
 Album.create(title: "Dogs", description: "I love dogs", user_id: 1, cover_image_url: "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xaf1/v/t1.0-9/p417x417/10448196_10203135881971298_7220303387391145382_n.jpg?oh=d07c45a13ab103ece5165d722a5d901b&oe=54BB2140&__gda__=1422436021_4b83e463618bdd62910320afde59ae89")
 Album.create(title: "Disneyland!", description: "I love disneyland", user_id: 11, cover_image_url: "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/p480x480/10154011_10202716127277693_366867179197971202_n.jpg?oh=7c0a2985f88918802cb648bd261b9e97&oe=54B88F56&__gda__=1422901245_53da47f3342b10e0c717b6d24cb40320")
 Album.create(title: "Wedding", description: "I love weddings", user_id: 3, cover_image_url: "https://scontent-a-sjc.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/1005311_10200864204700786_943413931_n.jpg?oh=5d75c472b0f710e3b8fa38cd73710d67&oe=54C90F90")
-Album.create(title: "LA", description: "I love LA", user_id: 1, cover_image_url: "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-prn2/v/t1.0-9/63249_10200191987575778_1715240787_n.jpg?oh=ede1df79b7d991953fc41b87c3eaffe5&oe=54BC092B&__gda__=1417877633_c973a75605c6d566d2be840a149dd897")
+Album.create(title: "LA", description: "I love LA", user_id: 2, cover_image_url: "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-prn2/v/t1.0-9/63249_10200191987575778_1715240787_n.jpg?oh=ede1df79b7d991953fc41b87c3eaffe5&oe=54BC092B&__gda__=1417877633_c973a75605c6d566d2be840a149dd897")
 
 
 

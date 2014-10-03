@@ -36,10 +36,7 @@ EfStops.ModalUpload = Backbone.Modal.extend({
     //   this.saveToDatabase(formTitle, formTag, fileUrl, formDescription, formAlbum_id);
     // }.bind(this));
 
-    this.saveToDatabase(formTitle, formTag, "assets/di76dxki9.jpeg", formDescription, formAlbum_id);
-    alert("Unfortunately due to filepicker API, you will not be able to choose an img, but here's a stickman!");
-
-
+    this.saveToDatabase(formTitle, formTag, "http://www.quickmeme.com/img/bf/bf01e83d627e5314134fca8b2be9db5b21d1d06fbe5de2bbfc148098835f80ec.jpg", formDescription, formAlbum_id);
   },
 
   saveToDatabase: function (title, tag, url, description, album_id) {
