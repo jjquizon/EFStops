@@ -48,6 +48,10 @@ group :development do
   gem 'bullet'
 end
 
+group :production do
+  gem 'thin'
+end
+
 gem 'figaro'
 gem "filepicker-rails"
 gem 'newrelic_rpm', '~> 3.9.5.251'
@@ -58,3 +62,4 @@ gem 'kaminari'
 gem 'friendly_id'
 gem 'compass'
 gem 'lol_dba'
+gem 'rack'

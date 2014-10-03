@@ -11,7 +11,7 @@ EfStops.Routers.AppRouter = Backbone.Router.extend({
     "/": "showUserFeed",
     "you": "showCurrentUserProfile",
     "upload": "uploadImage",
-    "explore": "showExplore",
+    "explore": "whatsNew",
     "users": "usersIndex",
     "users/:id": "showUserProfile",
     "users/:id/feed": "showUserFeed",

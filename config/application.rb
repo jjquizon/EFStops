@@ -22,5 +22,6 @@ module EfStops
     # config.filepicker_rails.api_key = <%= ENV["filepicker_api_key"] %>
     config.assets.paths << "app/assets/templates"
     config.time_zone = "Pacific Time (US & Canada)"
+    config.middleware.use Rack::Deflater
   end
 end

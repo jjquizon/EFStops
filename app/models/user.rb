@@ -83,8 +83,8 @@ class User < ActiveRecord::Base
   end
 
   def favorite_images
-    image_favorites = self.favorites.includes([:favoritable]).where("favoritable_type = ?", "Image")
-    image_favorites.includes([:user])
+    image_favorites = self.favorites.includes([:favoritable])
+                          .where("favoritable_type = ?", "Image")
   end
 
   protected
