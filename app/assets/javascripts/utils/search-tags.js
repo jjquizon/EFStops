@@ -12,6 +12,7 @@
     var $searchDiv = $(".search-tag-div");
     $searchTag.autocomplete({
       source: Tags
+
     });
 
     $searchButton.on("click", function (event) {
@@ -21,23 +22,9 @@
         Backbone.history.navigate("#/search/" + tagValue, { trigger: true });
         $searchTag.val("");
       } else {
-          $searchDiv.tooltip({
-            content: "Must enter valid tag",
-            position: {
-              my: "center bottom-20",
-              at: "center top",
-              using: function( position, feedback ) {
-                $( this ).css( position );
-                $( "<div>" )
-                  .addClass( "arrow" )
-                  .addClass( feedback.vertical )
-                  .addClass( feedback.horizontal )
-                  .appendTo( this );
-              }
-            }
-        });
-        setTimeout(function () { $searchDiv.tooltip("destroy");}, 3000);
-     }
+        $searchTag.val("");
+        document.getElementById('search-tags').placeholder = "Tag not found";
+      }
   });
 
 });

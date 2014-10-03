@@ -52,6 +52,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def favorites
+    @user = User.includes(:favorites).find(params[:id])
+    if @user
+      @favorites = @user.favorites
+      render :favorites
+    else
+      flash.now[:errors] = ['Could not find user']
+      redirect_to root_url
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password, :avatar_url)

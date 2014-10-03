@@ -1,6 +1,4 @@
 EfStops.Collections.Favorites = Backbone.Collection.extend({
   model: EfStops.Models.Favorite,
-  url: "/favorites"
+  url: "/favorites",
 });
-
-EfStops.favorites = new EfStops.Collections.Favorites();

@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   root to: 'staticpages#root'
   get '/home', to: 'staticpages#intro', as: :home
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :show, :index, :update] do 
+  resources :users, only: [:new, :create, :show, :index, :update] do
     member  do
       get 'feed'
+      get 'favorites'
     end
   end
   get '/images/whatsnew', to:  'images#whatsnew'
