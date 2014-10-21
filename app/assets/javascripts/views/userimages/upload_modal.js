@@ -30,13 +30,11 @@ EfStops.ModalUpload = Backbone.Modal.extend({
     var formAlbum_id = this.user.albums().where({ title: formAlbumTitle })[0].id;
     var fileUrl = '';
 
-    // TODO: uncomment
-    // filepicker.pick( function (Blob) {
-    //   fileUrl = Blob.url;
-    //   this.saveToDatabase(formTitle, formTag, fileUrl, formDescription, formAlbum_id);
-    // }.bind(this));
+    filepicker.pick( function (Blob) {
+      fileUrl = Blob.url;
+      this.saveToDatabase(formTitle, formTag, fileUrl, formDescription, formAlbum_id);
+    }.bind(this));
 
-    this.saveToDatabase(formTitle, formTag, "http://www.quickmeme.com/img/bf/bf01e83d627e5314134fca8b2be9db5b21d1d06fbe5de2bbfc148098835f80ec.jpg", formDescription, formAlbum_id);
   },
 
   saveToDatabase: function (title, tag, url, description, album_id) {
